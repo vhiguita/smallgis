@@ -1,0 +1,264 @@
+<style>
+.col-fixed-240{
+    width:40px;
+    background:white;
+    position:absolute;
+    height:100%;
+}
+
+.col-fixed-160{
+    margin-left:240px;
+    width:160px;
+    background:blue;
+    position:fixed;
+    height:870px;
+}
+
+.col-offset-400{
+    padding-left:45px;
+}
+md-sidenav  {
+  width: 210px;height:100%;
+  padding:20px;
+  background-color: #6bc7cc;
+}
+md-content {
+  background-color : tan;
+  height:100%;
+  padding:0px;
+}
+</style>
+<!--<nav class="navbar navbar-default" role="navigation" bs-navbar>
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#">Brand</a>
+  </div>
+  <div class="collapse navbar-collapse" uib-collapse="navCollapsed">
+  <ul class="nav navbar-nav">
+    <li data-match-route="/$"><a href="#/">Home</a></li>
+    <li data-match-route="/page-one"><a href="#/page-one">Page One</a></li>
+    <li data-match-route="/page-two.*"><a href="#/page-two/sub-a">Page Two</a></li>
+  </ul>
+</div>
+</nav>-->
+
+<md-sidenav layout="column" class="sidenav1" md-is-locked-open='true'>
+    SideNav
+</md-sidenav>
+
+<md-content flex layout="column">
+  <ng-view>
+  <div>
+  <div class="col-fixed-140"></div>
+  <div class="col-sm-12">
+
+    <nav mfb-menu position="bl" effect="zoomin" label="Análisis"
+         active-icon="ion-edit" resting-icon="ion-plus-round"
+         toggling-method="hover">
+      <button mfb-button icon="fa fa-map" label="menu item 1"></button>
+      <button mfb-button icon="ion-settings" label="menu item 2"></button>
+      <button mfb-button icon="ion-pie-graph" label="menu item 3"></button>
+      <button mfb-button icon="ion-cloud" label="menu item 4"></button>
+      <button mfb-button icon="ion-person" label="menu item 5"></button>
+      <button mfb-button icon="paper-airplane" label="menu item 6"></button>
+      <button mfb-button icon="paper-airplane" label="menu item 7"></button>
+      <button mfb-button icon="paper-airplane" label="menu item 8"></button>
+      <button mfb-button icon="paper-airplane" label="menu item 9"></button>
+    </nav>
+    <nav mfb-menu position="tr" effect="zoomin" label="Análisis"
+         active-icon="ion-edit" resting-icon="ion-plus-round"
+         toggling-method="hover">
+      <button mfb-button icon="ion-gear-a" label="menu item 1"></button>
+      <button mfb-button icon="ion-settings" label="menu item 2"></button>
+      <button mfb-button icon="ion-pie-graph" label="menu item 3"></button>
+      <button mfb-button icon="ion-cloud" label="menu item 4"></button>
+      <button mfb-button icon="ion-person" label="menu item 5"></button>
+      <button mfb-button icon="paper-airplane" label="menu item 6"></button>
+      <button mfb-button icon="paper-airplane" label="menu item 7"></button>
+      <button mfb-button icon="paper-airplane" label="menu item 8"></button>
+      <button mfb-button icon="paper-airplane" label="menu item 9"></button>
+    </nav>
+<!--    <div class="row">
+      <div class="col-fixed-240">
+        <span class="fa-stack fa-lg">
+              <i class="fa fa-square-o fa-stack-2x"></i>
+              <i class="fa fa-twitter fa-stack-1x"></i>
+            </span>
+            <br>
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-flag fa-stack-1x fa-inverse"></i>
+            </span>
+            <br>
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-square fa-stack-2x"></i>
+              <i class="fa fa-terminal fa-stack-1x fa-inverse"></i>
+            </span>
+            <br>
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-camera fa-stack-1x"></i>
+              <i class="fa fa-ban fa-stack-2x text-danger"></i>
+            </span>
+      </div>
+
+      <div class="col-md-12 col-offset-400">-->
+        <!--<md-fab-toolbar md-open="demo.isOpen" count="demo.count" md-direction="{{demo.selectedDirection}}">
+          <md-fab-trigger class="align-with-text">
+            <md-button aria-label="menu" class="md-fab">
+              <md-icon md-svg-src="content/images/turf-union.svg"></md-icon>
+            </md-button>
+          </md-fab-trigger>
+          <md-toolbar>
+            <md-fab-actions class="md-toolbar-tools">
+              <md-button aria-label="comment" class="md-icon-button">
+                <md-icon md-svg-src="content/images/turf-buffer.svg"></md-icon>
+              </md-button>
+              <md-button aria-label="label" class="md-icon-button">
+                <md-icon md-svg-src="content/images/turf-buffer.svg"></md-icon>
+              </md-button>
+              <md-button aria-label="photo" class="md-icon-button">
+                <md-icon md-svg-src="content/images/turf-buffer.svg"></md-icon>
+              </md-button>
+              <md-button aria-label="photo" class="md-icon-button">
+                <md-icon md-svg-src="content/images/turf-buffer.svg"></md-icon>
+              </md-button>
+              <md-button aria-label="photo" class="md-icon-button">
+                <md-icon md-svg-src="content/images/turf-buffer.svg"></md-icon>
+              </md-button>
+              <md-button aria-label="photo" class="md-icon-button">
+                <md-icon md-svg-src="content/images/turf-buffer.svg"></md-icon>
+              </md-button>
+              <md-button aria-label="comment" class="md-icon-button">
+                <md-icon md-svg-src="content/images/turf-buffer.svg"></md-icon>
+              </md-button>
+              <md-button aria-label="label" class="md-icon-button">
+                <md-icon md-svg-src="content/images/turf-buffer.svg"></md-icon>
+              </md-button>
+              <md-button aria-label="photo" class="md-icon-button">
+                <md-icon md-svg-src="content/images/turf-buffer.svg"></md-icon>
+              </md-button>
+              <md-button aria-label="photo" class="md-icon-button">
+                <md-icon md-svg-src="content/images/turf-buffer.svg"></md-icon>
+              </md-button>
+              <md-button aria-label="photo" class="md-icon-button">
+                <md-icon md-svg-src="content/images/turf-buffer.svg"></md-icon>
+              </md-button>
+              <md-button aria-label="photo" class="md-icon-button">
+                <md-icon md-svg-src="content/images/turf-buffer.svg"></md-icon>
+              </md-button>
+            </md-fab-actions>
+          </md-toolbar>
+        </md-fab-toolbar>-->
+      <leaflet lf-center="center" width="100%" height="870px"></leaflet>
+      </div>
+    </div>
+  </div>
+</div>
+</ng-view>
+</md-content>
+
+
+    <div>
+      <circular
+        options="options">
+      </circular>
+    </div>
+
+
+
+<!--<div ng-cloak>
+   <h2>
+    <span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Leaflet maps</h2>
+  <hr>
+  <div class="row">
+
+    <aside-menu id="sol1" side="left" width="400" is-backdrop="true" push-content="true">
+      <ul class="list-group">
+          <li class="list-group-item">Cras justo odio</li>
+          <li class="list-group-item">Dapibus ac facilisis in</li>
+          <li class="list-group-item">Morbi leo risus</li>
+          <li class="list-group-item">Porta ac consectetur ac</li>
+          <li class="list-group-item">Vestibulum at eros</li>
+      </ul>
+    </aside-menu>
+    <aside-menu id="sol2" side="left" width="400" is-backdrop="true" push-content="false">
+      <ul class="list-group">
+          <li class="list-group-item">Cras justo odio</li>
+          <li class="list-group-item">Dapibus ac facilisis in</li>
+          <li class="list-group-item">Morbi leo risus</li>
+          <li class="list-group-item">Porta ac consectetur ac</li>
+          <li class="list-group-item">Vestibulum at eros</li>
+      </ul>
+    </aside-menu>
+    <aside-menu id="sag1" side="right" width="240" is-backdrop="false" push-content="true">
+      <ul class="list-group">
+          <li class="list-group-item">Cras justo odio</li>
+          <li class="list-group-item">Dapibus ac facilisis in</li>
+          <li class="list-group-item">Morbi leo risus</li>
+          <li class="list-group-item">Porta ac consectetur ac</li>
+          <li class="list-group-item">Vestibulum at eros</li>
+      </ul>
+    </aside-menu>-->
+<!--    <aside-menu id="sag2" side="right" width="240" is-backdrop="false" push-content="false">
+      <ul class="list-group">
+          <li class="list-group-item">aaa</li>
+          <li class="list-group-item">asa</li>
+          <li class="list-group-item">sds</li>
+          <li class="list-group-item">Porta ac consectetur ac</li>
+          <li class="list-group-item">Vestibulum at eros</li>
+      </ul>
+    </aside-menu>-->
+    <!--<aside-menu-content>
+      <div class="col-sm-12">
+        <leaflet lf-center="center" width="100%" height="870px"></leaflet>-->
+    <!--      <button class="btn btn-primary" ng-click="center.autoDiscover=true">Discover position</button>-->
+  <!--    </div>
+      <div style="display: table; margin: 200px auto">
+          <button type="button" aside-menu-toggle="sol1" class="btn btn-default">Left Menu (Push Content & Backdrop)</button>
+          <button type="button" aside-menu-toggle="sol2" class="btn btn-default">Left (Backdrop)</button>
+          <button type="button" aside-menu-toggle="sag1" class="btn btn-default">Right Menu (Push Content)</button>
+          <button type="button" aside-menu-toggle="sag2" class="btn btn-default">Right Menu</button>
+      </div>
+    </aside-menu-content>
+
+<div>
+    <div>
+      <circular
+        options="options">
+      </circular>
+    </div>
+<nav mfb-menu position="bl" effect="zoomin" label="Análisis"
+         active-icon="ion-edit" resting-icon="ion-plus-round"
+         toggling-method="click">
+      <button mfb-button icon="ion-gear-a" label="menu item 1"></button>
+      <button mfb-button icon="ion-settings" label="menu item 2"></button>
+      <button mfb-button icon="ion-pie-graph" label="menu item 3"></button>
+      <button mfb-button icon="ion-cloud" label="menu item 4"></button>
+      <button mfb-button icon="ion-person" label="menu item 5"></button>
+      <button mfb-button icon="paper-airplane" label="menu item 6"></button>
+      <button mfb-button icon="paper-airplane" label="menu item 7"></button>
+      <button mfb-button icon="paper-airplane" label="menu item 8"></button>
+      <button mfb-button icon="paper-airplane" label="menu item 9"></button>
+    </nav>
+    <nav mfb-menu position="tr" effect="zoomin" label="Análisis"
+         active-icon="ion-edit" resting-icon="ion-plus-round"
+         toggling-method="click">
+      <button mfb-button icon="ion-gear-a" label="menu item 1"></button>
+      <button mfb-button icon="ion-settings" label="menu item 2"></button>
+      <button mfb-button icon="ion-pie-graph" label="menu item 3"></button>
+      <button mfb-button icon="ion-cloud" label="menu item 4"></button>
+      <button mfb-button icon="ion-person" label="menu item 5"></button>
+      <button mfb-button icon="paper-airplane" label="menu item 6"></button>
+      <button mfb-button icon="paper-airplane" label="menu item 7"></button>
+      <button mfb-button icon="paper-airplane" label="menu item 8"></button>
+      <button mfb-button icon="paper-airplane" label="menu item 9"></button>
+    </nav>
+
+  </div>
+</div>
+</div>-->

@@ -1,0 +1,27 @@
+<script type="text/ng-template" id="assigntable.html">
+        <div class="modal fade">
+         <div class="modal-dialog" style="width:600px;">
+           <div class="modal-content">
+             <div class="modal-header">
+               <button type="button" class="close" ng-click="close('Cancel')" data-dismiss="modal" aria-hidden="true">&times;</button>
+               <h4 class="modal-title">Tabla de asignación de requerimientos</h4>
+             </div>
+             <div class="modal-body">
+               <div class="container-2 main-section">
+                <div class="content-panel" style="border:none;box-shadow:none;">
+                   <div class="container-2">
+                     <div class="panel-group">
+                       <div id="grid-tags" ui-grid="gridReqOptions" ui-grid-resize-columns ui-grid-auto-resize  ui-grid-edit class="influxGrid" 
+                       style="width:500px;height: 200px;text-align:center;margin:auto;color:black;"></div>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+             </div>
+             <div class="modal-footer">
+               <md-button ng-click="process('Cancel')" class="btn btn-primary">Aceptar</md-button>
+             </div>
+           </div>
+         </div>
+       </div>
+</script>

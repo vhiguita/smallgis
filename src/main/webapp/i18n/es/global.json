@@ -1,0 +1,180 @@
+{
+    "global": {
+        "title": "Smallgis",
+        "browsehappy": "Está usando un navegador <strong>no actualizado</strong>. Por favor, <a href=\"http://browsehappy.com/?locale=en\">actualice su navegador</a> para mejorar su experiencia.",
+        "menu": {
+            "home": "Inicio",
+            "layers":"Capas",
+            "maps":"Mapas",
+            "apps":"Aplicaciones",
+            "exit": "Salir",
+            "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
+            "entities": {
+                "main": "Entidades",
+                "capa": "Capa",
+                "mapa": "Mapa",
+                "aplicacion": "Aplicacion",
+                "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
+            },
+            "account": {
+                "main": "Cuenta",
+                "settings": "Ajustes",
+                "password": "Contraseña",
+                "sessions": "Sesiones",
+                "login": "Iniciar sesión",
+                "logout": "Cerrar la sesión",
+                "register": "Crear una cuenta"
+            },
+            "welcome": {
+                "title": "Bienvenido <b>{{username}}</b>"
+            },
+            "statistics": {
+              "title": "Estadísticas del usuario [<b>{{username}}</b>]",
+              "user":  "Usuario",
+              "userplan":  "Plan del usuario"
+            },
+            "admin": {
+                "main": "Administración",
+                "userManagement": "Gestión de usuarios",
+                "tracker": "Registro de los usuarios",
+                "metrics": "Métricas",
+                "health": "Salud",
+                "configuration": "Configuración",
+                "logs": "Logs",
+                "audits": "Auditorías",
+                "apidocs": "API",
+                "database": "Base de datos",
+                "jhipster-needle-menu-add-admin-element": "JHipster will add additional menu entries here (do not translate!)"
+            },
+            "language": "Idioma"
+        },
+        "form": {
+            "name": "Nombre",
+            "name.placeholder": "Nombre completo",
+            "username": "Usuario",
+            "username.placeholder": "Nombre de usuario",
+            "changepassword": "Cambiar contraseña",
+            "newpassword": "Nueva contraseña",
+            "newpassword.placeholder": "Nueva contraseña",
+            "confirmpassword": "Confirmación de la nueva contraseña",
+            "confirmpassword.placeholder": "Confirmación de la nueva contraseña",
+            "email": "Correo electrónico",
+            "email.placeholder": "Su correo electrónico",
+            "admin": "Es administrador?",
+            "businesscode": "Código corporativo",
+            "companyname":"Empresa",
+            "business": "Corporativo",
+            "basic": "Básico",
+            "business.placeholder": "Nombre de la empresa",
+            "businesscode.placeholder": "Su código de pago",
+            "businessID.placeholder": "NIT de la empresa",
+            "country": "Pais",
+            "button": "Guardar",
+            "accountsettings":"Configurar cuenta",
+            "adminuseraccount":"Administrar usuarios",
+            "companyusers":"Usuarios de la empresa",
+            "statistics":"Estadísticas",
+            "trackanalysis":"Análisis de rastreo",
+            "admincost":"Administrar costos",
+            "cost":"Costos",
+            "pickupcosts":"Costos de recogida",
+            "delivercosts":"Costos de entrega"
+        },
+        "pwd":{
+          "title": "Contraseña de [<b>{{username}}</b>]",
+          "messages": {
+              "error":  "<strong>¡Ha ocurrido un error!</strong> La contraseña no se ha podido cambiar.",
+              "success": "<strong>¡La contraseña ha sido cambiada!</strong>"
+          }
+        },
+        "messages": {
+            "info": {
+                "authenticated": "Si desea <a class=\"alert-link\" href=\"\" ng-click=\"vm.login()\">iniciar una sesión</a>, puede intentar con las cuentas predeterminadas:<br/>- Administrator (usuario=\"admin\" y contraseña=\"admin\") <br/>- Usuario (usuario=\"user\" y contraseña=\"user\").",
+                "register": "¿No tienes una cuenta todavía? <a class=\"alert-link\" href=\"\" ng-click=\"vm.register()\">Crea una cuenta</a>"
+            },
+            "plan":{
+                "type":"Tipo de plan"
+            },
+            "error": {
+                "dontmatch": "¡La contraseña y la confirmación de contraseña no coinciden!",
+                "companyid": "¡La empresa no está registrada!",
+                "companycode": "¡El código de pago no es válido!",
+                "expiredaccount": "!La cuenta ha expirado, la empresa debe renovar el plan!",
+                "numberofusers": "!No puede registrar más usuarios!",
+                "numberofusersbp": "!No puede registrar más de un usuario con este plan!",
+                "adminexists": "!Ya existe un usuario adminstrador para la empresa registrada!",
+                "credentials": "!Las credenciales no corresponden al tipo de plan!"
+            },
+            "validate": {
+                "newpassword": {
+                    "required": "Se requiere que ingrese una contraseña.",
+                    "minlength": "Se requiere que su contraseña tenga por lo menos 5 caracteres",
+                    "maxlength": "Su contraseña no puede tener más de 50 caracteres",
+                    "strength": "Seguridad de la contraseña:"
+                },
+                "confirmpassword": {
+                    "required": "Se requiere que confirme la contraseña.",
+                    "minlength": "Se requiere que su contraseña de confirmación tenga por lo menos 5 caracteres",
+                    "maxlength": "Su contraseña de confirmación no puede tener más de 50 caracteres"
+                },
+                "email": {
+                    "required": "Se requiere un correo electrónico.",
+                    "invalid": "Su correo electrónico no es válido.",
+                    "minlength": "Se requiere que su correo electrónico tenga por lo menos 5 caracteres",
+                    "maxlength": "Su correo electrónico no puede tener más de 50 caracteres"
+                }
+            }
+        },
+        "field": {
+            "id": "ID"
+        },
+        "ribbon": {
+            "dev": "Development"
+        }
+    },
+    "entity": {
+        "action": {
+            "addblob": "Añadir fichero",
+            "addimage": "Añadir imagen",
+            "back": "Volver",
+            "cancel": "Cancelar",
+            "delete": "Eliminar",
+            "edit": "Editar",
+            "open": "Open",
+            "save": "Guardar",
+            "view": "Vista"
+        },
+        "detail": {
+            "field": "Campo",
+            "value": "Valor"
+        },
+        "delete": {
+            "title": "Confirmar operación de borrado"
+        },
+        "validation": {
+            "required": "Este campo es obligatorio.",
+            "minlength": "Este campo requiere al menos {{min}} caracteres.",
+            "maxlength": "Este campo no puede superar más de {{max}} caracteres.",
+            "min": "Este campo debe ser mayor que {{min}}.",
+            "max": "Este campo no puede ser mayor que {{max}}.",
+            "minbytes": "Este campo debe tener como mínimo {{min}} bytes.",
+            "maxbytes": "Este campo no puede tener más de {{max}} bytes.",
+            "pattern": "Este campo debe seguir el patrón {{pattern}}.",
+            "number": "Este campo debe ser un número.",
+            "datetimelocal": "Este campo debe ser una fecha y hora."
+        }
+    },
+    "error": {
+        "server.not.reachable": "Servidor no accesible",
+        "url.not.found": "Not found",
+        "NotNull": "¡El campo {{fieldName}} no puede estar vacío!",
+        "Size": "¡El campo {{fieldName}} no cumple con los requisitos de tamaño mínimo/máximo!",
+        "userexists": "Login name already used!",
+        "emailexists": "E-mail is already in use!",
+        "idexists": "A new {{entityName}} cannot already have an ID"
+    },
+    "footer": "pie de página",
+    "bootswatch": {
+        "themeSelector": "Theme"
+    }
+}

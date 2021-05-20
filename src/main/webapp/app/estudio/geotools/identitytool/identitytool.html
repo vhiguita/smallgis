@@ -1,0 +1,45 @@
+<script type="text/ng-template" id="identitytool.html">
+        <div class="modal fade">
+         <div class="modal-dialog">
+           <div class="modal-content">
+             <div class="modal-header">
+               <button type="button" class="close" ng-click="close('Cancel')" data-dismiss="modal" aria-hidden="true">&times;</button>
+               <h4 class="modal-title">Intersecctar y unir de 2 capas</h4>
+             </div>
+             <div class="modal-body">
+               <div class="container-2 main-section">
+                 <div class="content-panel" style="border:none;box-shadow:none;">
+                 <div class="container-1">
+                   <div class="img-content">
+                         <md-icon md-svg-icon="content/images/turf-intersect.svg" style="color: white; width:100px; height:100px;"></md-icon>
+                   </div>
+                   <div class="description">
+                     <div class="content-description">
+                          Calcula una intersección geométrica entre dos capas de polígonos. La capa resultado contiene la unión de la intersección de estas 2 capas
+                     </div>
+                   </div>
+                   <div class="container-2">
+                    <div class="layer-1">
+                      Capa 1:<select name="layer_1_sel" id="layer_1_sel" data-ng-model="ddlvalue1">
+                      <option value="">---Seleccionar capa---</option>
+                       <option ng-repeat="layer in layersMap" value="{{layer.id}}">{{layer.name}}</option>
+                      </select>
+                    </div>
+                    <div class="layer-2">
+                      Capa 2:<select name="layer_2_sel" id="layer_2_sel" data-ng-model="ddlvalue2">
+                      <option value="">---Seleccionar capa---</option>
+                       <option ng-repeat="layer in layersMap" value="{{layer.id}}">{{layer.name}}</option>
+                      </select>
+                    </div>
+                   </div>
+                 </div>
+               </div>
+              </div>
+             </div>
+             <div class="modal-footer">
+               <md-button ng-click="process()" class="btn btn-primary">Ejecutar</md-button>
+             </div>
+           </div>
+         </div>
+       </div>
+</script>

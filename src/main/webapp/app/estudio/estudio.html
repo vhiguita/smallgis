@@ -1,0 +1,1529 @@
+<!--<div id="dialog-downloadlayer" title="Descargar capa" style="height: 75px;">
+   <input id="layerId" type="hidden" value="">
+   <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Desea descargar la capa como?</p>
+</div>-->
+<!--<div id="dialog-csv" title="Cargar CVS" style="height: 75px;">
+  <label for="lbl_latitude" style="font-weight:bold;">Latitud</label>
+  <input type="number" id="latitude" name="latitude" step="0.1" value ="0">
+  <label for="lbl_longitude" style="font-weight:bold;">Longitud</label>
+  <input type="number" id="longitude" name="longitude" step="0.1" value ="0">
+</div>-->
+<div id="dialog-requirement" title="Crear capa de requerimientos" style="height: 0px;">
+</div>
+<div id="dialog-requirement-dest" title="Crear capa de requerimientos" style="height: 0px;">
+</div>
+<div id="dialog-address" title="Ingresar dirección" style="height: 0px;">
+</div>
+<div id="dialog-csv" title="Cargar csv" style="height: 75px;">
+   <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Debe de tener en cuenta que la estructura minima del archivo csv es lat,lng,name,...</p>
+</div>
+<div id="dialog" title="Dibujar capas" style="height: 75px;">
+   <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Desea agregar las capas dibujadas como una sola?</p>
+</div>
+<div id="dialog-logout" title="Cerrar sesión" style="height: 75px;">
+   <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Desea salir?, antes no olvide guardar todos los cambios.</p>
+</div>
+<div id="dialog-rmcol" title="Eliminar columna" style="height: 75px;">
+   <input id="columnValue" type="hidden" value="">
+   <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Desea eliminar la columna seleccionada?</p>
+</div>
+<div id="dialog-updatelayer" title="Guardar capa" style="height: 75px;">
+   <input id="layerName" type="hidden" value="">
+   <input id="layerId" type="hidden" value="">
+   <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Ya existe una capa con el mismo nombre. Desea sobreescribir la capa?</p>
+   <label for="labeldescription" style="font-weight:bold;">Descripción</label>
+   <textarea id="layerDes" name="layerDes" rows="3" cols="27">
+   </textarea>
+</div>
+<div id="dialog-rmlayers" title="Eliminar capas seleccionadas" style="height: 75px;">
+     <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Las capas seleccionadas seran eliminadas de las base de datos. Esta seguro?</p>
+</div>
+<div id="dialog-addlayers" title="Agregar capas seleccionadas" style="height: 75px;">
+     <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Desea agregar las capas seleccionadas?</p>
+</div>
+<div id="dialog-addreqlayers" title="Agregar capas seleccionadas" style="height: 75px;">
+     <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Desea agregar las capas de requerimientos seleccionadas?</p>
+</div>
+<div id="dialog-savelayer" title="Guardar capa" style="height: 75px;">
+   <input id="layername" type="hidden" value="">
+   <input id="layerid" type="hidden" value="">
+   <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Desea guardar la capa en la base de datos?</p>
+   <label for="labeldescription" style="font-weight:bold;">Descripción</label>
+   <textarea id="layer_des" name="layer_des" rows="3" cols="27">
+   </textarea>
+</div>
+<div id="dialog-savemap" title="Guardar mapa" style="height: 75px;">
+ <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Desea guardar las capas seleccionadas en un solo mapa?</p>
+   <label for="lbl_map_title" style="font-weight:bold;">Titulo</label>
+   <input type="text" id="map_title" name="map_title">
+   <label for="lbl_map_des" style="font-weight:bold;">Descripción</label>
+   <textarea id="map_des" name="map_des" rows="4" cols="27">
+   </textarea>
+</div>
+<div id="dialog-saveapp" title="Crear app" style="height: 75px;">
+   <input id="mapid" type="hidden" value="">
+   <label for="lbl_app_title" style="font-weight:bold;">Titulo</label>
+   <input type="text" id="app_title" name="app_title">
+   <label for="lbl_app_des" style="font-weight:bold;">Descripción</label>
+   <textarea id="app_des" name="map_des" rows="4" cols="27">
+   </textarea>
+   <div style="margin-top: 15px;">
+     <label style="font-weight:bold;">Tipo de aplicacion</label>
+     <select id="sel-type-app" ng-model="seltypeapp">
+       <option value="basic">Basica</option>
+       <option value="advanced">Avanzada</option>
+       <option value="globemap">Mapa 3D</option>
+     </select>
+    </div>
+    <div id="chk-container">
+        <label for="chkvalueCreateApp" style="font-weight:bold;">Público:<input type="checkbox" ng-init="checkboxModel.valueCreateApp=false" ng-model="checkboxModel.valueCreateApp" ng-change="clickEventApp(checkboxModel.valueCreateApp)">
+        </label><br/>
+    </div>
+</div>
+<div id="dialog-shareapp" title="Compartir app" style="height: 75px;">
+   <input id="mapid" type="hidden" value="">
+   <label for="lbl_URL" style="font-weight:bold;">URL</label>
+   <input id="share-url-app" name="share-url-app" ng-model="shareurlapp" type="text" readonly></input>
+    <div id="chk-container">
+        <label for="chkvalueCreateApp" style="font-weight:bold;">Público:<input type="checkbox" ng-init="checkboxModel.valueShareApp=false" ng-model="checkboxModel.valueShareApp" ng-change="clickEventShareApp(checkboxModel.valueShareApp)">
+        </label><br/>
+    </div>
+</div>
+<div id="dialog-removemap" title="Eliminar mapa" style="height: 75px;">
+     <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Desea eliminar el mapa seleccionado. Esta seguro?</p>
+</div>
+<div id="dialog-addmap" title="Agregar mapa" style="height: 75px;">
+     <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Desea adicionar el mapa seleccionado?</p>
+</div>
+<div id="dialog-createapp" title="Crear app" style="height: 75px;">
+     <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Desea crear el app con el mapa seleccionado?</p>
+</div>
+<div id="dialog-removeapp" title="Eliminar app" style="height: 75px;">
+     <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Desea eliminar la app seleccionada. Esta seguro?</p>
+</div>
+<div ng-cloak>
+<div ng-include="'app/estudio/addarcgisfeature/addarcgisfeature.html'"> </div>
+<div ng-include="'app/estudio/addexternallink/addexternallink.html'"> </div>
+<div ng-include="'app/estudio/drawposition/drawposition.html'"> </div>
+<div ng-include="'app/estudio/advancedquery/advancedquery.html'"> </div>
+<div ng-include="'app/estudio/renamelayer/renamelayer.html'"> </div>
+<div ng-include="'app/estudio/clasifylayer/clasifylayer.html'"> </div>
+<div ng-include="'app/estudio/assigndevice/assigndevice.html'"> </div>
+<div ng-include="'app/estudio/assigntable/assigntable.html'"> </div>
+<section layout="row" >
+<md-sidenav md-component-id="left0" layout="column" class="sidenav0" md-is-locked-open='true'>
+  <section layout="column" layout-sm="column" layout-align="center center" layout-wrap>
+    <md-button ng-click="toggleNav6()" class="md-fab md-mini" >
+      <md-tooltip md-direction='right'>
+        {{ 'global.menu.home' | translate }}
+      </md-tooltip>
+      <md-icon md-svg-src="content/images/SVG/home.svg" style="color: white;"></md-icon>
+    </md-button>
+    <md-button ng-click="toggleNav()" class="md-fab md-mini" >
+      <md-tooltip md-direction='right' >
+        {{ 'global.menu.layers' | translate }}
+      </md-tooltip>
+      <md-icon md-svg-src="content/images/layers.svg" style="color: white;"></md-icon>
+    </md-button>
+    <md-button ng-click="toggleNav4()" class="md-fab md-mini"  >
+      <md-tooltip md-direction='right'>
+       {{ 'global.menu.maps' | translate }}
+      </md-tooltip>
+      <md-icon md-svg-src="content/images/map.svg" style="color: white;"></md-icon>
+    </md-button>
+    <md-button  ng-click="toggleNav3()" class="md-fab md-mini"  >
+      <md-tooltip md-direction='right'>
+      {{ 'global.menu.apps' | translate }}
+      </md-tooltip md-direction='right'>
+      <md-icon md-svg-src="content/images/apps.svg" style="color: white;"></md-icon>
+    </md-button>
+    <md-button  ng-click="toggleNav5()" class="md-fab md-mini" >
+      <md-tooltip md-direction='right'>
+      {{ 'global.menu.account.main' | translate }}
+      </md-tooltip>
+      <md-icon md-svg-src="content/images/user.svg" style="color: white;"></md-icon>
+    </md-button>
+     <md-button  ng-click="toggleNav7()" class="md-fab md-mini" >
+      <md-tooltip md-direction='right'>
+        {{ 'global.form.statistics' | translate }}
+      </md-tooltip>
+      <md-icon md-svg-src="content/images/chart.svg" style="color: white;"></md-icon>
+    </md-button>
+    <md-button  ng-click="toggleNav12()" class="md-fab md-mini" data-ng-if="showTrackSection">
+      <md-tooltip md-direction='right'>
+        {{ 'global.form.trackanalysis' | translate }}
+      </md-tooltip>
+      <md-icon md-svg-src="content/images/route.svg" style="color: white;"></md-icon>
+    </md-button>
+    <md-button ng-click="logout()" class="md-fab md-mini" >
+      <md-tooltip md-direction='right'>
+        {{ 'global.menu.exit' | translate }}
+      </md-tooltip md-direction='right'>
+      <md-icon md-svg-src="content/images/SVG/exit.svg" style="color:white; height:16px; width:16px;"></md-icon>
+    </md-button>
+</section>
+</md-sidenav>
+<md-sidenav md-component-id="left1" layout="column" class="sidenav1" md-is-open="isOpen" md-is-locked-open="islocked" md-disable-backdrop='false' md-whiteframe="4">
+      <md-toolbar class="md-hue-2">
+          <div class="md-toolbar-tools">
+                <div>
+                  <a href="http://smallgis.co" class="navbar-brand"><img src="content/images/logo-SmallGis_layer_NG_40.png" style="height:20px;"></a>
+                </div>
+          </div>
+        </md-toolbar>
+        <md-toolbar class="md-hue-2">
+          <div class="md-toolbar-tools">
+                <titulobar>
+                  <span>Capas</span>
+                </titulobar>
+                <span flex></span>
+                <md-button class="md-icon-button" aria-label="Adicionar" ng-click="toggleNav8()">
+                  <md-tooltip md-direction="top">Adicionar capa</md-tooltip>
+                  <md-icon md-svg-icon="content/images/layers1.svg" style="color: white; width:24px; height:24px;"></md-icon>
+                </md-button>
+                <md-button class="md-icon-button" aria-label="Adicionar" ng-click="showDialogDrawCtrl()">
+                  <md-tooltip md-direction="top">Crear capa</md-tooltip>
+                  <md-icon md-svg-icon="content/images/mapa_dibujar.svg" style="color: white; width:24px; height:24px;"></md-icon>
+                </md-button>
+                <md-button class="md-icon-button" aria-label="Analisis" ng-click="toggleNav9()">
+                  <md-tooltip md-direction="top">Análisis espacial</md-tooltip>
+                  <md-icon md-svg-icon="content/images/turf-buffer.svg" style="color: white; width:24px; height:24px;"></md-icon>
+                </md-button>
+                <md-button class="md-icon-button" aria-label="Eliminar" ng-click="showDialogSaveMap()">
+                  <md-tooltip md-direction="top">Guardar como mapa</md-tooltip>
+                  <md-icon md-svg-icon="content/images/guardar_como_mapa.svg" style="color: white; width:24px; height:24px;"></md-icon>
+                </md-button>
+                <md-button class="md-icon-button" aria-label="Settings" ng-click="toggleNav()")>
+                  <md-tooltip md-direction="top">Cerrar</md-tooltip>
+                  <md-icon md-svg-icon="content/images/delete-button.svg" style="color: white; width:24px; height:24px;"></md-icon>
+                </md-button>
+
+          </div>
+        <divider></divider>
+         <input type="file" id="file1" style="display:none" onchange="angular.element(this).scope().fileNameChanged1();this.value=null;return false;">
+      </md-toolbar>
+  <div class="container-nav1" >
+    <md-list>
+        <md-list-item  ng-click="navigateTo()" ng-repeat="item in capas" id="{{item.id}}">
+          <div ng-mouseenter="show = true" ng-mouseleave="show = false">
+            <div class="accordion1">
+              <div>
+                <md-switch class="md-secondary" ng-model="item.enabled" style="position:absolute; right:2px; top:20px;" ng-change="onChange(item.enabled,item.id)"><md-tooltip md-direction="left">Encender/apa</md-tooltip></md-switch>
+                <img alt="{{ item.tipo }}" ng-src="{{ item.tipo }}" class="md-avatar">
+                <h5capa>{{item.nombre}}</h5capa><br>
+              </div>
+              <div style="width:250px;">
+                  <h6>{{item.descripcion}}</h6>
+              </div>
+              <div style="height:66px;" id="tools-capa" ng-show="item.enabled">
+                  <md-icon md-svg-src="content/images/ultimate/fullscreen.svg" class="md-secondary" ng-click="getClose(item.id)" style="position:absolute; right:256px;top:100px;color:white; height:12px; width:12px; hover:red; visited: green;">
+                    <md-tooltip md-direction="bottom">Acercar capa</md-tooltip>
+                  </md-icon>
+                  <md-icon md-svg-src="content/images/ultimate/font-a.svg" class="md-secondary" ng-click="renameLayer(item.id)" style="position:absolute; right:241px;top:100px;color:white; height:12px; width:12px; hover:red; visited: green;">
+                    <md-tooltip md-direction="bottom">Renombrar</md-tooltip>
+                  </md-icon>
+                  <md-icon md-svg-src="content/images/ultimate/download-1.svg" class="md-secondary" ng-click="listItemDown($index)" style="position:absolute; right:226px;top:100px;color:white;height:12px; width:12px; hover:red; visited: green;">
+                    <md-tooltip md-direction="bottom">Bajar</md-tooltip>
+                  </md-icon>
+                  <md-icon md-svg-src="content/images/ultimate/upload-1.svg" class="md-secondary" ng-click="listItemUp($index)" style="position:absolute; right:211px;top:100px; color:white;height:12px; width:12px;">
+                    <md-tooltip md-direction="bottom">Subir</md-tooltip>
+                  </md-icon>
+                  <md-icon id="legend-{{item.id}}" md-svg-src="content/images/leyenda.svg" class="md-secondary" ng-click="showLegendCtrl(item.id,item.nombre)" style="position:absolute;right:196px;top:100px; color:white; height:12px; width:12px;">
+                    <md-tooltip md-direction="bottom">Leyenda</md-tooltip>
+                  </md-icon>
+                  <md-icon id="tb-{{item.id}}" md-svg-src="content/images/SVG/little-table-grid.svg" class="md-secondary" ng-click="toggle('tablalayout',item.id)" style="position:absolute;right:181px;top:100px; color:white; height:12px; width:12px;">
+                    <md-tooltip md-direction="bottom">Tabla de Atributos</md-tooltip>
+                  </md-icon>
+                  <md-icon md-svg-src="content/images/SVG/garbage-2.svg" class="md-secondary" ng-click="removeLayer(item.id)" style="position:absolute; right:166px;top:100px; color:white; height:12px; width:12px;">
+                    <md-tooltip md-direction="bottom">Borrar</md-tooltip>
+                  </md-icon>
+                  <md-icon md-svg-src="content/images/copy.svg" class="md-secondary" ng-click="copyLayer(item.id,item.nombre)" style="position:absolute; right:151px;top:100px; color:white; height:12px; width:12px;">
+                    <md-tooltip md-direction="bottom">Duplicar</md-tooltip>
+                  </md-icon>
+
+                  <md-icon md-svg-src="content/images/download.svg" class="md-secondary" ng-click="toggleNav10(item.id)" style="position:absolute; right:136px;top:100px; color:white; height:12px; width:12px;">
+                    <md-tooltip md-direction="bottom">Descargar capa</md-tooltip>
+                  </md-icon>
+                  <md-icon md-svg-src="content/images/map-save.svg" class="md-secondary" ng-click="downloadMap(item.id,item.nombre)" style="position:absolute; right:121px;top:100px; color:white; height:12px; width:12px;">
+                    <md-tooltip md-direction="bottom">Descargar mapa</md-tooltip>
+                  </md-icon>
+                  <md-icon md-svg-src="content/images/tag.svg" class="md-secondary" ng-click="clasLayer(item.id,item.nombre)" style="position:absolute;right:106px;top:100px; color:white; height:12px; width:12px;">
+                    <md-tooltip md-direction="bottom">Clasificar capa</md-tooltip>
+                  </md-icon>
+                  <md-icon id="edit-{{item.id}}" md-svg-src="content/images/edit.svg" class="md-secondary" ng-click="editLayer(item.id)" style="position:absolute; right:91px;top:100px; color:white; height:12px; width:12px;">
+                    <md-tooltip md-direction="bottom">Editar</md-tooltip>
+                  </md-icon>
+
+                  <md-icon md-svg-src="content/images/save.svg" class="md-secondary" ng-click="showDialogSaveLayer(item.id,item.nombre)" style="position:absolute; right:76px;top:100px; color:white; height:12px; width:12px;">
+                    <md-tooltip md-direction="bottom">Guardar capa</md-tooltip>
+                  </md-icon>
+                  <md-icon id="simplify-{{item.id}}" md-svg-src="content/images/turf-simplify.svg" class="md-secondary" ng-click="toggleNav11(item.id)" style="position:absolute; right:61px;top:100px;color:white; height:12px; width:12px; hover:red; visited: green;" ng-show="!item.espunto">
+                    <md-tooltip md-direction="bottom">Simplificar</md-tooltip>
+                  </md-icon>
+                  <md-icon id="cl-{{item.id}}" md-svg-src="content/images/dot-and-circle.svg" class="md-secondary" ng-click="showCluster(item.id,item.nombre)" style="position:absolute; right:46px;top:100px; color:white; height:12px; width:12px;" ng-show="item.espunto">
+                    <md-tooltip md-direction="bottom">Agrupamiento</md-tooltip>
+                  </md-icon>
+                  <div class="dropchop-form-parameter" style="padding-left:10px;">
+                      <input ng-model="valueini" type="text" id="transparencia" slider options="optionSlider" ng-disabled="disabled" ng-change="setTransparence(item.id,valueini)" style="width:300px;">
+                      <p class="dropchop-form-parameter-description">Porcentaje de transparencia de la capa</p>
+                  </div>
+            </div>
+            </div>
+            <md-divider ></md-divider>
+        </div>
+         <a id="a-{{item.id}}" href="#/estudio" style="padding: 0px 0px 0px 0px;"></a>
+        </md-list-item>
+    </md-list>
+  </div>
+</md-sidenav>
+<md-sidenav md-component-id="left2" layout="column" class="sidenav2" md-is-open="isOpen2" md-is-locked-open='islocked2' md-disable-backdrop='false' md-whiteframe="4">
+  <div ng-include="'app/estudio/TOC/toc.html'"></div>
+</md-sidenav>
+<md-sidenav md-component-id="left3" layout="column" class="sidenav1" md-is-open="isOpen3" md-is-locked-open="islocked3" md-disable-backdrop='false' md-whiteframe="4">
+      <md-toolbar class="md-hue-2">
+          <div class="md-toolbar-tools">
+                <div>
+                  <a href="" class="navbar-brand"><img src="content/images/logo-SmallGis_layer_NG_40.png" style="height:20px;"></a>
+                </div>
+          </div>
+        </md-toolbar>
+        <md-toolbar class="md-hue-2">
+          <div class="md-toolbar-tools">
+                <h5>
+                  <span>Aplicaciones</span>
+                </h5>
+                <span flex></span>
+                <md-button class="md-icon-button" aria-label="Eliminar" ng-click="shareSelectedApp()">
+                  <md-tooltip md-direction="botton">Compartir App</md-tooltip>
+                  <md-icon md-svg-icon="content/images/share.svg" style="color: white; width:20px; height:20px;"></md-icon>
+                </md-button>
+                <md-button class="md-icon-button" aria-label="Eliminar" ng-click="showDialogRemoveApp()">
+                  <md-tooltip md-direction="botton">Borrar App</md-tooltip>
+                  <md-icon md-svg-icon="content/images/garbage.svg" style="color: white; width:20px; height:20px;"></md-icon>
+                </md-button>
+          <!--      <md-button class="md-icon-button" aria-label="Eliminar">
+                  <md-tooltip md-direction="botton">Compartir App</md-tooltip>
+                  <md-icon md-svg-icon="content/images/link.svg" style="color: white; width:20px; height:20px;"></md-icon>
+                </md-button>-->
+                <md-button class="md-icon-button" aria-label="Settings" ng-click="toggleNav3()">
+                  <md-tooltip md-direction="botton">Cerrar</md-tooltip>
+                  <md-icon md-svg-icon="content/images/delete-button.svg" style="color: white; width:20px; height:20px;"></md-icon>
+                </md-button>
+          </div>
+        <divider></divider>
+      </md-toolbar>
+  <div class="container-nav1" >
+    <md-list>
+        <md-list-item  ng-repeat="item in apps" id="{{item.id}}">
+          <div >
+            <div class="accordion1">
+                <p>
+                <md-checkbox class="md-secondary" ng-model="item.isChecked" ng-click="updateSelectionApp($index, apps)"></md-checkbox>
+                <img alt="{{ item.tipo }}" ng-src="{{ item.tipo }}" class="md-avatar">
+                <h5capa>{{item.titulo}}</h5capa><h6>{{item.descripcion}}</h6>
+              </p>
+      <!--        <md-icon md-svg-src="content/images/ultimate/download-1.svg" class="md-secondary1" ng-click="" style="color:white; height:16px; width:16px; hover:red; visited: green;"></md-icon>
+              <md-icon md-svg-src="content/images/ultimate/upload-1.svg" class="md-secondary1" ng-click="" style="color:white; height:16px; width:16px;"></md-icon>
+              <md-icon md-svg-src="content/images/SVG/little-table-grid.svg" class="md-secondary1" ng-click="" style="color:white; height:16px; width:16px;"></md-icon>
+              <md-icon md-svg-src="content/images/SVG/garbage-2.svg" class="md-secondary1" ng-click="" style="color:white; height:16px; width:16px;"></md-icon>
+              <md-icon md-svg-src="content/images/SVG/layers.svg" class="md-secondary1" ng-click="" style="color:white; height:16px; width:16px;"></md-icon> -->
+              <md-icon md-svg-src="content/images/eye.svg" class="md-secondary1" ng-click="showSelectedApp(item.id)" style="color:white; height:20px; width:20px;">
+                <md-tooltip md-direction="right">Mostrar Aplicación</md-tooltip>
+              </md-icon>
+            </div>
+            <md-divider ></md-divider>
+        </div>
+        </md-list-item>
+   </md-list>
+ </div>
+</md-sidenav>
+<md-sidenav md-component-id="left4" layout="column" class="sidenav1" md-is-open="isOpen4" md-is-locked-open="islocked4" md-disable-backdrop='false' md-whiteframe="4">
+      <md-toolbar class="md-hue-2">
+          <div class="md-toolbar-tools">
+                <div>
+                  <a href="" class="navbar-brand"><img src="content/images/logo-SmallGis_layer_NG_40.png" style="height:20px;"></a>
+                </div>
+          </div>
+        </md-toolbar>
+        <md-toolbar class="md-hue-2">
+          <div class="md-toolbar-tools">
+                <h5>
+                  <span>Mapas</span>
+                </h5>
+                <span flex></span>
+                <md-button class="md-icon-button" aria-label="Eliminar" ng-click="showDialogCreateApp()">
+                  <md-tooltip md-direction="botton">Crear Aplicación</md-tooltip>
+                  <md-icon md-svg-icon="content/images/desktop-monitor.svg" style="color: white; width:20px; height:20px;"></md-icon>
+                </md-button>
+                <md-button class="md-icon-button" aria-label="Eliminar" ng-click="showDialogAddMap()">
+                  <md-tooltip md-direction="botton">Abrir Mapa</md-tooltip>
+                  <md-icon md-svg-icon="content/images/open-folder-outline.svg" style="color: white; width:20px; height:20px;"></md-icon>
+                </md-button>
+                <md-button class="md-icon-button" aria-label="Eliminar" ng-click="showDialogRemoveMap()">
+                  <md-tooltip md-direction="botton">Borrar Mapa</md-tooltip>
+                  <md-icon md-svg-icon="content/images/garbage.svg" style="color: white; width:20px; height:20px;"></md-icon>
+                </md-button>
+          <!--      <md-button class="md-icon-button" aria-label="Eliminar">
+                  <md-tooltip md-direction="botton">Compartir App</md-tooltip>
+                  <md-icon md-svg-icon="content/images/link.svg" style="color: white; width:20px; height:20px;"></md-icon>
+                </md-button>-->
+                <md-button class="md-icon-button" aria-label="Settings" ng-click="toggleNav4()">
+                  <md-tooltip md-direction="botton">Cerrar</md-tooltip>
+                  <md-icon md-svg-icon="content/images/delete-button.svg" style="color: white; width:20px; height:20px;"></md-icon>
+                </md-button>
+          </div>
+        <divider></divider>
+      </md-toolbar>
+  <div class="container-nav1" >
+    <md-list>
+        <md-list-item  ng-repeat="item in mapas" id="{{item.id}}">
+          <div >
+            <div class="accordion1">
+                <p>
+                <md-checkbox class="md-secondary" ng-model="item.isChecked" ng-click="updateSelection($index, mapas)"></md-checkbox>
+                <img alt="{{ item.tipo }}" ng-src="{{ item.tipo }}" class="md-avatar" style="color:white;">
+                <h5capa>{{item.titulo}}</h5capa>
+                <br><div style="width:220px;"><h6>{{item.descripcion}}</h6></div>
+              </p>
+      <!--        <md-icon md-svg-src="content/images/ultimate/download-1.svg" class="md-secondary1" ng-click="" style="color:white; height:16px; width:16px; hover:red; visited: green;"></md-icon>
+              <md-icon md-svg-src="content/images/ultimate/upload-1.svg" class="md-secondary1" ng-click="" style="color:white; height:16px; width:16px;"></md-icon>
+              <md-icon md-svg-src="content/images/SVG/little-table-grid.svg" class="md-secondary1" ng-click="" style="color:white; height:16px; width:16px;"></md-icon>
+              <md-icon md-svg-src="content/images/SVG/garbage-2.svg" class="md-secondary1" ng-click="" style="color:white; height:16px; width:16px;"></md-icon>
+              <md-icon md-svg-src="content/images/SVG/layers.svg" class="md-secondary1" ng-click="" style="color:white; height:16px; width:16px;"></md-icon>
+              <md-icon md-svg-src="content/images/eye.svg" class="md-secondary1" ng-click="" style="color:white; height:20px; width:20px;">
+                <md-tooltip md-direction="right">Ver mapa</md-tooltip>
+              </md-icon>-->
+            </div>
+            <md-divider ></md-divider>
+        </div>
+        </md-list-item>
+    </md-list>
+  </div>
+</md-sidenav>
+<md-sidenav md-component-id="left5" layout="column" class="sidenav5" md-is-open="false" md-is-locked-open="false" md-disable-backdrop='true' md-whiteframe="4" style="z-index: 1500;">
+  <div>
+    <md-content>
+      <md-toolbar class="md-hue-2">
+          <div class="md-toolbar-tools">
+                <div>
+                  <a href="" class="navbar-brand"><img src="content/images/logo-SmallGis_layer_NG_40.png" style="height:20px;"></a>
+                </div>
+                <md-button class="md-icon-button" aria-label="Settings" ng-click="toggleNav5()" style="position:absolute; top:3px; right:10px;">
+                  <md-tooltip md-direction="botton">Cerrar</md-tooltip>
+                  <md-icon md-svg-icon="content/images/delete-button.svg" style="color: white; width:20px; height:20px;"></md-icon>
+              </md-button>
+          </div>
+        </md-toolbar>
+      <md-tabs md-dynamic-height md-border-bottom>
+        <md-tab label="{{ 'global.form.accountsettings' | translate }}">
+          <md-content class="md-padding">
+            <div>
+              <!--<div ng-include="'app/account/settings/settings.html'" ng-controller="SettingsController"></div>-->
+              <div  style="overflow: hidden;
+                  overflow-y:scroll;
+                  -webkit-box-sizing: border-box;
+                  -moz-box-sizing: border-box;
+                  box-sizing: border-box;height:450px;">
+                  <div class="row">
+                      <div class="col-md-8 col-md-offset-2">
+                          <h2 translate="settings.title" translate-values="{username: '{{vm.settingsAccount.login}}'}">User settings for [<b>{{vm.settingsAccount.login}}</b>]</h2>
+
+                          <div class="alert alert-success" ng-show="vm.success" translate="settings.messages.success">
+                              <strong>Settings saved!</strong>
+                          </div>
+
+                         <jhi-alert-error></jhi-alert-error>
+
+                          <form name="form" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+                              <div class="form-group">
+                                  <label class="control-label" for="firstName" translate="settings.form.firstname">First Name</label>
+                                  <input type="text" class="form-control" id="firstName" name="firstName" placeholder="{{'settings.form.firstname.placeholder' | translate}}"
+                                         ng-model="vm.settingsAccount.firstName" ng-minlength=1 ng-maxlength=50 required maxlength="50">
+                                  <div ng-show="form.firstName.$dirty && form.firstName.$invalid">
+                                      <p class="help-block"
+                                             ng-show="form.firstName.$error.required" translate="settings.messages.validate.firstname.required">
+                                          Your first name is required.
+                                      </p>
+                                      <p class="help-block"
+                                             ng-show="form.firstName.$error.minlength" translate="settings.messages.validate.firstname.minlength">
+                                          Your first name is required to be at least 1 character.
+                                      </p>
+                                      <p class="help-block"
+                                             ng-show="form.firstName.$error.maxlength" translate="settings.messages.validate.firstname.maxlength">
+                                          Your first name cannot be longer than 50 characters.
+                                      </p>
+                                  </div>
+                              </div>
+                              <div class="form-group">
+                                  <label class="control-label" for="lastName" translate="settings.form.lastname">Last Name</label>
+                                  <input type="text" class="form-control" id="lastName" name="lastName" placeholder="{{'settings.form.lastname.placeholder' | translate}}"
+                                         ng-model="vm.settingsAccount.lastName" ng-minlength=1 ng-maxlength=50 required maxlength="50">
+                                  <div ng-show="form.lastName.$dirty && form.lastName.$invalid">
+                                      <p class="help-block"
+                                             ng-show="form.lastName.$error.required" translate="settings.messages.validate.lastname.required">
+                                          Your last name is required.
+                                      </p>
+                                      <p class="help-block"
+                                             ng-show="form.lastName.$error.minlength" translate="settings.messages.validate.lastname.minlength">
+                                          Your last name is required to be at least 1 character.
+                                      </p>
+                                      <p class="help-block"
+                                             ng-show="form.lastName.$error.maxlength" translate="settings.messages.validate.lastname.maxlength">
+                                          Your last name cannot be longer than 50 characters.
+                                      </p>
+                                  </div>
+                              </div>
+                              <div class="form-group">
+                                  <label class="control-label" for="email" translate="global.form.email">E-mail</label>
+                                  <input type="email" class="form-control" id="email" name="email" placeholder="{{'global.form.email.placeholder' | translate}}"
+                                         ng-model="vm.settingsAccount.email" ng-minlength=5 ng-maxlength=100 required maxlength="100" readonly>
+                                  <div ng-show="form.email.$dirty && form.email.$invalid">
+                                      <p class="help-block"
+                                             ng-show="form.email.$error.required" translate="global.messages.validate.email.required">
+                                          Your e-mail is required.
+                                      </p>
+                                      <p class="help-block"
+                                             ng-show="form.email.$error.email" translate="global.messages.validate.email.invalid">
+                                          Your e-mail is invalid.
+                                      </p>
+                                      <p class="help-block"
+                                             ng-show="form.email.$error.minlength" translate="global.messages.validate.email.minlength">
+                                          Your e-mail is required to be at least 5 characters.
+                                      </p>
+                                      <p class="help-block"
+                                             ng-show="form.email.$error.maxlength" translate="global.messages.validate.email.maxlength">
+                                          Your e-mail cannot be longer than 100 characters.
+                                      </p>
+                                  </div>
+                              </div>
+                              <div class="form-group">
+                                  <label for="langKey" translate="settings.form.language">Language</label>
+                                  <select id="langKey" name="langKey" class="form-control" ng-model="vm.settingsAccount.langKey" ng-controller="JhiLanguageController as languageVm" ng-options="code as (code | findLanguageFromKey) for code in languageVm.languages"></select>
+                              </div>
+                              <div class="form-group">
+                               <label class="control-label" for="businessName" translate="global.form.companyname">Company name</label>
+                               <input type="text" id="businessName" name="businessName" class="form-control" ng-model="vm.settingsAccount.businessName" placeholder="{{'global.form.business.placeholder' | translate}}"/>
+                                <div ng-show="form.businessName.$dirty && form.businessName.$invalid">
+                                  <p class="help-block" ng-show="form.businessName.$error.required" translate="settings.messages.validate.businessname.required">
+                                    Your company name is required
+                                  </p>
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <label class="control-label" for="country" translate="global.form.country">Country</label>
+                                <select name="selectcountries" id="selectcountries" ng-model="vm.settingsAccount.countryCode" style="width:100%;">
+                                  <option value="AR">Argentina</option>
+                                  <option value="BZ">Belice</option>
+                                  <option value="BO">Bolivia</option>
+                                  <option value="CO">Colombia</option>
+                                  <option value="CR">Costa Rica</option>
+                                  <option value="CU">Cuba</option>
+                                  <option value="DO">Republica Dominicana</option>
+                                  <option value="EC">Ecuador</option>
+                                  <option value="SV">El Salvador</option>
+                                  <option value="ES">España</option>
+                                  <option value="US">Estados Unidos</option>
+                                  <option value="GT">Guatemala</option>
+                                  <option value="HN">Honduras</option>
+                                  <option value="MX">Mexico</option>
+                                  <option value="PA">Panama</option>
+                                  <option value="PY">Paraguay</option>
+                                  <option value="PE">Peru</option>
+                                  <option value="PR">Puerto Rico</option>
+                                  <option value="UY">Uruguay</option>
+                                  <option value="VE">Venezuela</option>
+                                </select>
+                            </div>
+
+                              <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary" translate="settings.form.button">Save</button>
+                          </form>
+                      </div>
+                  </div>
+
+              </div>
+            </div>
+          </md-content>
+        </md-tab>
+        <md-tab label="{{ 'global.form.changepassword' | translate }}">
+          <md-content class="md-padding">
+            <h1 class="md-display-2" translate="global.form.newpassword">Nueva contraseña</h1>
+            <div>
+               <div ng-include="'app/account/password/password.html'" ng-controller="PasswordController as vm"></div>
+            </div>
+          </md-content>
+        </md-tab>
+        <md-tab label="{{'global.form.adminuseraccount'| translate }}" data-ng-if="showSection">
+        <md-content class="md-padding" style="color:black;">
+          <div>
+            <div class="row">
+              <div class="col-md-8 col-md-offset-2">
+                <h2 translate="global.form.companyusers" style="color:white; font-size:36px; text-align: center; ">Usuarios registrados en el Plan Corporativo</h2><br>
+                <div id="grid-tags" ui-grid="gridUsersOptions" ui-grid-resize-columns ui-grid-auto-resize  ui-grid-edit></div>
+              </div>
+            </div>
+          </div>
+        </md-content>
+      </md-tab>
+      <md-tab label="{{'global.form.admincost'| translate }}" data-ng-if="showSection">
+        <md-content class="md-padding" style="color:black;">
+          <div>
+           <div  style="overflow: hidden;
+               overflow-y:scroll;
+               -webkit-box-sizing: border-box;
+               -moz-box-sizing: border-box;
+               box-sizing: border-box;height:450px;">
+             <div class="row">
+               <div class="col-md-8 col-md-offset-2">
+                <div class="alert alert-success" ng-show="vm.success1" translate="settings.messages.success">
+                      <strong>Settings saved!</strong>
+                </div>
+                <h1 class="md-display-2" translate="global.form.cost" style="color:white;">Costs</h1>
+                <!--<jhi-alert-error></jhi-alert-error>-->
+                <form name="form" role="form" novalidate ng-submit="vm.changeCost()" show-validation>
+                  <div class="form-group">
+                      <h2 translate="global.form.pickupcosts" style="color:white;">Pickup costs</h2>
+                      <label class="control-label" for="cost1">1-5 (km)</label>
+                      <input type="number" class="form-control" id="cost" name="cost" ng-model="vm.settingsCost.costoRecogida1"  style="width: 100px;" required>
+                      <label class="control-label" for="cost2">5-10 (km)</label>
+                      <input type="number" class="form-control" id="cost" name="cost" ng-model="vm.settingsCost.costoRecogida2"  style="width: 100px;" required>
+                      <label class="control-label" for="cost3">>10 (km)</label>
+                      <input type="number" class="form-control" id="cost" name="cost" ng-model="vm.settingsCost.costoRecogida3"  style="width: 100px;" required>
+                      <h2 translate="global.form.delivercosts" style="color:white;">Deliver costs</h2>
+                      <label class="control-label" for="cost1">1-5 (km)</label>
+                      <input type="number" class="form-control" id="cost" name="cost" ng-model="vm.settingsCost.costoEntrega1"  style="width: 100px;" required>
+                      <label class="control-label" for="cost2">5-10 (km)</label>
+                      <input type="number" class="form-control" id="cost" name="cost" ng-model="vm.settingsCost.costoEntrega2"  style="width: 100px;" required>
+                      <label class="control-label" for="cost3">>10 (km)</label>
+                      <input type="number" class="form-control" id="cost" name="cost" ng-model="vm.settingsCost.costoEntrega3"  style="width: 100px;" required>
+                  </div>
+                  <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary" translate="global.form.button">Save</button>
+                 </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </md-content>
+      </md-tab>
+      </md-tabs>
+    </md-content>
+  </div>
+</md-sidenav>
+<md-sidenav md-component-id="left6" layout="column" class="sidenav5" md-is-open="false" md-is-locked-open="false" md-disable-backdrop='true' md-whiteframe="4" style="z-index: 1500;">
+  <div>
+    <md-content>
+      <md-toolbar class="md-hue-2">
+          <div class="md-toolbar-tools">
+                <div>
+                  <a href="" class="navbar-brand"><img src="content/images/logo-SmallGis_layer_NG_40.png" style="height:20px;"></a>
+                </div>
+                <md-button class="md-icon-button" aria-label="Settings" ng-click="toggleNav6()" style="position:absolute; top:3px; right:10px;">
+                  <md-tooltip md-direction="botton">Cerrar</md-tooltip>
+                  <md-icon md-svg-icon="content/images/delete-button.svg" style="color: white; width:20px; height:20px;"></md-icon>
+              </md-button>
+          </div>
+        </md-toolbar>
+      <md-tabs md-dynamic-height md-border-bottom>
+        <md-tab label="Inicio">
+          <md-content class="md-padding">
+            <div>
+              <div ng-include="'app/home/home.html'" ng-controller="HomeController as vm"></div>
+            </div>
+          </md-content>
+        </md-tab>
+        <md-tab label="Ayuda">
+          <md-content class="md-padding">
+            <h1 class="md-display-2">Ayuda</h1>
+            <div>
+                <!--<div ng-include="'app/account/password/password.html'" ng-controller="PasswordController as vm"></div>-->
+            </div>
+
+          </md-content>
+        </md-tab>
+      </md-tabs>
+    </md-content>
+  </div>
+</md-sidenav>
+<md-sidenav md-component-id="left7" layout="column" class="sidenav5" md-is-open="false" md-is-locked-open="false" md-disable-backdrop='true' md-whiteframe="4" style="z-index: 1500;">
+  <div>
+    <md-content>
+      <md-toolbar class="md-hue-2">
+          <div class="md-toolbar-tools">
+                <div>
+                  <a href="" class="navbar-brand"><img src="content/images/logo-SmallGis_layer_NG_40.png" style="height:20px;"></a>
+                </div>
+                <md-button class="md-icon-button" aria-label="Settings" ng-click="toggleNav7()" style="position:absolute; top:3px; right:10px;">
+                  <md-tooltip md-direction="botton">Cerrar</md-tooltip>
+                  <md-icon md-svg-icon="content/images/delete-button.svg" style="color: white; width:20px; height:20px;"></md-icon>
+              </md-button>
+          </div>
+        </md-toolbar>
+      <md-tabs md-dynamic-height md-border-bottom>
+        <md-tab label="{{ 'global.form.statistics' | translate }}">
+          <md-content class="md-padding">
+            <div>
+                <div ng-include="'app/account/statistics/statistics.html'" ng-controller="StatisticsController as vm"></div>
+            </div>
+          </md-content>
+        </md-tab>
+        <!--<md-tab label="Estado">
+          <md-content class="md-padding">
+            <div>
+              <div ng-include="'app/admin/metrics/metrics.html'" ng-controller="JhiMetricsMonitoringController as vm" style="overflow-y:auto;"></div>
+            </div>
+          </md-content>
+        </md-tab>
+        <md-tab label="Servicios">
+          <md-content class="md-padding">
+            <h1 class="md-display-2">Salud</h1>
+            <div>
+                <div ng-include="'app/admin/health/health.html'" ng-controller="JhiHealthCheckController as vm" style="overflow-y:auto;"></div>
+            </div>
+
+          </md-content>
+        </md-tab>
+        <md-tab label="Configuración">
+          <md-content class="md-padding">
+            <h1 class="md-display-2">Acerca de SmallGIS</h1>
+            <div ng-include="'app/admin/configuration/configuration.html'" ng-controller="JhiConfigurationController as vm" style="overflow-y:auto;"></div>
+          </md-content>
+        </md-tab>-->
+      </md-tabs>
+    </md-content>
+  </div>
+</md-sidenav>
+<md-sidenav md-component-id="left8" layout="column" class="sidenav1" md-is-open="isOpen8" md-is-locked-open='islocked8' md-disable-backdrop='false' md-whiteframe="4">
+    <md-toolbar class="md-hue-2">
+        <div class="md-toolbar-tools">
+          <h5>
+            <span>Cargar capas</span>
+          </h5>
+        </div>
+      </md-toolbar>
+      <md-toolbar class="md-hue-2">
+         <div class="md-toolbar-tools">
+          <span flex></span>
+          <md-button class="md-icon-button" aria-label="Settings" ng-click="addFile()">
+            <md-tooltip md-direction="bottom">Archivo local</md-tooltip>
+            <md-icon md-svg-icon="content/images/upload.svg" style="color: white; width:24px; height:24px;"></md-icon>
+          </md-button>
+          <md-button class="md-icon-button" aria-label="Settings" ng-click="showUbication()">
+            <md-tooltip md-direction="bottom">Ubicarme</md-tooltip>
+            <md-icon md-svg-icon="content/images/ubicarme.svg" style="color: white; width:24px; height:24px;"></md-icon>
+          </md-button>
+          <md-button class="md-icon-button" aria-label="Settings" ng-click="drawPosition()">
+            <md-tooltip md-direction="bottom">Coordenada X-Y</md-tooltip>
+            <md-icon md-svg-icon="content/images/localizar.svg" style="color: white; width:24px; height:24px;"></md-icon>
+          </md-button>
+          <md-button class="md-icon-button" aria-label="Settings" ng-click="addArcGISFeature()">
+           <md-tooltip md-direction="bottom">Desde servicios de internet</md-tooltip>
+           <md-icon md-svg-icon="content/images/internet.svg" style="color: white; width:24px; height:24px;"></md-icon>
+         </md-button>
+         <md-button class="md-icon-button" aria-label="Settings" ng-click="addExternalLink()">
+          <md-tooltip md-direction="bottom">Desde enlace URL</md-tooltip>
+          <md-icon md-svg-icon="content/images/link.svg" style="color: white; width:24px; height:24px;"></md-icon>
+        </md-button>
+          <md-button class="md-icon-button" aria-label="Settings" ng-click="toggleNav8()">
+            <md-tooltip md-direction="bottom">Cerrar</md-tooltip>
+            <md-icon md-svg-icon="content/images/delete-button.svg" style="color: white; width:24px; height:24px;"></md-icon>
+          </md-button>
+        </div>
+    </md-toolbar>
+    <md-divider></md-divider>
+    <div style="height: 95%; width: 100%; margin: 0; color:white;">
+
+  <angular-accordion>
+      <pane>
+          <pane-header class="angular-accordion-header">
+              <md-icon md-svg-icon="content/images/download.svg" style="color: white; width:24px; height:24px;"></md-icon> Desde la nube
+          </pane-header>
+          <pane-content style="color white;">
+            <md-toolbar class="md-hue-2">
+              <div class="md-toolbar-tools">
+                    <h5>
+                      <span>Seleccionar capas</span>
+                    </h5>
+                    <span flex></span>
+                    <md-button class="md-icon-button" aria-label="Eliminar" ng-click="showDialogAddLayers()">
+                      <md-tooltip md-direction="botton">Adicionar al Mapa</md-tooltip>
+                      <md-icon md-svg-icon="content/images/add.svg" style="color: white; width:20px; height:20px;"></md-icon>
+                    </md-button>
+                    <md-button class="md-icon-button" aria-label="Eliminar" ng-click="showDialogRmLayer()">
+                      <md-tooltip md-direction="botton">Eliminar capas</md-tooltip>
+                      <md-icon md-svg-icon="content/images/garbage.svg" style="color: white; width:20px; height:20px;"></md-icon>
+                    </md-button>
+              </div>
+            <divider></divider>
+          </md-toolbar>
+            <div class="container-nav2" style="overflow-y: auto;" >
+              <md-list>
+                  <md-list-item  ng-repeat="item in capasDb" id="{{item.id}}">
+                    <div >
+                      <div class="accordion1">
+                          <p>
+                          <md-checkbox class="md-secondary" ng-model="item.isChecked"></md-checkbox>
+                          <img alt="{{ item.tipo }}" ng-src="{{ item.tipo }}" class="md-avatar" style="color:white;">
+                          <h5capa>{{item.nombre}}</h5capa>
+                          <br><div style="width:220px;"><h6>{{item.descripcion}}</h6></div>
+                        </p>
+                      </div>
+                      <md-divider ></md-divider>
+                  </div>
+                  </md-list-item>
+              </md-list>
+            </div>
+          </pane-content>
+      </pane>
+      <!--<pane>
+          <pane-header>
+              <md-icon md-svg-icon="content/images/open-data.svg" style="color: white; width:24px; height:24px;"></md-icon> Open Data
+          </pane-header>
+          <pane-content>
+            <md-toolbar class="md-hue-2">
+              <div class="md-toolbar-tools">
+                    <h5>
+                      <span>Seleccionar capas</span>
+                    </h5>
+                    <span flex></span>
+                    <md-button class="md-icon-button" aria-label="Eliminar">
+                      <md-tooltip md-direction="botton">Adicionar al Mapa</md-tooltip>
+                      <md-icon md-svg-icon="content/images/add.svg" style="color: white; width:20px; height:20px;"></md-icon>
+                    </md-button>
+              </div>
+            <divider></divider>
+          </md-toolbar>
+            <div class="container-nav2" style="overflow-y: auto;" >
+              <md-list>
+                  <md-list-item  ng-repeat="item in capas" id="{{item.id}}">
+                    <div >
+                      <div class="accordion1">
+                          <p>
+                          <md-checkbox class="md-secondary" ng-model="topping.wanted"></md-checkbox>
+                          <img alt="{{ item.tipo }}" ng-src="{{item.tipo}}" class="md-avatar" style="color:white;">
+                          <h5capa>{{item.nombre}}</h5capa>
+                          <br><div style="width:220px;"><h6>{{item.descripcion}}</h6></div>
+                        </p>
+                          <md-icon md-svg-src="content/images/eye.svg" class="md-secondary1" ng-click="" style="color:white; height:20px; width:20px;">
+                          <md-tooltip md-direction="right">Ver mapa</md-tooltip>
+                        </md-icon>
+                      </div>
+                      <md-divider ></md-divider>
+                  </div>
+                  </md-list-item>
+              </md-list>
+            </div>
+          </pane-content>
+      </pane>-->
+      <!--<pane>
+          <pane-header>
+              <md-icon md-svg-icon="content/images/internet.svg" style="color: white; width:24px; height:24px;"></md-icon> Desde servicios de internet
+          </pane-header>
+          <pane-content>
+              Content 3
+          </pane-content>
+      </pane>-->
+  </angular-accordion>
+
+</div>
+</md-sidenav>
+<md-sidenav md-component-id="left9" layout="column" class="sidenav1" md-is-open="isOpen9" md-is-locked-open='islocked9' md-disable-backdrop='false' md-whiteframe="4">
+  <angular-accordion>
+    <md-toolbar class="md-hue-2">
+        <div class="md-toolbar-tools">
+          <h5>
+            <span>Análisis espacial</span>
+          </h5>
+          <span flex></span>
+          <md-button class="md-icon-button" aria-label="Settings" ng-click="toggleNav9()">
+            <md-tooltip md-direction="bottom">Cerrar</md-tooltip>
+            <md-icon md-svg-icon="content/images/delete-button.svg" style="color: white; width:24px; height:24px;"></md-icon>
+          </md-button>
+        </div>
+    </md-toolbar>
+    <md-divider></md-divider>
+    <div style="height: 95%; width: 100%; margin: 0; color:white; overflow-y:auto;">
+      <pane>
+          <pane-header class="angular-accordion-header" ng-click="showAlong()">
+              <md-icon md-svg-icon="content/images/turf-along.svg" style="color: white; width:32px; height:32px;"></md-icon> Punto a lo largo de una línea
+          </pane-header>
+          <div ng-include="'app/estudio/geotools/alongtool/alongtool.html'"></div>
+      </pane>
+      <pane>
+          <pane-header ng-click="showEnvelope()">
+            <div layout="row">
+              <div><md-icon md-svg-icon="content/images/turf-bbox-polygon.svg" style="color: white; width:32px; height:32px;"></md-icon></div>
+              <div style="width:200px; padding:5px;"> Generar poligono de extensión de la capa</div>
+            </div>
+          </pane-header>
+          <pane-content>
+              <div ng-include="'app/estudio/geotools/bboxtool/bboxtool.html'"></div>
+          </pane-content>
+      </pane>
+      <pane>
+          <pane-header ng-click="showBezier()">
+              <md-icon md-svg-icon="content/images/turf-bezier.svg" style="color: white; width:32px; height:32px;"></md-icon>Curvar línea
+          </pane-header>
+          <pane-content>
+              <div ng-include="'app/estudio/geotools/beziertool/beziertool.html'"></div>
+          </pane-content>
+      </pane>
+      <pane>
+          <pane-header ng-click="showBuffer()">
+              <md-icon md-svg-icon="content/images/turf-buffer.svg" style="color: white; width:32px; height:32px;"></md-icon> Area de Influencia (Buffer)
+          </pane-header>
+          <pane-content>
+                <div ng-include="'app/estudio/geotools/buffertool/buffertool.html'"></div>
+          </pane-content>
+      </pane>
+      <pane>
+          <pane-header ng-click="showCenter()">
+              <md-icon md-svg-icon="content/images/turf-center.svg" style="color: white; width:32px; height:32px;"></md-icon> Centro de una capa
+          </pane-header>
+          <pane-content>
+              <div ng-include="'app/estudio/geotools/centertool/centertool.html'"></div>
+          </pane-content>
+      </pane>
+      <pane>
+          <pane-header ng-click="showCentroid()">
+              <md-icon md-svg-icon="content/images/turf-centroid.svg" style="color: white; width:32px; height:32px;"></md-icon> Centroides de las entidades
+          </pane-header>
+          <pane-content>
+              <div ng-include="'app/estudio/geotools/centroidtool/centroidtool.html'"></div>
+          </pane-content>
+      </pane>
+      <pane>
+          <pane-header ng-click="showConcave()">
+            <div layout="row">
+              <div><md-icon md-svg-icon="content/images/turf-concave.svg" style="color: white; width:32px; height:32px;"></md-icon></div>
+              <div style="width:200px; padding:5px;">Generar polígono concavo a partir de puntos</div>
+            </div>
+          </pane-header>
+          <pane-content>
+              <div ng-include="'app/estudio/geotools/concavetool/concavetool.html'"></div>
+          </pane-content>
+      </pane>
+      <pane>
+          <pane-header ng-click="showConvex()">
+            <div layout="row">
+              <div><md-icon md-svg-icon="content/images/turf-convex.svg" style="color: white; width:32px; height:32px;"></md-icon></div>
+              <div style="width:200px; padding:5px;"> Generar polígono convexo a partir de puntos</div>
+            </div>
+          </pane-header>
+          <pane-content>
+              <div ng-include="'app/estudio/geotools/convextool/convextool.html'"></div>
+          </pane-content>
+      </pane>
+      <pane>
+          <pane-header ng-click="showDestination()">
+              <md-icon md-svg-icon="content/images/turf-destination.svg" style="color: white; width:32px; height:32px;"></md-icon> Calcular punto de destino
+          </pane-header>
+          <pane-content>
+              <div ng-include="'app/estudio/geotools/destinationtool/destinationtool.html'"></div>
+          </pane-content>
+      </pane>
+      <!--<pane>
+          <pane-header>
+              <md-icon md-svg-icon="content/images/turf-envelope.svg" style="color: white; width:32px; height:32px;"></md-icon> Envelope
+          </pane-header>
+          <pane-content>
+              Content 3
+          </pane-content>
+      </pane>-->
+      <!--<pane>
+          <pane-header ng-click="showErase()">
+              <md-icon md-svg-icon="content/images/turf-erased.svg" style="color: white; width:32px; height:32px;"></md-icon> Erased
+          </pane-header>
+          <pane-content>
+            <div ng-include="'app/estudio/geotools/removetool/removetool.html'"></div>
+          </pane-content>
+      </pane>-->
+      <pane>
+          <pane-header ng-click="showExplode()">
+            <div layout="row">
+              <div><md-icon md-svg-icon="content/images/turf-explode.svg" style="color: white; width:32px; height:32px;"></md-icon></div>
+              <div style="width:200px; padding:5px;">Generar vertices de entidades como puntos</div>
+            </div>
+          </pane-header>
+          <pane-content>
+              <div ng-include="'app/estudio/geotools/explodetool/explodetool.html'"></div>
+          </pane-content>
+      </pane>
+      <!--<pane>
+          <pane-header>
+              <md-icon md-svg-icon="content/images/turf-extent.svg" style="color: white; width:32px; height:32px;"></md-icon> Extender
+          </pane-header>
+          <pane-content>
+              Content 3
+          </pane-content>
+      </pane>-->
+      <!--<pane>
+          <pane-header ng-click="showIdentity()">
+              <md-icon md-svg-icon="content/images/turf-intersect.svg" style="color: white; width:32px; height:32px;"></md-icon> Intersecctar y unir de 2 capas
+          </pane-header>
+          <pane-content>
+              <div ng-include="'app/estudio/geotools/identitytool/identitytool.html'"></div>
+          </pane-content>
+      </pane>-->
+      <pane>
+          <pane-header ng-click="showIntersect()">
+              <md-icon md-svg-icon="content/images/turf-intersect.svg" style="color: white; width:32px; height:32px;"></md-icon> Intersectar 2 capas
+          </pane-header>
+          <pane-content>
+              <div ng-include="'app/estudio/geotools/intersectool/intersectool.html'"></div>
+          </pane-content>
+      </pane>
+      <pane>
+          <pane-header ng-click="showIsoline()">
+              <md-icon md-svg-icon="content/images/turf-isoline.svg" style="color: white; width:24px; height:24px;"></md-icon> Generar isolineas
+          </pane-header>
+          <pane-content>
+              <div ng-include="'app/estudio/geotools/polilinetool/polilinetool.html'"></div>
+          </pane-content>
+      </pane>
+      <pane>
+          <pane-header ng-click="showDistance()">
+              <md-icon md-svg-icon="content/images/distance.svg" style="color: white; width:24px; height:24px;"></md-icon> Calcular Distancia entre dos puntos
+          </pane-header>
+          <pane-content>
+              <div ng-include="'app/estudio/geotools/distancetool/distancetool.html'"></div>
+          </pane-content>
+      </pane>
+      <!--<pane>
+          <pane-header>
+              <md-icon md-svg-icon="content/images/turf-kinks.svg" style="color: white; width:32px; height:32px;"></md-icon> Kinks
+          </pane-header>
+          <pane-content>
+              Content 3
+          </pane-content>
+      </pane>
+      <pane>
+          <pane-header>
+              <md-icon md-svg-icon="content/images/turf-line-slice.svg" style="color: white; width:32px; height:32px;"></md-icon> Line-slice
+          </pane-header>
+          <pane-content>
+              Content 3
+          </pane-content>
+      </pane>-->
+      <!--<pane>
+          <pane-header ng-click="showMerge()">
+              <md-icon md-svg-icon="content/images/turf-merge.svg" style="color: white; width:32px; height:32px;"></md-icon> Fusionar dos capas
+          </pane-header>
+          <pane-content>
+              <div ng-include="'app/estudio/geotools/mergetool/mergetool.html'"></div>
+          </pane-content>
+      </pane>-->
+      <pane>
+          <pane-header ng-click="showMidPoint()">
+              <md-icon md-svg-icon="content/images/turf-midpoint.svg" style="color: white; width:32px; height:32px;"></md-icon> Calcular punto medio
+          </pane-header>
+          <pane-content>
+              <div ng-include="'app/estudio/geotools/midpointtool/midpointtool.html'"></div>
+          </pane-content>
+      </pane>
+      <!--<pane>
+          <pane-header>
+              <md-icon md-svg-icon="content/images/turf-point-grid.svg" style="color: white; width:32px; height:32px;"></md-icon> point-grid
+          </pane-header>
+          <pane-content>
+              Content 3
+          </pane-content>
+      </pane>
+      <pane>
+          <pane-header>
+              <md-icon md-svg-icon="content/images/turf-point-on-line.svg" style="color: white; width:32px; height:32px;"></md-icon> point on-line
+          </pane-header>
+          <pane-content>
+              Content 3
+          </pane-content>
+      </pane>
+      <pane>
+          <pane-header>
+              <md-icon md-svg-icon="content/images/turf-point-on-surface.svg" style="color: white; width:32px; height:32px;"></md-icon> point on surface
+          </pane-header>
+          <pane-content>
+              Content 3
+          </pane-content>
+      </pane>-->
+      <pane>
+          <pane-header ng-click="showSimplified()">
+              <md-icon md-svg-icon="content/images/turf-simplify.svg" style="color: white; width:32px; height:32px;"></md-icon> Simplificar la geometria de una capa
+          </pane-header>
+          <pane-content>
+              <div ng-include="'app/estudio/geotools/simplifiedtool/simplifiedtool.html'"></div>
+          </pane-content>
+      </pane>
+      <!--<pane>
+          <pane-header>
+              <md-icon md-svg-icon="content/images/turf-size.svg" style="color: white; width:32px; height:32px;"></md-icon> BSize
+          </pane-header>
+          <pane-content>
+              Content 3
+          </pane-content>
+      </pane>-->
+      <pane>
+          <pane-header ng-click="showSquareGrid()">
+              <md-icon md-svg-icon="content/images/turf-square-grid.svg" style="color: white; width:32px; height:32px;"></md-icon> Square grid
+          </pane-header>
+          <pane-content>
+            <div ng-include="'app/estudio/geotools/squaregridtool/squaregridtool.html'"></div>
+          </pane-content>
+      </pane>
+      <pane>
+          <pane-header ng-click="showSquare()">
+              <md-icon md-svg-icon="content/images/turf-square.svg" style="color: white; width:32px; height:32px;"></md-icon> Square
+          </pane-header>
+          <pane-content>
+            <div ng-include="'app/estudio/geotools/squaretool/squaretool.html'"></div>
+          </pane-content>
+      </pane>
+      <pane>
+          <pane-header ng-click="showTin()">
+              <md-icon md-svg-icon="content/images/turf-tin.svg" style="color: white; width:32px; height:32px;"></md-icon> Generar TIN
+          </pane-header>
+          <pane-content>
+              <div ng-include="'app/estudio/geotools/tintool/tintool.html'"></div>
+          </pane-content>
+      </pane>
+      <pane>
+          <pane-header ng-click="showTriangleGrid()">
+              <md-icon md-svg-icon="content/images/turf-triangle-grid.svg" style="color: white; width:32px; height:32px;"></md-icon> Triangle Grid
+          </pane-header>
+          <pane-content>
+             <div ng-include="'app/estudio/geotools/trianglegridtool/trianglegridtool.html'"></div>
+          </pane-content>
+      </pane>
+      <pane>
+          <pane-header ng-click="showUnion()">
+              <md-icon md-svg-icon="content/images/turf-union.svg" style="color: white; width:32px; height:32px;"></md-icon> Unir 2 capas de polígonos
+          </pane-header>
+          <pane-content>
+              <div ng-include="'app/estudio/geotools/uniontool/uniontool.html'"></div>
+          </pane-content>
+      </pane>
+      <pane>
+          <pane-header ng-click="showUpdate()">
+            <div layout="row">
+              <div><md-icon md-svg-icon="content/images/turf-explode.svg" style="color: white; width:32px; height:32px;"></md-icon></div>
+              <div style="width:200px; padding:5px;">Intersectar y actualizar atributos de 2 polígonos</div>
+            </div>
+          </pane-header>
+          <pane-content>
+              <div ng-include="'app/estudio/geotools/updatetool/updatetool.html'"></div>
+          </pane-content>
+      </pane>
+      <pane>
+          <pane-header ng-click="showWithin()">
+            <div layout="row">
+              <div><md-icon md-svg-icon="content/images/turf-within.svg" style="color: white; width:32px; height:32px;"></md-icon></div>
+              <div style="width:200px; padding:5px;">Seleccionar puntos contenidos en un polígono</div>
+            </div>
+          </pane-header>
+          <pane-content>
+              <div ng-include="'app/estudio/geotools/withintool/withintool.html'"></div>
+          </pane-content>
+      </pane>
+
+
+  </angular-accordion>
+
+</div>
+</md-sidenav>
+<md-sidenav md-component-id="left10" layout="column" class="sidenav1" md-is-open="isOpen10" md-is-locked-open='islocked10' md-disable-backdrop='false' md-whiteframe="4">
+    <md-toolbar class="md-hue-2">
+        <div class="md-toolbar-tools">
+          <h5>
+            <span>Descargar capa como</span>
+          </h5>
+          <span flex></span>
+          <md-button class="md-icon-button" aria-label="Settings" ng-click="toggleNav10()">
+            <md-tooltip md-direction="bottom">Cerrar</md-tooltip>
+            <md-icon md-svg-icon="content/images/delete-button.svg" style="color: white; width:24px; height:24px;"></md-icon>
+          </md-button>
+        </div>
+      </md-toolbar>
+    <md-divider></md-divider>
+    <div style="height: 95%; width: 100%; margin: 0; color:white;">
+    <angular-accordion>
+        <pane>
+            <pane-header ng-click="downloadGeojson()">
+                GeoJSON
+            </pane-header>
+        </pane>
+        <pane>
+            <pane-header ng-click="donwloadShape()">
+                Shapefile
+            </pane-header>
+        </pane>
+        <!--<pane>
+            <pane-header ng-click="downloadTopjson()">
+                TopoJSON
+            </pane-header>
+        </pane>-->
+    </angular-accordion>
+
+</div>
+</md-sidenav>
+<md-sidenav md-component-id="left11" layout="column" class="sidenav1" md-is-open="isOpen11" md-is-locked-open='islocked11' md-disable-backdrop='false' md-whiteframe="4">
+    <md-toolbar class="md-hue-2">
+        <div class="md-toolbar-tools">
+          <h5>
+            <span>Simplificar capa</span>
+          </h5>
+          <span flex></span>
+          <md-button class="md-icon-button" aria-label="Settings" ng-click="toggleNav11()">
+            <md-tooltip md-direction="bottom">Cerrar</md-tooltip>
+            <md-icon md-svg-icon="content/images/delete-button.svg" style="color: white; width:24px; height:24px;"></md-icon>
+          </md-button>
+        </div>
+      </md-toolbar>
+    <md-divider></md-divider>
+    <div style="height: 95%; width: 100%; margin: 0; color:white;">
+    <angular-accordion>
+        <pane>
+            <pane-header >
+             <input ng-model="valueinisimplify" type="text" id="simplificar" slider options="optionSliderSimplify" ng-disabled="disabled" ng-change="simplifyLayer(valueinisimplify)" style="width:300px;">
+            </pane-header>
+            <pane-header>
+              <md-checkbox class="md-secondary" ng-change='onChangeCheckedSimplify(isCheckedSimplify)' ng-model="isCheckedSimplify">Alta calidad</md-checkbox>
+            </pane-header>
+        </pane>
+    </angular-accordion>
+</div>
+</md-sidenav>
+<md-sidenav md-component-id="left12" layout="column" class="sidenav1" md-is-open="isOpen12" md-is-locked-open="islocked12" md-disable-backdrop='false' md-whiteframe="4">
+      <md-toolbar class="md-hue-2">
+          <div class="md-toolbar-tools">
+                <div>
+                  <a href="http://smallgis.co" class="navbar-brand"><img src="content/images/logo-SmallGis_layer_NG_40.png" style="height:20px;"></a>
+                </div>
+          </div>
+        </md-toolbar>
+        <md-toolbar class="md-hue-2">
+          <div class="md-toolbar-tools">
+                <titulobar>
+                  <!--<span>Rastreo</span>-->
+                </titulobar>
+                <span flex></span>
+                <md-button class="md-icon-button" aria-label="Eliminar" ng-click="showAssignmentTable()">
+                  <md-tooltip md-direction="top">Tabla de asignaciones de requerimientos</md-tooltip>
+                  <md-icon md-svg-icon="content/images/SVG/little-table-grid.svg" style="color: white; width:20px; height:20px;"></md-icon>
+                </md-button>
+                <md-button class="md-icon-button" aria-label="Eliminar" ng-click="showAssignDevice()">
+                  <md-tooltip md-direction="top">Asignar</md-tooltip>
+                  <md-icon md-svg-icon="content/images/equal.svg" style="color: white; width:20px; height:20px;"></md-icon>
+                </md-button>
+                <md-button class="md-icon-button" aria-label="Adicionar" ng-click="showDrawPointsCtrl()">
+                  <md-tooltip md-direction="top">Crear capa de requerimientos</md-tooltip>
+                  <md-icon md-svg-icon="content/images/map-marker.svg" style="color: white; width:20px; height:20px;"></md-icon>
+                </md-button>
+                <!--<md-button class="md-icon-button" aria-label="Adicionar" ng-click="showDrawPointsCtrl2()">
+                  <md-tooltip md-direction="top">Crear capa origen-destino</md-tooltip>
+                  <md-icon md-svg-icon="content/images/distancia.svg" style="color: white; width:20px; height:20px;"></md-icon>
+                </md-button>-->
+                 <md-button class="md-icon-button" aria-label="Adicionar" ng-click="toggleNav13()">
+                  <md-tooltip md-direction="top">Adicionar capa de requerimientos desde la nube</md-tooltip>
+                  <md-icon md-svg-icon="content/images/mapa_add.svg" style="color: white; width:20px; height:20px;"></md-icon>
+                </md-button>
+                <md-button class="md-icon-button" aria-label="Settings" ng-click="toggleNav12()")>
+                  <md-tooltip md-direction="top">Cerrar</md-tooltip>
+                  <md-icon md-svg-icon="content/images/delete-button.svg" style="color: white; width:20px; height:20px;"></md-icon>
+                </md-button>
+
+          </div>
+        <divider></divider>
+      </md-toolbar>
+      <angular-accordion>
+      <pane>
+          <pane-header class="angular-accordion-header">
+              <md-icon md-svg-icon="content/images/smartphone.svg" style="color: white; width:24px; height:24px;"></md-icon> Dispositivos
+              <md-checkbox class="md-secondary" ng-model="devicesVisible" ng-change='showDevices(devicesVisible)'></md-checkbox>
+          </pane-header>
+          <pane-content style="color white;">
+          <div class="container-nav2" style="overflow-y: auto;" >
+            <md-list>
+                <md-list-item  ng-click="navigateTo()" ng-repeat="item in tracks" id="{{item.id}}">
+                  <div ng-mouseenter="show = true" ng-mouseleave="show = false">
+                    <div class="accordion1">
+                      <div>
+                        <md-switch class="md-secondary" ng-model="item.enabled" style="position:absolute; right:2px; top:20px;" ng-change="onChangeTracking(item.enabled,item.clientId)"><md-tooltip md-direction="left">Encender/apa</md-tooltip></md-switch>
+                        <img alt="{{ item.tipo }}" ng-src="{{ item.tipo }}" class="md-avatar"><!--Type of points-->
+                        <h5capa>{{item.clientId}}</h5capa><br>
+                      </div>
+
+                      <div style="height:30px;" id="tools-capa" ng-show="item.enabled">
+                          <!--<md-icon md-svg-src="content/images/history.svg" class="md-secondary" ng-click="getHistorial(item.id)" style="position:absolute; right:256px;top:100px;color:white; height:12px; width:12px; hover:red; visited: green;">
+                            <md-tooltip md-direction="bottom">Historial</md-tooltip>
+                          </md-icon>-->
+                          <md-icon  id="route-{{item.clientId}}" md-svg-src="content/images/ruta.svg" class="md-secondary" ng-click="traceRoute(item.clientId)" style="position:absolute; right:241px;top:50px;color:white; height:16px; width:16px; hover:red; visited: green;">
+                            <md-tooltip md-direction="bottom">Trazar ruta</md-tooltip>
+                          </md-icon>
+                    </div>
+                    </div>
+                    <md-divider ></md-divider>
+                </div>
+                 <a id="a-{{item.id}}" href="#/estudio" style="padding: 0px 0px 0px 0px;"></a>
+                </md-list-item>
+            </md-list>
+          </div>
+        </pane-content>
+      </pane>
+      <pane>
+          <pane-header>
+              <md-icon md-svg-icon="content/images/layers.svg" style="color: white; width:24px; height:24px;"></md-icon> Requerimientos
+          </pane-header>
+          <pane-content>
+            <div class="container-nav2" style="overflow-y: auto;" >
+              <md-list>
+                  <md-list-item  ng-click="navigateTo()" ng-repeat="item in capasreq" id="{{item.id}}">
+                    <div ng-mouseenter="show = true" ng-mouseleave="show = false">
+                      <div class="accordion1">
+                        <div>
+                          <md-switch class="md-secondary" ng-model="item.enabled" style="position:absolute; right:2px; top:20px;" ng-change="onChangeLayerRequirement(item.enabled,item.id)"><md-tooltip md-direction="left">Encender/apa</md-tooltip></md-switch>
+                          <h5capa>{{item.nombre}}</h5capa>
+                        </div>
+                        <div style="height:30px;" id="tools-capa" ng-show="item.enabled">
+                            <md-icon md-svg-src="content/images/ultimate/fullscreen.svg" class="md-secondary" ng-click="getClose(item.id)" style="position:absolute; right:245px;top:40px;color:white; height:12px; width:12px; hover:red; visited: green;">
+                              <md-tooltip md-direction="bottom">Acercar capa</md-tooltip>
+                            </md-icon>
+                            <md-icon md-svg-src="content/images/edit.svg" class="md-secondary" ng-click="EditReqLayer(item.id)" style="position:absolute; right:225px;top:40px;color:white; height:12px; width:12px; hover:red; visited: green;">
+                              <md-tooltip md-direction="bottom">Editar</md-tooltip>
+                            </md-icon>
+                            <md-icon md-svg-src="content/images/SVG/garbage-2.svg" class="md-secondary" ng-click="removeRequirementLayer(item.id)" style="position:absolute; right:205px;top:40px; color:white; height:12px; width:12px;">
+                               <md-tooltip md-direction="bottom">Borrar</md-tooltip>
+                            </md-icon>
+                        </div>
+                      </div>
+                      <md-divider ></md-divider>
+                  </div>
+                  </md-list-item>
+              </md-list>
+            </div>
+          </pane-content>
+      </pane>
+   </angular-accordion>
+</md-sidenav>
+<md-sidenav md-component-id="left13" layout="column" class="sidenav1" md-is-open="isOpen13" md-is-locked-open='islocked13' md-disable-backdrop='false' md-whiteframe="4">
+    <md-toolbar class="md-hue-2">
+        <div class="md-toolbar-tools">
+          <h5>
+            <span>Cargar capas de requerimiento</span>
+          </h5>
+        </div>
+      </md-toolbar>
+        <md-toolbar class="md-hue-2">
+         <div class="md-toolbar-tools">
+          <span flex></span>
+          <md-button class="md-icon-button" aria-label="Settings" ng-click="toggleNav13()">
+            <md-tooltip md-direction="bottom">Cerrar</md-tooltip>
+            <md-icon md-svg-icon="content/images/delete-button.svg" style="color: white; width:20px; height:20px;"></md-icon>
+          </md-button>
+        </div>
+    </md-toolbar>
+    <md-divider></md-divider>
+    <div style="height: 95%; width: 100%; margin: 0; color:white;">
+
+  <angular-accordion>
+      <pane>
+          <pane-header class="angular-accordion-header">
+              <md-icon md-svg-icon="content/images/download.svg" style="color: white; width:24px; height:24px;"></md-icon> Desde la nube
+          </pane-header>
+          <pane-content style="color white;">
+            <md-toolbar class="md-hue-2">
+              <div class="md-toolbar-tools">
+                    <h5>
+                      <span>Seleccionar capas</span>
+                    </h5>
+                    <span flex></span>
+                    <md-button class="md-icon-button" aria-label="Eliminar" ng-click="showDialogAddReqLayers()">
+                      <md-tooltip md-direction="botton">Adicionar al Mapa</md-tooltip>
+                      <md-icon md-svg-icon="content/images/add.svg" style="color: white; width:20px; height:20px;"></md-icon>
+                    </md-button>
+                    <!--<md-button class="md-icon-button" aria-label="Eliminar" ng-click="showDialogRmLayer()">
+                      <md-tooltip md-direction="botton">Eliminar capas</md-tooltip>
+                      <md-icon md-svg-icon="content/images/garbage.svg" style="color: white; width:20px; height:20px;"></md-icon>
+                    </md-button>-->
+              </div>
+            <divider></divider>
+          </md-toolbar>
+            <div class="container-nav2" style="overflow-y: auto;" >
+              <md-list>
+                  <md-list-item  ng-repeat="item in capasreqDb" id="{{item.id}}">
+                    <div >
+                      <div class="accordion1">
+                          <p>
+                          <md-checkbox class="md-secondary" ng-model="item.isChecked"></md-checkbox>
+                          <!--<img alt="{{ item.tipo }}" ng-src="{{ item.tipo }}" class="md-avatar" style="color:white;">-->
+                          <h5capa>{{item.nombre}}</h5capa>
+                        </p>
+                      </div>
+                      <md-divider ></md-divider>
+                  </div>
+                  </md-list-item>
+              </md-list>
+            </div>
+          </pane-content>
+      </pane>
+  </angular-accordion>
+
+</div>
+</md-sidenav>
+<section layout="row" class="mapa">
+  <md-content flex layout="column">
+    <ng-view>
+    <div class="mapa">
+      <div ui-layout disableToggle="true" ui-layout-loaded>
+        <div ui-layout >
+          <div ui-layout-container collapse="lauout.mapalayout">
+<!--              <nav mfb-menu position="tl" effect="zoomin" label="Utilidades"
+                       active-icon="ion-android-more-vertical" resting-icon="ion-navicon-round"
+                       toggling-method="hover">
+                    <button mfb-button icon="ion-ios-world-outline" label="Mapas base" ></button>
+                    <button mfb-button icon="ion-map" label="Perfil de terreno"></button>
+                    <button mfb-button icon="ion-network" label="Rutas"></button>
+                    <button mfb-button icon="ion-search" label="Consulta avanzada"></button>
+                    <button mfb-button icon="ion-android-print" label="Imprimir"></button>
+                    <button mfb-button icon="paper-airplane" label="menu item 6"></button>
+                    <button mfb-button icon="paper-airplane" label="menu item 7"></button>
+                    <button mfb-button icon="paper-airplane" label="menu item 8"></button>
+                    <button mfb-button icon="paper-airplane" label="menu item 9"></button>
+               </nav>-->
+               <!--Botonera de control del mapas-->
+               <!--<md-button aria-label="zoom-in" class="md-fab md-mini" style="position:absolute; top:75px; left:5px;color:black;"  id="zoom-in">
+                 <md-icon md-svg-src="content/images/zoom-in.svg" aria-label="Mapa Base" ></md-icon>
+                 <md-tooltip md-direction="Bottom">Ampliar mapa</md-tooltip>
+               </md-button>
+               <md-button aria-label="zoom-out" class="md-fab md-mini" style="position:absolute; top:125px; left:5px;color:black;"  id="zoom-out">
+                 <md-icon md-svg-src="content/images/zoom-out.svg" aria-label="Mapa Base" ></md-icon>
+                 <md-tooltip md-direction="Bottom">Alejar mapa</md-tooltip>
+               </md-button>-->
+               <md-button aria-label="mapa base" class="md-fab ng-popover-trigger" style="position:absolute; top:5px; right:5px;color:black;"  id="mapabase-popover">
+                 <md-icon md-svg-src="content/images/mapa_base.svg" aria-label="Mapa Base" ></md-icon>
+                 <md-tooltip md-direction="Bottom">Mapas base</md-tooltip>
+               </md-button>
+               <!--Botonera de utilidades de edición de capas-->
+               <md-fab-speed-dial md-open="false" md-direction="right"
+                                        class="md-fling" style="position:absolute; margin-top:5px; margin-left:5px;">
+                       <md-fab-trigger>
+                         <md-button aria-label="menu" class="md-fab">
+                           <md-icon md-svg-src="content/images/menu.svg"></md-icon>
+                           <md-tooltip md-direction="right">Utilidades</md-tooltip>
+                         </md-button>
+                       </md-fab-trigger>
+                       <md-fab-actions>
+                         <md-button aria-label="Google Hangout" class="md-fab md-raised md-mini" ng-click="showTerrain()">
+                           <md-icon md-svg-src="content/images/perfil_terreno.svg" aria-label="Google Hangout"></md-icon>
+                           <md-tooltip md-direction="bottom">Perfil de terreno</md-tooltip>
+                         </md-button>
+                         <md-button aria-label="Google Hangout" class="md-fab md-raised md-mini" ng-click="showRouteCtrl()">
+                           <md-icon md-svg-src="content/images/ruta.svg" aria-label="Google Hangout"></md-icon>
+                           <md-tooltip md-direction="bottom">Rutas</md-tooltip>
+                         </md-button>
+                         <md-button aria-label="Google Hangout" class="md-fab md-raised md-mini" ng-click="advancedQueryDialog()">
+                           <md-icon md-svg-src="content/images/consultar.svg" aria-label="Google Hangout"></md-icon>
+                           <md-tooltip md-direction="bottom">Consulta avanzada</md-tooltip>
+                         </md-button>
+                         <!--<md-button aria-label="Google Hangout" class="md-fab md-raised md-mini">
+                           <md-icon md-svg-src="content/images/imprimir.svg" aria-label="Google Hangout"></md-icon>
+                           <md-tooltip md-direction="bottom">Imprimir mapa</md-tooltip>
+                         </md-button>-->
+                         <md-button aria-label="Google Hangout" class="md-fab md-raised md-mini" ng-click="takePicture()">
+                           <md-icon md-svg-src="content/images/photo.svg" aria-label="Google Hangout"></md-icon>
+                           <md-tooltip md-direction="bottom">Capturar mapa</md-tooltip>
+                         </md-button>
+                         <!--<md-button aria-label="Google Hangout" class="md-fab md-raised md-mini">
+                           <md-icon md-svg-src="content/images/link.svg" aria-label="Google Hangout"></md-icon>
+                           <md-tooltip md-direction="bottom">Compartir mapa</md-tooltip>
+                         </md-button>-->
+                         <md-button aria-label="Google Hangout" class="md-fab md-raised md-mini" ng-click="clearMap()">
+                           <md-icon md-svg-src="content/images/eraser.svg" aria-label="Google Hangout"></md-icon>
+                           <md-tooltip md-direction="bottom">Limpiar mapa</md-tooltip>
+                         </md-button>
+                         <md-button aria-label="Google Hangout" class="md-fab md-raised md-mini" ng-click="mapLegend()">
+                           <md-icon md-svg-src="content/images/leyenda.svg" aria-label="Google Hangout"></md-icon>
+                           <md-tooltip md-direction="bottom">Leyenda del mapa</md-tooltip>
+                         </md-button>
+                         <md-button id="fire" aria-label="Google Hangout" class="md-fab md-raised md-mini" ng-click="showHeatPoints()">
+                           <md-icon md-svg-src="content/images/fire-flame.svg" aria-label="Google Hangout"></md-icon>
+                           <md-tooltip md-direction="bottom">Mapa de calor</md-tooltip>
+                         </md-button>
+                       </md-fab-actions>
+              </md-fab-speed-dial>
+              <!--Botonera de utilidades de edición de capas
+              <md-fab-speed-dial md-open="false" md-direction="down"
+                                       class="md-fling" style="position:absolute; margin-top:70px; margin-left:35px;">
+                      <md-fab-trigger>
+                        <md-button aria-label="menu" class="md-fab">
+                          <md-icon md-svg-src="content/images/edit.svg"></md-icon>
+                          <md-tooltip md-direction="right">Utilidades editar mapa</md-tooltip>
+                        </md-button>
+                      </md-fab-trigger>
+                      <md-fab-actions>
+                        <md-button aria-label="Twitter" class="md-fab md-raised md-mini">
+                          <md-icon md-svg-src="content/images/punto.svg" aria-label="Twitter" ></md-icon>
+                          <md-tooltip md-direction="right">Punto</md-tooltip>
+                        </md-button>
+                        <md-button aria-label="Facebook" class="md-fab md-raised md-mini">
+                          <md-icon md-svg-src="content/images/line.svg" aria-label="Facebook"></md-icon>
+                          <md-tooltip md-direction="right">Línea</md-tooltip>
+                        </md-button>
+                        <md-button aria-label="Google Hangout" class="md-fab md-raised md-mini">
+                          <md-icon md-svg-src="content/images/poligono.svg" aria-label="Google Hangout"></md-icon>
+                          <md-tooltip md-direction="right">Polígono</md-tooltip>
+                        </md-button>p
+                        <md-button aria-label="Google Hangout" class="md-fab md-raised md-mini">
+                          <md-icon md-svg-src="content/images/mapa_dibujar.svg" aria-label="Google Hangout"></md-icon>
+                          <md-tooltip md-direction="right">Editar entidad</md-tooltip>
+                        </md-button>
+                        <md-button aria-label="Google Hangout" class="md-fab md-raised md-mini">
+                          <md-icon md-svg-src="content/images/save.svg" aria-label="Google Hangout"></md-icon>
+                          <md-tooltip md-direction="right">Guardar</md-tooltip>
+                        </md-button>
+                      </md-fab-actions>
+             </md-fab-speed-dial>-->
+
+              <leaflet class="sidebar-map" center="center" width="100%" height="100%" layers="layers" controls="controls" id="mapabase"></leaflet>
+            <!--<div ng-include="'app/estudio/mainmapa.html'" style="overflow:hidden;"> </div>-->
+          </div>
+          <div ui-layout-container collapsed="layout.tablalayout" size="0px" min-size="0px" max-size="500px">
+            <div ng-include="'app/estudio/tabla.html'"> </div>
+         </div>
+       </div>
+      </div>
+    </div>
+    </ng-view>
+  </md-content>
+</section>
+</section>
+<ng-popover trigger="mapabase-popover" popover-class="mapabase-popover" on-open="openCallback('template popover')" on-close="closeCallback('template popover')" direction="left" style="z-index:10000;" >
+	    <div class="condition-popover">
+	      	<div class="popover-header">
+	        	<div class="popover-header-content clearfix">
+	          		<div class="title" style="background-color:#222222; color:white;">
+	            		Mapas Base
+	          		</div>
+	          </div>
+	      	</div>
+	      	<div class="popover-body" style="background-color:#333333;">
+              <md-list style="background-color:#333333;color:white;">
+                <md-list-item  ng-repeat="item in mapabase" id="{{item.id}}">
+                  <div >
+                    <div class="accordion1">
+                <!--    <md-checkbox class="md-secondary" ng-model="topping.wanted"></md-checkbox>-->
+                        <img alt="{{ item.nombre }}" ng-src="{{ item.imagen}}" class="md-avatar1"><br>
+                  <!--      <h5capa>{{item.nombre}}</h5capa><br>-->
+                      <md-icon md-svg-src="content/images/eye.svg" class="md-secondary1" ng-click="selectBaseMap(item.id,item.capa)" style="color:white; height:20px; width:20px;">
+                        <md-tooltip md-direction="right">Mostrar mapa base</md-tooltip>
+                      </md-icon>
+                    </div>
+                    <md-divider ></md-divider>
+                </div>
+                </md-list-item>
+           </md-list>
+          </div>
+	      	<!--<div class="popover-footer text-right">
+	      		<md-button ng-click="closePopover('mapabase-popover')">Cancelar</md-button>
+	      		<md-buttom ng-click="closePopover('mapabase-popover')">Ejecutar</md-button>
+	      	</div>-->
+	    </div>
+</ng-popover>
+</div>

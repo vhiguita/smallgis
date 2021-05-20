@@ -1,0 +1,39 @@
+<script type="text/ng-template" id="centertool.html">
+        <div class="modal fade">
+         <div class="modal-dialog">
+           <div class="modal-content">
+             <div class="modal-header">
+               <button type="button" class="close" ng-click="close('Cancel')" data-dismiss="modal" aria-hidden="true">&times;</button>
+               <h4 class="modal-title">Centro de la capa</h4>
+             </div>
+             <div class="modal-body">
+              <div class="container-1 main-section">
+               <div class="content-panel" style="border:none;box-shadow:none;">
+                 <div class="container-1">
+                   <div class="img-content">
+                       <md-icon md-svg-icon="content/images/turf-center.svg" style="color: white; width:100px; height:100px;"></md-icon>
+                   </div>
+                   <div class="description">
+                     <div class="content-description">
+                       Toma una capa y devuelve el punto central absoluto de todas las entidades que la integran.
+                     </div>
+                   </div>
+                 </div>
+                 <div class="container-2">
+                   <div class="layer-1">
+                     Capa:<select name="layer_1_sel" id="layer_1_sel" data-ng-model="ddlvalue">
+                     <option value="">---Seleccionar capa---</option>
+                      <option ng-repeat="layer in layersMap" value="{{layer.id}}">{{layer.name}}</option>
+                     </select>
+                   </div>
+                 </div>
+               </div>
+              </div>
+             </div>
+             <div class="modal-footer">
+               <md-button ng-click="process()" class="btn btn-primary" data-dismiss="modal">Ejecutar</md-button>
+             </div>
+           </div>
+         </div>
+       </div>
+</script>

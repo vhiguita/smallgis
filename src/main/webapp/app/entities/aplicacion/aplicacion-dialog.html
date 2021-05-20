@@ -1,0 +1,78 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myAplicacionLabel" translate="smallgisApp.aplicacion.home.createOrEditLabel">Create or edit a Aplicacion</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.aplicacion.id">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.aplicacion.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="smallgisApp.aplicacion.titulo" for="field_titulo">Titulo</label>
+            <input type="text" class="form-control" name="titulo" id="field_titulo"
+                    ng-model="vm.aplicacion.titulo"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="smallgisApp.aplicacion.mapid" for="field_mapid">Mapid</label>
+            <input type="text" class="form-control" name="mapid" id="field_mapid"
+                    ng-model="vm.aplicacion.mapid"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="smallgisApp.aplicacion.empresa" for="field_empresa">Empresa</label>
+            <input type="text" class="form-control" name="empresa" id="field_empresa"
+                    ng-model="vm.aplicacion.empresa"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="smallgisApp.aplicacion.usuario" for="field_usuario">Usuario</label>
+            <input type="text" class="form-control" name="usuario" id="field_usuario"
+                    ng-model="vm.aplicacion.usuario"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="smallgisApp.aplicacion.descripcion" for="field_descripcion">Descripcion</label>
+            <input type="text" class="form-control" name="descripcion" id="field_descripcion"
+                    ng-model="vm.aplicacion.descripcion"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="smallgisApp.aplicacion.tipoApp" for="field_tipoApp">Tipo App</label>
+            <input type="text" class="form-control" name="tipoApp" id="field_tipoApp"
+                    ng-model="vm.aplicacion.tipoApp"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="smallgisApp.aplicacion.espublico" for="field_espublico">Espublico</label>
+            <input type="checkbox" class="form-control" name="espublico" id="field_espublico"
+                    ng-model="vm.aplicacion.espublico"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="smallgisApp.aplicacion.fecha" for="field_fecha">Fecha</label>
+                <div class="input-group">
+                    <input id="field_fecha" type="text" class="form-control" name="fecha" uib-datepicker-popup="{{dateformat}}" ng-model="vm.aplicacion.fecha" is-open="vm.datePickerOpenStatus.fecha"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('fecha')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

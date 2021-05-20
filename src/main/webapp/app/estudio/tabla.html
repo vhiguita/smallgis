@@ -1,0 +1,72 @@
+<div style="overflow:hidden;">
+  <md-toolbar class="md-hue-2">
+      <div class="md-toolbar-tools">
+            <titulobar>
+              <span>Tabla de atributos</span>
+            </titulobar>
+            <span flex></span>
+
+              <md-input-container class="md-icon-float md-block" style="color:white;margin-bottom:0px; height:30px;">
+                <!-- Use floating label instead of placeholder -->
+                <label>Nombre del nuevo campo</label>
+                <input ng-model="campoName" type="text" style="font-size:12px;">
+                <md-tooltip md-direction="bottom">Agregar campo</md-tooltip>
+              </md-input-container>
+              <md-button class="md-icon-button" aria-label="Eliminar" ng-click="addColumn(campoName)">
+                <md-tooltip md-direction="bottom">Agregar campo tabla activa</md-tooltip>
+                <md-icon md-svg-icon="content/images/add.svg" style="color: white; width:20px; height:20px;"></md-icon>
+              </md-button>
+              <md-input-container class="md-icon-float md-block" style="color:white;margin-bottom:0px; height:30px;">
+                  <!-- Use floating label instead of placeholder -->
+                  <label>Seleccionar campo</label>
+                  <md-select ng-model="ddlvalue" style="font-size:12px; color:white;">
+                      <!--<md-select-label>{{ddlvalue}}</md-select-label>-->
+                      <md-option ng-repeat="col in selectTableColumn" ng-value="col.field">
+                         {{col.field}}
+                      </md-option>
+                  </md-select>
+              </md-input-container>
+            <md-button class="md-icon-button" aria-label="Eliminar" ng-click="showDialogRmCol(ddlvalue)">
+              <md-tooltip md-direction="bottom">Eliminar campo seleccionado</md-tooltip>
+              <md-icon md-svg-icon="content/images/garbage.svg" style="color: white; width:20px; height:20px;"></md-icon>
+            </md-button>
+            <md-button class="md-icon-button" aria-label="Guardar" ng-click="">
+              <md-tooltip md-direction="bottom">Guardar tabla activa</md-tooltip>
+              <md-icon md-svg-icon="content/images/database_ok.svg" style="color: white; width:20px; height:20px;"></md-icon>
+            </md-button>
+            <!--<md-button class="md-icon-button" aria-label="Cerrar" ng-click="">
+              <md-tooltip md-direction="bottom">Cerrar tabla activa</md-tooltip>
+              <md-icon md-svg-icon="content/images/cancel.svg" style="color: white; width:20px; height:20px;"></md-icon>
+            </md-button>-->
+            <md-button class="md-icon-button" aria-label="CerrarPanel" ng-click="toggle('tablalayout')">
+              <md-tooltip md-direction="bottom">Cerrar panel</md-tooltip>
+              <md-icon md-svg-icon="content/images/three-dots-menu.svg" style="color: white; width:20px; height:20px;"></md-icon>
+            </md-button>
+      </div>
+    </md-toolbar>
+    <divider></divider>
+    <md-content>
+       <md-tabs md-dynamic-height md-border-bottom>
+         <md-tab label="{{nombreCapa}}">
+           <md-icon md-svg-icon="content/images/three-dots-menu.svg" style="color: white; width:12px; height:12px; position:absolute; right:2px top:2px;"></md-icon>
+           <md-content class="md-padding">
+              <div>
+                <div id="grid1" ui-grid="gridOptions" class="mygrid" style="color:#333333; font-size:11px;background-color:white;" ui-grid-auto-resize ui-grid-selection ui-grid-exporter ui-grid-move-columns ui-grid-resize-columns ui-grid-edit></div>
+            </div>
+            </md-content>
+         </md-tab>
+         <!--<md-tab label="Tabla 2">
+           <md-content class="md-padding">
+             <div>
+             <div id="grid2" ui-grid="{ data: 'capas' }" class="mygrid" style="color:#333333; font-Size:11px;background-color:white;"></div>
+           </div>
+             </md-content>
+         </md-tab>
+         <md-tab label="Tabla 3">
+           <md-content class="md-padding">
+             <h1 class="md-display-2">Tabla 3</h1>
+           </md-content>
+         </md-tab>-->
+       </md-tabs>
+    </md-content>
+</div>

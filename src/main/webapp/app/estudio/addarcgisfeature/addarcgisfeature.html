@@ -1,0 +1,42 @@
+<script type="text/ng-template" id="addarcgisfeature.html">
+        <div class="modal fade">
+         <div class="modal-dialog">
+           <div class="modal-content">
+             <div class="modal-header">
+               <button type="button" class="close" ng-click="close('Cancel')" data-dismiss="modal" aria-hidden="true">&times;</button>
+               <h4 class="modal-title">Adicionar servicio de ArcGIS</h4>
+             </div>
+             <div class="modal-body">
+               <div class="container-1">
+                   <div class="content-panel" style="border:none;box-shadow:none;">
+                     <div ng-init="service_url='http://sampleserver6.arcgisonline.com/arcgis/rest/services/Hurricanes/MapServer/0'">
+                       <label for="lbl-service_url" style="font-weight:bold;color:#000000;">Feature service</label><input id="service_url" name="service_url" ng-model="service_url" type="text" required></input>
+                       <p class="dropchop-form-parameter-description">Ingrese URL del servicio de ArcGIS (ex. http://sampleserver6.arcgisonline.com/arcgis/rest/services/Hurricanes/MapServer/0)</p>
+                     </div>
+                     <div ng-init="whclause='1=1'">
+                      <label for="lbl-whclause" style="font-weight:bold;color:#000000;">Where</label><input id="whclause" name="whclause" ng-model="whclause" type="text" required></input>
+                        <p class="dropchop-form-parameter-description">Cláusula where para filtrar la consulta. Cualquier consulta SQL en los campos de la capa donde es permitido.</p>
+                     </div>
+                     <div>
+                      <label for="lbl-type" style="font-weight:bold;color:#000000;">Tipo de petición</label>
+                      <div class="rd-group" style="display: block;">
+                          <label class="sub-label" for="CORS">CORS<input type="radio" id="CORS" name="requesttype" ng-model="requesttype" class="radio" value="CORS"></label>
+                          <label class="sub-label" for="JSONP">JSONP<input type="radio" id="JSONP" name="requesttype" ng-model="requesttype" class="radio" value="JSONP"></label>
+                      </div>
+                      <p class="dropchop-form-parameter-description">Seleccione JSONP si recibe errores de intercambio de recursos cross-origin</p>
+                     </div>
+                     <div>
+                        <label for="lbl-type" style="font-weight:bold;color:#000000;">Limite al mapa</label>
+                        <input type="checkbox" id="limitToMap" name="limitToMap" ng-model="limitToMap" value="limit to map">
+                        <p class="dropchop-form-parameter-description">Sólo carga las características dentro de la vista actual del mapa</p>
+                     </div>
+                   </div>
+               </div>
+             </div>
+             <div class="modal-footer">
+               <md-button ng-click="executeService()" class="btn btn-primary" data-dismiss="modal">Ejecutar</md-button>
+             </div>
+           </div>
+         </div>
+       </div>
+</script>

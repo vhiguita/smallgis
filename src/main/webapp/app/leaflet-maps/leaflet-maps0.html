@@ -1,0 +1,170 @@
+<!--<nav class="navbar navbar-default" role="navigation" bs-navbar>
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#">Brand</a>
+  </div>
+  <div class="collapse navbar-collapse" uib-collapse="navCollapsed">
+  <ul class="nav navbar-nav">
+    <li data-match-route="/$"><a href="#/">Home</a></li>
+    <li data-match-route="/page-one"><a href="#/page-one">Page One</a></li>
+    <li data-match-route="/page-two.*"><a href="#/page-two/sub-a">Page Two</a></li>
+  </ul>
+</div>
+</nav>-->
+<section layout="row" >
+<md-sidenav md-component-id="left0" layout="column" class="sidenav0" md-is-locked-open='true'>
+      <section layout="column" layout-sm="column" layout-align="center center" layout-wrap>
+        <md-button ng-click="openSideNav1()" class="md-fab md-mini" aria-label="Use Android" >
+          <md-icon md-svg-src="content/images/SVG/home.svg" style="color: white;"></md-icon>
+        </md-button>
+        <md-button ng-click="openSideNav2()" class="md-fab md-mini" aria-label="Use Android" >
+          <md-icon md-svg-src="content/images/SVG/folder.svg" style="color: white;"></md-icon>
+        </md-button>
+        <md-button class="md-fab md-mini" aria-label="Use Android">
+          <md-icon md-svg-src="content/images/SVG/agenda.svg" style="color: white;"></md-icon>
+        </md-button>
+        <md-button class="md-fab md-mini" aria-label="Use Android">
+          <md-icon md-svg-src="content/images/SVG/alarm.svg" style="color: white;"></md-icon>
+        </md-button>
+        <md-button class="md-fab md-mini" aria-label="Use Android">
+          <md-icon md-svg-src="content/images/SVG/app.svg" style="color: white;"></md-icon>
+        </md-button>
+        <md-button class="md-fab md-mini" aria-label="Use Android">
+          <md-icon md-svg-src="content/images/SVG/archive.svg" style="color: white;"></md-icon>
+        </md-button>
+        <md-button class="md-fab md-mini" aria-label="Use Android">
+          <md-icon md-svg-src="content/images/SVG/binoculars.svg" style="color: white;"></md-icon>
+        </md-button>
+        <md-button class="md-fab md-mini" aria-label="Use Android">
+          <md-icon md-svg-src="content/images/SVG/cloud.svg" style="color: white;"></md-icon>
+        </md-button>
+        <md-button class="md-fab md-mini" aria-label="Use Android">
+          <md-icon md-svg-src="content/images/SVG/map.svg" style="color: white;"></md-icon>
+        </md-button>
+        <md-button class="md-fab md-mini" aria-label="Use Android">
+          <md-icon md-svg-src="content/images/SVG/exit.svg" style="color: white;"></md-icon>
+        </md-button>
+    </section>
+</md-sidenav>
+<md-sidenav md-component-id="left1" layout="column" class="sidenav1" md-is-locked-open='true' md-disable-backdrop='false' md-whiteframe="4">
+<div class="column">
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+     <div class="container-fluid">
+        <ul class="nav navbar-nav">
+    <li><a><b>Capas</b></a></li>
+    <li><a href="#"><span class="glyphicon glyphicon-plus"></span></a></li>
+    <li><a href="#"><span class="glyphicon glyphicon-trash"></span></a></li>
+    <li><a href="#"><span class="glyphicon glyphicon-floppy-disk"></span></a></li>
+  </ul>
+  </div>
+ </nav>
+</div class="column">
+  <div class="container">
+    <div class="well well-sm">Capa1</div>
+    <div class="well well-sm">Capa2</div>
+    <div class="well well-sm">Capa3</div>
+    <div class="well well-sm">Capa4</div>
+    <div class="well well-sm">Capa5</div>
+    <div class="well well-sm">Capa6</div>
+    <div class="well well-sm">Capa7</div>
+    <div class="well well-sm">Capa8</div>
+    <div class="well well-sm">Capa9</div>
+    <div class="well well-sm">Capa10</div>
+    <div class="well well-sm">Capa11</div>
+    <div class="well well-sm">Capa12</div>
+    <div class="well well-sm">Capa13</div>
+    <div class="well well-sm">Capa14</div>
+    <div class="well well-sm">Capa15</div>
+    <div class="well well-sm">Capa16</div>
+    <div class="well well-sm">Capa17</div>
+    <div class="well well-sm">Capa18</div>
+    <div class="well well-sm">Capa19</div>
+    <div class="well well-sm">Capa20</div>
+    <div class="well well-sm">Capa21</div>
+    <div class="well well-sm">Capa22</div>
+    <div class="well well-sm">Capa23</div>
+    <div class="well well-sm">Capa24</div>
+    <div class="well well-sm">Capa25</div>
+    <div class="well well-sm">Capa26</div>
+    <div class="well well-sm">Capa27</div>
+    <div class="well well-sm">Capa28</div>
+</div>
+</md-sidenav>
+<md-sidenav md-component-id="left2" layout="column" class="sidenav2" md-is-locked-open='false' md-disable-backdrop='true' md-whiteframe="4">
+</md-sidenav>
+<md-content flex layout="column">
+  <ng-view>
+  <div>
+    <div  class="mapa">
+      <nav mfb-menu position="tl" effect="zoomin" label="Análisis"
+               active-icon="ion-edit" resting-icon="ion-plus-round"
+               toggling-method="hover">
+            <button mfb-button icon="ion-gear-a" label="menu item 1"></button>
+            <button mfb-button icon="ion-settings" label="menu item 2"></button>
+            <button mfb-button icon="ion-pie-graph" label="menu item 3"></button>
+            <button mfb-button icon="ion-cloud" label="menu item 4"></button>
+            <button mfb-button icon="ion-person" label="menu item 5"></button>
+            <button mfb-button icon="paper-airplane" label="menu item 6"></button>
+            <button mfb-button icon="paper-airplane" label="menu item 7"></button>
+            <button mfb-button icon="paper-airplane" label="menu item 8"></button>
+            <button mfb-button icon="paper-airplane" label="menu item 9"></button>
+       </nav>
+      <nav mfb-menu position="tr" effect="zoomin" label="Análisis"
+               active-icon="ion-edit" resting-icon="ion-plus-round"
+               toggling-method="hover">
+            <button mfb-button icon="ion-gear-a" label="menu item 1"></button>
+            <button mfb-button icon="ion-settings" label="menu item 2"></button>
+            <button mfb-button icon="ion-pie-graph" label="menu item 3"></button>
+            <button mfb-button icon="ion-cloud" label="menu item 4"></button>
+            <button mfb-button icon="ion-person" label="menu item 5"></button>
+            <button mfb-button icon="paper-airplane" label="menu item 6"></button>
+            <button mfb-button icon="paper-airplane" label="menu item 7"></button>
+            <button mfb-button icon="paper-airplane" label="menu item 8"></button>
+            <button mfb-button icon="paper-airplane" label="menu item 9"></button>
+       </nav>
+       <div>
+         <circular
+           options="options">
+         </circular>
+      </div>
+      <leaflet lf-center="center" width="100%" height="80%"></leaflet>
+      <div class="container" >
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>John</td>
+            <td>Doe</td>
+            <td>john@example.com</td>
+          </tr>
+          <tr>
+            <td>Mary</td>
+            <td>Moe</td>
+            <td>mary@example.com</td>
+          </tr>
+          <tr>
+            <td>July</td>
+            <td>Dooley</td>
+            <td>july@example.com</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+      </div>
+
+    </div>
+
+  </ng-view>
+</md-content>
+</section>

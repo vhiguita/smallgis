@@ -1,0 +1,24 @@
+{
+    "smallgisApp": {
+        "capa" : {
+            "home": {
+                "title": "Capas",
+                "createLabel": "Crear nuevo Capa",
+                "createOrEditLabel": "Crear o editar Capa",
+                "search": "Search for Capa"
+            },
+            "created": "Un nuevo Capa ha sido creado con el identificador {{ param }}",
+            "updated": "Un Capa ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Capa ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Capa {{ id }}?"
+            },
+            "detail": {
+                "title": "Capa"
+            },
+            "nombre": "Nombre",
+            "empresa": "Empresa",
+            "usuario": "Usuario"
+        }
+    }
+}

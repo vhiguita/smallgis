@@ -1,0 +1,217 @@
+<script type="text/ng-template" id="clasifylayer.html">
+        <div id="myModal" class="modal fade">
+         <div class="modal-dialog">
+           <div class="modal-content">
+             <div class="modal-header">
+               <button type="button" class="close" ng-click="close('Cancel')" data-dismiss="modal" aria-hidden="true">&times;</button>
+               <h4 class="modal-title">Clasificar</h4>
+             </div>
+             <div class="modal-body">
+               <div id="layercolors-content">
+                 <input type="text" id="layerIDColor" name="layerIDColor" ng-model="layerIDColor" style="display: none;"/>
+                 <input type="text" id="layerNameColor" name="layerNameColor" ng-model="layerNameColor" style="display: none;"/>
+                 <div class="container-1 mapstarter-section" id="section-color" style="/*border:1px solid #ccc;border-radius: 4px;*/">
+                   <div class="content-panel" style="border:none;box-shadow:none;">
+                     <div class="panel-group">
+                       <div>
+                         <span class="form-item" id="span-color-type-simple" >
+                           <label for="color-type-simple" class="text" style="font-weight: normal;">Por capa</label>
+                           <input type="radio" name="color-type" id="color-type-simple" ng-model="colorValue" ng-click="eventClick1()" value='1'/>
+                         </span>
+                         <!--<span class="form-item" id="span-color-type-choropleth" ng-show="choroplethJenks">
+                           <label for="color-type-choropleth" class="text" style="font-weight: normal;color:#000000;">Jenks</label>
+                           <input type="radio" name="color-type" id="color-type-choropleth" ng-click="eventClick2()"  ng-model="colorValue" value='2'/>
+                         </span>-->
+                         <span class="form-item" id="span-color-type-choropleth-range" ng-show="choroplethRange">
+                           <label for="color-type-choropleth-range" class="text" style="font-weight: normal;">Por rangos</label>
+                           <input type="radio" name="color-type" id="color-type-choropleth-range" ng-click="eventClick3()"  ng-model="colorValue" value='3'/>
+                         </span>
+                         <span class="form-item" id="span-color-type-class">
+                           <label for="color-type-class" class="text" style="font-weight: normal;">Por clases</label>
+                           <input type="radio" name="color-type" id="color-type-class" ng-click="eventClick4()"  ng-model="colorValue" value='4'/>
+                         </span>
+                         <div style="margin-top: 10px;">
+                           <span class="form-item">
+                             <label for="layer-name" style="font-weight: normal;">Titulo de la capa</label>
+                             <input type="text" class="text" id="txtLayerName" ng-model="layerNameClas"/>
+                           </span>
+                         </div>
+                       </div>
+                     </div>
+                     <div class="panel-group" id="panel-color-stroke" ng-show="panelColorStroke">
+                       <div class="panel-header">Bordes</div>
+                       <div>
+                         <span class="form-item">
+                           <label for="color-stroke" style="font-weight: normal;">Color de borde</label>
+                           <input type="color" class="text" id="color-stroke" ng-model="colorStroke" ng-change="setColorStroke()" />
+                         </span>
+                         <span class="form-item">
+                           <label for="color-stroke-width" style="font-weight: normal;">Ancho de borde</label>
+                           <input type="number" class="text" step="0.25" min="0" id="color-stroke-width" ng-change="setStrokeWidth()" ng-model="strokeValue"/>
+                         </span>
+                       </div>
+                     </div>
+                     <div class="panel-group color-type" id="color-simple" ng-show="panelColorSimple">
+                         <span class="form-item">
+                           <label for="color-fill" style="font-weight: normal;">Relleno</label>
+                           <input type="color" class="text" id="color-fill" ng-model="colorFill" ng-change="setFillColor()" />
+                         </span>
+                         <div style="margin-top: 15px;">
+                           <span class="form-item">
+                             <input id="tag-name" type="hidden" value="">
+                           </span>
+                         </div>
+                     </div>
+                     <div class="panel-group color-type" id="color-choropleth" style="display:none;">
+                           <div>
+                             <span class="form-item">
+                               <label for="color-choropleth-attribute" style="font-weight: normal;">Atributo</label>
+                               <select id="color-choropleth-attribute" class="attribute-list" ng-model="data.colorChoropleth" ng-change="selectAttributeChoroplet()">
+                                 <option ng-repeat="option in options" value="{{option}}">{{option}}</option>
+                               </select>
+                             </span>
+                             <span class="form-item">
+                               <label for="color-choropleth-buckets" style="font-weight: normal;"># de clases</label>
+                               <select id="color-choropleth-buckets" ng-model="data.colorChoroplethBuckets" ng-change="selectChoroplethBuckets()">
+                                 <option value="3">3</option>
+                                 <option value="4">4</option>
+                                 <option value="5">5</option>
+                                 <option value="6">6</option>
+                                 <option value="7">7</option>
+                                 <option value="8">8</option>
+                                 <option value="9">9</option>
+                                 <option value="10">10</option>
+                                 <option value="11">11</option>
+                               </select>
+                             </span>
+                           </div>
+                           <div>
+                             <div class="panel-header">Escala de colores</div>
+                             <div id="color-choropleth-scales">
+                             </div>
+                             <div class="clear"></div>
+                           </div>
+                     </div>
+                     <div class="panel-group color-type" id="color-class" style="display:none;">
+                           <div>
+                             <span class="form-item">
+                                 <label for="attributetxt" style="font-weight: normal;">Atributo</label><select name="attribute_sel" id="attribute_sel" data-ng-model="attribute" ng-options="attrib.name for attrib in attrNames" ng-change="selectAttribute()">
+                                 <option value="">---Seleccionar atributo---</option>
+                                 </select>
+
+                                 <label for="valuetxt" style="font-weight: normal;">Clases</label><select ng-change="selectAttributeValue()" name="value_sel" id="value_sel" data-ng-model="attributevalue" ng-options="attribVal.attributevalue for attribVal in attrValues">
+                                 <option value="">---Seleccionar valor---</option>
+                               </select><input type="text" id="nCls" name="nCls" data-ng-model="numberOfClasses" readonly>
+
+                             </span>
+                           </div>
+                           <div id="color-cl-scales">
+                             <div class="panel-header">Escala de colores</div>
+                             <div id="color-choropleth-scales-2">
+                             </div>
+                             <div class="clear"></div>
+                           </div>
+                     </div>
+                     <div class="panel-group" id="panel-grid-point">
+                       <div id="grid-tags" ui-grid="gridTagOptions" ui-grid-resize-columns ui-grid-auto-resize  ui-grid-edit class="influxGrid"></div>
+                     </div>
+                     <div class="panel-group" id="panel-style-editor" style="float: left;margin-top:10px;" ng-show="panelStyleEditor">
+                       <span class="form-item">
+                         <label for="lbl-icon" style="font-weight: normal;">Icono</label>
+                         <select id="select-icon-marker" ng-model="data.iconMarker" ng-change="selectIconMarker()">
+                           <option value="circle-stroked">circulo-suavisado</option>
+                           <option value="circle">circulo</option>
+                           <option value="square-stroked">cuadrado-siavisado</option>
+                           <option value="square">cuadrado</option>
+                           <option value="triangle-stroked">triangulo-siavisado</option>
+                           <option value="triangle">triangulo</option>
+                           <option value="star-stroked">estrella-suavisada</option>
+                           <option value="star">estrella</option>
+                           <option value="marker-stroked">marcador-suavisado</option>
+                           <option value="marker">marcador</option>
+                           <option value="religious-jewish">religioso-judio</option>
+                           <option value="religious-christian">religioso-cristiano</option>
+                           <option value="religious-muslim">religioso-musulman</option>
+                           <option value="cemetery">cementerio</option>
+                           <option value="rocket">cohete</option>
+                           <option value="airport">aeropuerto</option>
+                           <option value="heliport">helipuerto</option>
+                           <option value="rail">tren</option>
+                           <option value="rail-metro">metro</option>
+                           <option value="rail-light">tranvia</option>
+                           <option value="bus">bus</option>
+                           <option value="fuel">estación-servicio</option>
+                           <option value="parking">parqueadero</option>
+                           <option value="parking-garage">garage</option>
+                           <option value="airfield">campo-aereo</option>
+                           <option value="roadblock">barricada</option>
+                           <option value="ferry">ferry</option>
+                           <option value="harbor">puerto</option>
+                           <option value="bicycle">parqueadero-bicicletas</option>
+                           <option value="park">parque</option>
+                         </select>
+                         <label for="lbl-icon-size" style="font-weight: normal;">Tamaño</label>
+                         <select id="select-icon-size" ng-model="data.iconSize" ng-change="selectIconMarkerSize()">
+                           <option value="small">Pequeño</option>
+                           <option value="medium">Mediano</option>
+                           <option value="large">Grande</option>
+                         </select>
+                       </span>
+                       <span class="form-item">
+                        <div>
+                         <label for="lbl-icon-color" style="font-weight: normal;">Color</label>
+                         <div id="colors-scales">
+
+                          </div>
+                        </div>
+                       </span>
+                       <div id="save-style-container" ng-show="saveStyleContainer">
+                          <md-button ng-click="saveStyle()" class="btn btn-primary">Guardar</md-button>
+                       </div>
+
+                     </div>
+                     <div class="panel-group" id="panel-style-line-editor" style="float: left;margin-top:10px;" ng-show="panelStyleLineEditor">
+                       <span class="form-item" id="content-line-editor">
+                         <div style="float: left;width:100%;margin-top:5px;">
+                           <div>
+                             <label for="lb-stroke-width" style="font-weight: normal;">Ancho linea</label>
+                             <input type="number" class="text" step="0.25" min="0" id="line-stroke-width" ng-model="lineStrokeWidth"/>
+                           </div>
+                           <div>
+                             <label for="lb-line-opacity" style="font-weight: normal;">Opacidad</label>
+                             <input type="number" class="text" step="0.1" min="0" max="1" id="line-opacity" ng-model="lineOpacity"/>
+                           </div>
+                           <div>
+                             <label for="lb-stroke-type" style="font-weight: normal;">Tipo de linea</label>
+                             <select id="sel-line-stroke" ng-model="data.lineStroke">
+
+                               <option value="stroke1">continua</option>
+                               <option value="stroke2">intermitente</option>
+                               <option value="stroke3">punteada</option>
+                             </select>
+                           </div>
+                           <span class="form-item">
+                            <div>
+                             <label for="lbl-icon-color" style="font-weight: normal;">Color</label>
+                             <div id="colors-line-scales">
+
+                              </div>
+                            </div>
+                           </span>
+                         </div>
+                       </span>
+                       <div id="save-style-line-container" ng-show="saveStyleLineContainer">
+                          <md-button ng-click="saveStyleLine()" class="btn btn-primary">Guardar</md-button>
+                       </div>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+             </div>
+            <div class="modal-footer">
+              <md-button ng-click="execute('Cancel')" class="btn btn-primary">Ejecutar</md-button>
+             </div>
+           </div>
+         </div>
+       </div>
+</script>

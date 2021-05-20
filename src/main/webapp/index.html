@@ -1,0 +1,448 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>smallgis</title>
+    <meta name="description" content="">
+    <meta name="google" value="notranslate">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" type="text/css" href="src/css/w2ui-1.4.2.min.css" />
+    <link rel="stylesheet" href="bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" type="text/css"/>
+    <link rel="stylesheet" href="bower_components/angular-awesome-slider/dist/css/angular-awesome-slider.min.css" type="text/css"/>
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css content/css/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="bower_components/leaflet/dist/leaflet.css">
+    <link rel="stylesheet" href="bower_components/leaflet-search/dist/leaflet-search.src.css">
+    <link rel="stylesheet" href="bower_components/angular-motion/dist/angular-motion.css">
+    <link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.css">
+    <link rel="stylesheet" href="bower_components/ng-material-floating-button/mfb/dist/mfb.css">
+    <link rel="stylesheet" href="bower_components/angular-circular-navigation/angular-circular-navigation.css">
+    <link rel="stylesheet" href="bower_components/angular-json-human/dist/angular-json-human.css">
+    <link rel="stylesheet" href="bower_components/angular-hamburger-toggle/dist/angular-hamburger-toggle.css">
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
+    <!-- endinject -->
+    <!-- endbuild -->
+    <link rel="stylesheet" href="https://cdn.rawgit.com/vhiguitagps2017/libraries/ec4668fe/content/bower_components/angular-colorpicker/dist/css/angular-colorpicker.min.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/vhiguitagps2017/libraries/ec4668fe/content/bower_components/bg-splitter/css/style.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/vhiguitagps2017/libraries/ec4668fe/content/bower_components/angular-data-table/release/dataTable.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/vhiguitagps2017/libraries/ec4668fe/content/bower_components/angular-ui-layout/src/ui-layout.css"/>
+    <link rel="stylesheet" href="https://cdn.rawgit.com/vhiguitagps2017/libraries/ec4668fe/content/bower_components/angular-ui-grid/ui-grid.min.css"/>
+    <link rel='stylesheet' href='https://cdn.rawgit.com/vhiguitagps2017/libraries/ec4668fe/content/bower_components/Leaflet.Elevation/dist/Leaflet.Elevation-0.0.2.css' />
+    <link rel='stylesheet' href='https://cdn.rawgit.com/vhiguitagps2017/libraries/ec4668fe/content/bower_components/Leaflet.EasyButton/src/easy-button.css' />
+    <link rel='stylesheet' href='https://cdn.rawgit.com/vhiguitagps2017/libraries/ec4668fe/content/bower_components/leaflet-draw/dist/leaflet.draw.css' />
+    <link rel='stylesheet' href='https://cdn.rawgit.com/vhiguitagps2017/libraries/ec4668fe/content/bower_components/leaflet-measure/dist/leaflet-measure.css' />
+    <link rel='stylesheet' href='https://cdn.rawgit.com/vhiguitagps2017/libraries/ec4668fe/content/bower_components/leaflet-minimap/dist/Control.MiniMap.min.css' />
+    <link rel="stylesheet" href="https://cdn.rawgit.com/vhiguitagps2017/libraries/ec4668fe/content/bower_components/angular-material/angular-material.css">
+    <link rel='stylesheet' href='https://cdn.rawgit.com/vhiguitagps2017/libraries/ec4668fe/content/bower_components/eeh-navigation/dist/eeh-navigation.css' />
+    <link rel='stylesheet' href='https://cdn.rawgit.com/vhiguitagps2017/libraries/ec4668fe/content/bower_components/leaflet-routing-machine/dist/leaflet-routing-machine.css' />
+    <!--<link rel="stylesheet" href="dist/leaflet-routing-machine.css" />-->
+    <link rel="stylesheet" href="https://cdn.rawgit.com/vhiguitagps2017/libraries/ec4668fe/content/bower_components/leaflet.markercluster/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://cdn.rawgit.com/vhiguitagps2017/libraries/ec4668fe/content/bower_components/leaflet.markercluster/dist/MarkerCluster.Default.css" />
+    <link type="text/css" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" rel="stylesheet" />
+    <link rel="stylesheet" href="src/css/l.geosearch.css" />
+    <link rel="stylesheet" href="src/css/marker.css" />
+    <link rel="stylesheet" href="src/css/site.css" />
+    <link rel="stylesheet" href="dist/easyPrint.css"/>
+    <link rel="stylesheet" href="app/estudio/drawposition/drawposition.css"/>
+    <link rel="stylesheet" href="app/estudio/advancedquery/advancedquery.css"/>
+    <link rel="stylesheet" href="app/estudio/renamelayer/renamelayer.css"/>
+    <link rel="stylesheet" href="app/estudio/addexternallink/addexternallink.css"/>
+    <link rel="stylesheet" href="app/estudio/addarcgisfeature/addarcgisfeature.css"/>
+    <link rel="stylesheet" href="app/estudio/clasifylayer/clasifylayer.css"/>
+    <link rel="stylesheet" href="app/estudio/geotools/alongtool/alongtool.css"/>
+    <link rel="stylesheet" href="app/estudio/estudio.css">
+    <link rel="stylesheet" href="app/apps/apps.css">
+    <link rel="stylesheet" href="app/apps/templates/app1/app1.css">
+    <link rel="stylesheet" href="app/apps/templates/app2/app2.css">
+    <link rel="stylesheet" href="app/apps/templates/app3/app3.css">
+    <!-- placeholder link to load bootswatch themes, title holds the current applied theme name-->
+    <link rel="stylesheet" href="" id="bootswatch-css" title="Default">
+    <!-- build:css content/css/main.css -->
+    <link rel="stylesheet" href="content/css/main.css">
+    <!-- endbuild -->
+</head>
+<body ng-app="smallgisApp" ng-strict-di>
+    <!--[if lt IE 9]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+<!--    <page-ribbon></page-ribbon>-->
+<!--<div ui-view="navbar" ng-cloak=""></div>-->
+        <div ui-view="content">
+            <!-- Angular views -->
+        </div>
+
+<!--        <div class="footer" ng-cloak="">
+            <p translate="footer">This is your footer</p>
+            <div ng-controller="BootswatchController as vm" id="bootswatch-theme-switcher" uib-dropdown="" class="dropup pull-right">
+                    <a class="btn btn-default dropdown-toggle" uib-dropdown-toggle="">
+                        <span class="glyphicon glyphicon-adjust"></span>
+                        <span class="hidden-tablet" translate="bootswatch.themeSelector">Theme</span>
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu" role="menu" uib-dropdown-menu="">
+                        <li class="theme-link" ng-repeat="theme in vm.themes">
+                            <a href="" jh-switch-theme="theme">{{theme.name}}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+    </div>-->
+
+    <script>
+    (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+    function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+    e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+    e.src='//www.google-analytics.com/analytics.js';
+    r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+    ga('create','UA-XXXXX-X');ga('send','pageview');
+    </script>
+    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script>L_PREFER_CANVAS = true;</script>
+    <!-- build:js app/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/messageformat/messageformat.js"></script>
+    <script src="bower_components/json3/lib/json3.js"></script>
+    <script src="bower_components/lodash/dist/lodash.compat.js"></script>
+    <script src="bower_components/leaflet/dist/leaflet-src.js"></script>
+    <script src="bower_components/leaflet-search/dist/leaflet-search.src.js"></script>
+    <script src="bower_components/SHA-1/sha1.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/angular-cache-buster/angular-cache-buster.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-dynamic-locale/src/tmhDynamicLocale.js"></script>
+    <script src="bower_components/ngstorage/ngStorage.js"></script>
+    <script src="bower_components/angular-loading-bar/build/loading-bar.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-translate/angular-translate.js"></script>
+    <script src="bower_components/angular-translate-interpolation-messageformat/angular-translate-interpolation-messageformat.js"></script>
+    <script src="bower_components/angular-translate-loader-partial/angular-translate-loader-partial.js"></script>
+    <script src="bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/bootstrap-ui-datetime-picker/dist/datetime-picker.js"></script>
+    <script src="bower_components/ng-file-upload/ng-file-upload.js"></script>
+    <script src="bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js"></script>
+    <script src="bower_components/angular-simple-logger/dist/angular-simple-logger.js"></script>
+    <script src="bower_components/ng-material-floating-button/src/mfb-directive.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+    <script src="bower_components/angular-circular-navigation/angular-circular-navigation.js"></script>
+    <script src="bower_components/angular-json-human/dist/angular-json-human.js"></script>
+    <script src="bower_components/angular-hamburger-toggle/dist/angular-hamburger-toggle.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-modal-service/dst/angular-modal-service.js"></script>
+    <script src="bower_components/angulartics/src/angulartics.js"></script>
+    <script src="bower_components/ui-leaflet/dist/ui-leaflet.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
+    <script src="bower_components/angular-material-sidenav/angular-material-sidenav.js"></script>
+    <script src="bower_components/angulartics-google-analytics/lib/angulartics-ga.js"></script>
+    <!-- endinject -->
+    <!-- endbuild -->
+    <script src="bower_components/leaflet-measure/dist/leaflet-measure.min.js"></script>
+    <script src="bower_components/leaflet-minimap/dist/Control.MiniMap.min.js"></script>
+    <script src="bower_components/leaflet-draw/dist/leaflet.draw-src.js"></script>
+    <script src="https://cdn.rawgit.com/vhiguitagps2017/libraries/ec4668fe/content/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="https://cdn.rawgit.com/vhiguitagps2017/libraries/ec4668fe/content/bower_components/ng-scrollbars/dist/scrollbars.min.js"></script>
+    <script src="https://cdn.rawgit.com/vhiguitagps2017/libraries/ec4668fe/content/bower_components/angular-awesome-slider/dist/angular-awesome-slider.min.js"></script>
+    <script src="https://cdn.rawgit.com/vhiguitagps2017/libraries/ec4668fe/content/bower_components/angular-colorpicker/dist/js/angular-colorpicker.min.js"></script>
+    <script src="https://cdn.rawgit.com/vhiguitagps2017/libraries/ec4668fe/content/bower_components/bg-splitter/js/splitter.js"></script>
+    <script src="https://cdn.rawgit.com/vhiguitagps2017/libraries/ec4668fe/content/bower_components/angular-data-table/release/dataTable.min.js"></script>
+    <script src="https://cdn.rawgit.com/vhiguitagps2017/libraries/ec4668fe/content/bower_components/angular-ui-layout/src/ui-layout.js"></script>
+    <script src="https://cdn.rawgit.com/vhiguitagps2017/libraries/ec4668fe/content/bower_components/angular-ui-grid/ui-grid.min.js"></script>
+    <script src="https://cdn.rawgit.com/vhiguitagps2017/libraries/ec4668fe/content/bower_components/heatmap.js-amd/build/heatmap.js"></script>
+    <script src="https://cdn.rawgit.com/vhiguitagps2017/libraries/ec4668fe/content/bower_components/heatmap.js-amd/plugins/leaflet-heatmap.js"></script>
+    <script src="https://cdn.rawgit.com/vhiguitagps2017/libraries/ec4668fe/content/bower_components/heatmap.js-amd/plugins/svg-area-heatmap.js"></script>
+    <script src="https://cdn.rawgit.com/vhiguitagps2017/libraries/ec4668fe/content/bower_components/pdfmake/build/pdfmake.js"></script>
+    <script src="https://cdn.rawgit.com/vhiguitagps2017/libraries/ec4668fe/content/bower_components/pdfmake/build/vfs_fonts.js"></script>
+    <script src="https://cdn.rawgit.com/vhiguitagps2017/libraries/ec4668fe/content/bower_components/alasql/dist/alasql.min.js"></script>
+    <script src="https://cdn.rawgit.com/vhiguitagps2017/libraries/ec4668fe/content/bower_components/eeh-navigation/dist/eeh-navigation.js"></script>
+    <script src="https://cdn.rawgit.com/vhiguitagps2017/libraries/ec4668fe/content/bower_components/eeh-navigation/dist/eeh-navigation.tpl.js"></script>
+    <script src="https://cdn.rawgit.com/vhiguitagps2017/libraries/ec4668fe/content/bower_components/turf/turf.min.js"></script>
+    <script src="https://cdn.rawgit.com/vhiguitagps2017/libraries/ec4668fe/content/bower_components/Leaflet.Elevation/dist/Leaflet.Elevation-0.0.2.min.js"></script>
+    <script src="https://cdn.rawgit.com/vhiguitagps2017/libraries/ec4668fe/content/bower_components/Leaflet.Elevation/dist/Leaflet.Elevation-0.0.2.src.js"></script>
+    <script src="https://cdn.rawgit.com/vhiguitagps2017/libraries/ec4668fe/content/bower_components/spin.js/spin.js"></script>
+    <script src="https://cdn.rawgit.com/vhiguitagps2017/libraries/ec4668fe/content/bower_components/leaflet-spin/leaflet.spin.js"></script>
+    <script src="https://cdn.rawgit.com/vhiguitagps2017/libraries/ec4668fe/content/bower_components/leaflet.active-layers/dist/leaflet.active-layers.min.js"></script>
+    <script src="https://cdn.rawgit.com/vhiguitagps2017/libraries/ec4668fe/content/bower_components/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+    <!--<script src="dist/leaflet-routing-machine.js"></script>-->
+    <script src="https://cdn.rawgit.com/vhiguitagps2017/libraries/ec4668fe/content/bower_components/Leaflet.EasyButton/src/easy-button.js"></script>
+    <script src="https://cdn.rawgit.com/vhiguitagps2017/libraries/ec4668fe/content/bower_components/angular-modal-service/dst/angular-modal-service.js"></script>
+    <script src="https://cdn.rawgit.com/vhiguitagps2017/libraries/ec4668fe/content/bower_components/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
+    <script src="https://cdn.rawgit.com/vhiguitagps2017/libraries/ec4668fe/content/bower_components/leaflet.markercluster/dist/leaflet.markercluster-src.js"></script>
+    <script src="https://cdn.rawgit.com/vhiguitagps2017/libraries/ec4668fe/content/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA41YttoSnQrC38zX-sYFZ91pDiNDNPpL8&sensor=false&libraries=places" type="text/javascript"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <script src="dist/shp.min.js"> </script>
+    <script src="dist/FileSaver.js"> </script>
+    <script src="dist/jszip.min.js"> </script>
+    <script src="js/d3.v3.min.js" charset="utf-8"></script>
+    <script src="js/topojson.v1.min.js"></script>
+    <script src="js/leaflet-omnivore.min.js"></script>
+    <script src="js/csv2geojson.js"></script>
+    <script src="js/Control.Geocoder.js"></script>
+    <script src="js/pancake.stack.min.js"></script>
+    <script src="js/template.js"></script>
+    <script src="js/colorbrewer.js"></script>
+    <script src='js/leaflet-geodesy.js'></script>
+    <script src='js/polygon.js'></script>
+    <script src='js/toGeoJSON.js'></script>
+    <script src='js/linq.js'></script>
+    <script src='js/leaflet-image.js'></script>
+    <script src="dist/leaflet.easyPrint.js"></script>
+    <script src="src/js/l.control.geosearch.js"></script>
+    <script src="src/js/l.geosearch.provider.esri.js"></script>
+    <script src="https://cdn.rawgit.com/vhiguitagps2017/libraries/ec4668fe/Build/CesiumUnminified/Cesium.js"></script><!--modify with the server name in production-->
+    <script src="dist/parsetogeojson.js"></script>
+    <script src="dist/leaflet-realtime.js"></script>
+    <!-- build:js app/app.js  -->
+    <!-- inject:js -->
+    <script src="app/app.module.js"></script>
+    <script src="app/servicios.js"></script>
+    <script src="app/apps/apps.state.js"></script>
+    <script src="app/apps/apps.controller.js"></script>
+    <script src="app/apps/templates/app1/app1.state.js"></script>
+    <script src="app/apps/templates/app1/app1.controller.js"></script>
+    <script src="app/apps/templates/app2/app2.state.js"></script>
+    <script src="app/apps/templates/app2/app2.controller.js"></script>
+    <script src="app/apps/templates/app3/app3.state.js"></script>
+    <script src="app/apps/templates/app3/app3.controller.js"></script>
+    <script src="app/services/empresa/lempresa.service.js"></script>
+    <script src="app/services/empresa/lempresa1.service.js"></script>
+    <script src="app/services/empresa/lempresa2.service.js"></script>
+    <script src="app/services/cost/lcost1.service.js"></script>
+    <script src="app/services/cost/lcost.service.js"></script>
+    <script src="app/services/requirement/lrequirement.service.js"></script>
+    <script src="app/services/auxtrack/lauxtrack.service.js"></script>
+    <script src="app/services/track/ltrack.service.js"></script>
+    <script src="app/services/user/user1.service.js"></script>
+    <script src="app/services/user/user.service.js"></script>
+    <script src="app/services/profiles/profile.service.js"></script>
+    <script src="app/services/profiles/page-ribbon.directive.js"></script>
+    <script src="app/services/userapp/app.service.js"></script>
+    <script src="app/services/userapp/userapp.service.js"></script>
+    <script src="app/services/map/mmapa.service.js"></script>
+    <script src="app/services/map/map.service.js"></script>
+    <script src="app/services/layer/lcapa.service.js"></script>
+    <script src="app/services/layer/layer.service.js"></script>
+    <script src="app/services/auth/register.service.js"></script>
+    <script src="app/services/auth/principal.service.js"></script>
+    <script src="app/services/auth/password-reset-init.service.js"></script>
+    <script src="app/services/auth/password-reset-finish.service.js"></script>
+    <script src="app/services/auth/password.service.js"></script>
+    <script src="app/services/auth/has-authority.directive.js"></script>
+    <script src="app/services/auth/has-any-authority.directive.js"></script>
+    <script src="app/services/auth/auth.service.js"></script>
+    <script src="app/services/auth/auth.jwt.service.js"></script>
+    <script src="app/services/auth/activate.service.js"></script>
+    <script src="app/services/auth/account.service.js"></script>
+    <script src="app/leaflet-maps/leaflet-maps.state.js"></script>
+    <script src="app/leaflet-maps/leaflet-maps.controller0.js"></script>
+    <script src="app/leaflet-maps/leaflet-maps.controller.js"></script>
+    <script src="app/leaflet-maps/angular-pageslide-directive.js"></script>
+    <script src="app/leaflet-maps/angular-drag-and-drop-lists.js"></script>
+    <script src="app/layouts/navbar/navbar.controller.js"></script>
+    <script src="app/layouts/navbar/active-menu.directive.js"></script>
+    <script src="app/layouts/navbar/active-link.directive.js"></script>
+    <script src="app/layouts/error/error.state.js"></script>
+    <script src="app/payment/payment.state.js"></script>
+    <script src="app/payment/payment.controller.js"></script>
+    <script src="app/home/home.state.js"></script>
+    <script src="app/home/home.controller.js"></script>
+    <script src="app/estudio/TOC/ngjs-color-picker.js"></script>
+    <script src="app/estudio/assigndevice/assigndevice.directive.js"></script>
+    <script src="app/estudio/assigndevice/assigndevice.controller.js"></script>
+    <script src="app/estudio/assigntable/assigntable.directive.js"></script>
+    <script src="app/estudio/assigntable/assigntable.controller.js"></script>
+    <script src="app/estudio/renamelayer/renamelayer.directive.js"></script>
+    <script src="app/estudio/renamelayer/renamelayer.controller.js"></script>
+    <script src="app/estudio/geotools/withintool/withintool.directive.js"></script>
+    <script src="app/estudio/geotools/withintool/withintool.controller.js"></script>
+    <script src="app/estudio/geotools/updatetool/updatetool.directive.js"></script>
+    <script src="app/estudio/geotools/updatetool/updatetool.controller.js"></script>
+    <script src="app/estudio/geotools/uniontool/uniontool.directive.js"></script>
+    <script src="app/estudio/geotools/uniontool/uniontool.controller.js"></script>
+    <script src="app/estudio/geotools/tintool/tintool.directive.js"></script>
+    <script src="app/estudio/geotools/tintool/tintool.controller.js"></script>
+    <script src="app/estudio/geotools/squaretool/squaretool.directive.js"></script>
+    <script src="app/estudio/geotools/squaretool/squaretool.controller.js"></script>
+    <script src="app/estudio/geotools/squaregridtool/squaregridtool.directive.js"></script>
+    <script src="app/estudio/geotools/squaregridtool/squaregridtool.controller.js"></script>
+    <script src="app/estudio/geotools/trianglegridtool/trianglegridtool.directive.js"></script>
+    <script src="app/estudio/geotools/trianglegridtool/trianglegridtool.controller.js"></script>
+    <script src="app/estudio/geotools/simplifiedtool/simplifiedtool.directive.js"></script>
+    <script src="app/estudio/geotools/simplifiedtool/simplifiedtool.controller.js"></script>
+    <script src="app/estudio/geotools/removetool/removetool.directive.js"></script>
+    <script src="app/estudio/geotools/removetool/removetool.controller.js"></script>
+    <script src="app/estudio/geotools/polilinetool/polilinetool.directive.js"></script>
+    <script src="app/estudio/geotools/polilinetool/polilinetool.controller.js"></script>
+    <script src="app/estudio/geotools/midpointtool/midpointtool.directive.js"></script>
+    <script src="app/estudio/geotools/midpointtool/midpointtool.controller.js"></script>
+    <script src="app/estudio/geotools/mergetool/mergetool.directive.js"></script>
+    <script src="app/estudio/geotools/mergetool/mergetool.controller.js"></script>
+    <script src="app/estudio/geotools/intersectool/intersectool.directive.js"></script>
+    <script src="app/estudio/geotools/intersectool/intersectool.controller.js"></script>
+    <script src="app/estudio/geotools/identitytool/identitytool.directive.js"></script>
+    <script src="app/estudio/geotools/identitytool/identitytool.controller.js"></script>
+    <script src="app/estudio/geotools/filtertool/filtertool.directive.js"></script>
+    <script src="app/estudio/geotools/filtertool/filtertool.controller.js"></script>
+    <script src="app/estudio/geotools/explodetool/explodetool.directive.js"></script>
+    <script src="app/estudio/geotools/explodetool/explodetool.controller.js"></script>
+    <script src="app/estudio/geotools/distancetool/distancetool.directive.js"></script>
+    <script src="app/estudio/geotools/distancetool/distancetool.controller.js"></script>
+    <script src="app/estudio/geotools/destinationtool/destinationtool.directive.js"></script>
+    <script src="app/estudio/geotools/destinationtool/destinationtool.controller.js"></script>
+    <script src="app/estudio/geotools/concavetool/concavetool.directive.js"></script>
+    <script src="app/estudio/geotools/concavetool/concavetool.controller.js"></script>
+    <script src="app/estudio/geotools/convextool/convextool.directive.js"></script>
+    <script src="app/estudio/geotools/convextool/convextool.controller.js"></script>
+    <script src="app/estudio/geotools/centroidtool/centroidtool.directive.js"></script>
+    <script src="app/estudio/geotools/centroidtool/centroidtool.controller.js"></script>
+    <script src="app/estudio/geotools/centertool/centertool.directive.js"></script>
+    <script src="app/estudio/geotools/centertool/centertool.controller.js"></script>
+    <script src="app/estudio/geotools/buffertool/buffertool.directive.js"></script>
+    <script src="app/estudio/geotools/buffertool/buffertool.controller.js"></script>
+    <script src="app/estudio/geotools/beziertool/beziertool.directive.js"></script>
+    <script src="app/estudio/geotools/beziertool/beziertool.controller.js"></script>
+    <script src="app/estudio/geotools/bboxtool/bboxtool.directive.js"></script>
+    <script src="app/estudio/geotools/bboxtool/bboxtool.controller.js"></script>
+    <script src="app/estudio/geotools/alongtool/alongtool.directive.js"></script>
+    <script src="app/estudio/geotools/alongtool/alongtool.controller.js"></script>
+    <script src="app/estudio/estudio.state.js"></script>
+    <script src="app/estudio/estudio.controller.js"></script>
+    <script src="app/estudio/drawposition/drawposition.directive.js"></script>
+    <script src="app/estudio/drawposition/drawposition.controller.js"></script>
+    <script src="app/estudio/clasifylayer/clasifylayer.directive.js"></script>
+    <script src="app/estudio/clasifylayer/clasifylayer.controller.js"></script>
+    <script src="app/estudio/angular-accordion.js"></script>
+    <script src="app/estudio/advancedquery/advancedquery.directive.js"></script>
+    <script src="app/estudio/advancedquery/advancedquery.controller.js"></script>
+    <script src="app/estudio/addexternallink/addexternallink.directive.js"></script>
+    <script src="app/estudio/addexternallink/addexternallink.controller.js"></script>
+    <script src="app/estudio/addarcgisfeature/addarcgisfeature.directive.js"></script>
+    <script src="app/estudio/addarcgisfeature/addarcgisfeature.controller.js"></script>
+    <script src="app/entities/mapa/mapa-dialog.controller.js"></script>
+    <script src="app/entities/mapa/mapa-detail.controller.js"></script>
+    <script src="app/entities/mapa/mapa-delete-dialog.controller.js"></script>
+    <script src="app/entities/mapa/mapa.state.js"></script>
+    <script src="app/entities/mapa/mapa.service.js"></script>
+    <script src="app/entities/mapa/mapa.controller.js"></script>
+    <script src="app/entities/entity.state.js"></script>
+    <script src="app/entities/capa/capa-dialog.controller.js"></script>
+    <script src="app/entities/capa/capa-detail.controller.js"></script>
+    <script src="app/entities/capa/capa-delete-dialog.controller.js"></script>
+    <script src="app/entities/capa/capa.state.js"></script>
+    <script src="app/entities/capa/capa.service.js"></script>
+    <script src="app/entities/capa/capa.controller.js"></script>
+    <script src="app/entities/aplicacion/aplicacion-dialog.controller.js"></script>
+    <script src="app/entities/aplicacion/aplicacion-detail.controller.js"></script>
+    <script src="app/entities/aplicacion/aplicacion-delete-dialog.controller.js"></script>
+    <script src="app/entities/aplicacion/aplicacion.state.js"></script>
+    <script src="app/entities/aplicacion/aplicacion.service.js"></script>
+    <script src="app/entities/aplicacion/aplicacion.controller.js"></script>
+    <script src="app/components/util/truncate-words.filter.js"></script>
+    <script src="app/components/util/truncate-characters.filter.js"></script>
+    <script src="app/components/util/sort-by.directive.js"></script>
+    <script src="app/components/util/sort.directive.js"></script>
+    <script src="app/components/util/parse-links.service.js"></script>
+    <script src="app/components/util/pagination-util.service.js"></script>
+    <script src="app/components/util/jhi-item-count.directive.js"></script>
+    <script src="app/components/util/date-util.service.js"></script>
+    <script src="app/components/util/data-util.service.js"></script>
+    <script src="app/components/util/capitalize.filter.js"></script>
+    <script src="app/components/util/base64.service.js"></script>
+    <script src="app/components/login/login.service.js"></script>
+    <script src="app/components/login/login.controller.js"></script>
+    <script src="app/account/login/login.state.js"></script>
+    <script src="app/account/login/login.controller.js"></script>
+    <script src="app/components/language/language.service.js"></script>
+    <script src="app/components/language/language.filter.js"></script>
+    <script src="app/components/language/language.controller.js"></script>
+    <script src="app/components/language/language.constants.js"></script>
+    <script src="app/components/interceptor/bootswatch.interceptor.js"></script>
+    <script src="app/components/form/show-validation.directive.js"></script>
+    <script src="app/components/form/pagination.constants.js"></script>
+    <script src="app/components/form/minbytes.directive.js"></script>
+    <script src="app/components/form/maxbytes.directive.js"></script>
+    <script src="app/components/bootswatch/bootswatch.service.js"></script>
+    <script src="app/components/bootswatch/bootswatch.directive.js"></script>
+    <script src="app/components/bootswatch/bootswatch.controller.js"></script>
+    <script src="app/components/alert/alert-error.directive.js"></script>
+    <script src="app/components/alert/alert.service.js"></script>
+    <script src="app/components/alert/alert.directive.js"></script>
+    <script src="app/blocks/interceptor/notification.interceptor.js"></script>
+    <script src="app/blocks/interceptor/errorhandler.interceptor.js"></script>
+    <script src="app/blocks/interceptor/auth-expired.interceptor.js"></script>
+    <script src="app/blocks/interceptor/auth.interceptor.js"></script>
+    <script src="app/blocks/handlers/translation.handler.js"></script>
+    <script src="app/blocks/handlers/state.handler.js"></script>
+    <script src="app/blocks/config/uib-pagination.config.js"></script>
+    <script src="app/blocks/config/uib-pager.config.js"></script>
+    <script src="app/blocks/config/translation-storage.provider.js"></script>
+    <script src="app/blocks/config/translation.config.js"></script>
+    <script src="app/blocks/config/localstorage.config.js"></script>
+    <script src="app/blocks/config/http.config.js"></script>
+    <script src="app/blocks/config/compile.config.js"></script>
+    <script src="app/blocks/config/alert.config.js"></script>
+    <script src="app/app.state.js"></script>
+    <script src="app/app.constants.js"></script>
+    <!--<script src="app/site/site.state.js"></script>-->
+    <script src="app/admin/user-management/user-management-dialog.controller.js"></script>
+    <script src="app/admin/user-management/user-management-detail.controller.js"></script>
+    <script src="app/admin/user-management/user-management-delete-dialog.controller.js"></script>
+    <script src="app/admin/user-management/user-management.state.js"></script>
+    <script src="app/admin/user-management/user-management.controller.js"></script>
+    <script src="app/admin/metrics/metrics.state.js"></script>
+    <script src="app/admin/metrics/metrics.service.js"></script>
+    <script src="app/admin/metrics/metrics.modal.controller.js"></script>
+    <script src="app/admin/metrics/metrics.controller.js"></script>
+    <script src="app/admin/logs/logs.state.js"></script>
+    <script src="app/admin/logs/logs.service.js"></script>
+    <script src="app/admin/logs/logs.controller.js"></script>
+    <script src="app/admin/health/health.state.js"></script>
+    <script src="app/admin/health/health.service.js"></script>
+    <script src="app/admin/health/health.modal.controller.js"></script>
+    <script src="app/admin/health/health.controller.js"></script>
+    <script src="app/admin/docs/docs.state.js"></script>
+    <script src="app/admin/configuration/configuration.state.js"></script>
+    <script src="app/admin/configuration/configuration.service.js"></script>
+    <script src="app/admin/configuration/configuration.controller.js"></script>
+    <script src="app/admin/audits/audits.state.js"></script>
+    <script src="app/admin/audits/audits.service.js"></script>
+    <script src="app/admin/audits/audits.controller.js"></script>
+    <script src="app/admin/admin.state.js"></script>
+    <script src="app/account/statistics/statistics.state.js"></script>
+    <script src="app/account/statistics/statistics.controller.js"></script>
+    <script src="app/account/settings/settings.state.js"></script>
+    <script src="app/account/settings/settings.controller.js"></script>
+    <script src="app/account/reset/request/reset.request.state.js"></script>
+    <script src="app/account/reset/request/reset.request.controller.js"></script>
+    <script src="app/account/reset/finish/reset.finish.state.js"></script>
+    <script src="app/account/reset/finish/reset.finish.controller.js"></script>
+    <script src="app/account/register/register.state.js"></script>
+    <script src="app/account/register/register.controller.js"></script>
+    <script src="app/account/password/password-strength-bar.directive.js"></script>
+    <script src="app/account/password/password.state.js"></script>
+    <script src="app/account/password/password.controller.js"></script>
+    <script src="app/account/activate/activate.state.js"></script>
+    <script src="app/account/activate/activate.controller.js"></script>
+    <script src="app/account/account.state.js"></script>
+    <!-- endinject -->
+    <!-- endbuild -->
+    <script src="https://rawgit.com/mahmutduva/6c251e5fce9f69221f5c82d27bb5d549/raw/fc70ce11072acb3ce7cdfdbfa9dec1cfafdda2f5/aside-menu.min.js"></script>
+    <script type="text/javascript" src="js/w2ui-1.4.2.min.js"></script>
+    <script src="app/estudio/angular-accordion.js"></script>
+    <script src="content/js/csv.js"></script>
+    <script src="content/js/ngPopover.js"></script>
+    <script src="content/js/easy-button.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+/* Styles go here */
+
+aside-menu{
+    display: none;
+}
+.aside-menu{
+    background-color: #303030;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 0;
+    overflow: hidden;
+    max-height: 100%;
+    display: block;
+    margin-left: 48px;
+}
+
+.aside-menu-content{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 48px;
+    right: -48px;
+    width: 98%;
+    background-color: #fff;
+    overflow: hidden;
+    -webkit-transform: none;
+    transform: none;
+    z-index: 1;
+}
+.aside-menu-animate{
+    -webkit-transition: -webkit-transform 200ms ease;
+    transition: transform 200ms ease;
+}
+
+.aside-back-drop{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 200px;
+    z-index: 99;
+    background: #000000;
+    opacity: 0;
+    -webkit-transition: opacity .15s linear;
+    -o-transition: opacity .15s linear;
+    transition: opacity .15s linear;
+}
+
+.aside-back-drop.in{
+    opacity: .1;
+}

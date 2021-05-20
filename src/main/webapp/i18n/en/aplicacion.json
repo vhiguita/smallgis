@@ -1,0 +1,29 @@
+{
+    "smallgisApp": {
+        "aplicacion" : {
+            "home": {
+                "title": "Aplicacions",
+                "createLabel": "Create a new Aplicacion",
+                "createOrEditLabel": "Create or edit a Aplicacion",
+                "search": "Search for Aplicacion"
+            },
+            "created": "A new Aplicacion is created with identifier {{ param }}",
+            "updated": "A Aplicacion is updated with identifier {{ param }}",
+            "deleted": "A Aplicacion is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Aplicacion {{ id }}?"
+            },
+            "detail": {
+                "title": "Aplicacion"
+            },
+            "titulo": "Titulo",
+            "mapid": "Mapid",
+            "empresa": "Empresa",
+            "usuario": "Usuario",
+            "descripcion": "Descripcion",
+            "tipoApp": "Tipo App",
+            "espublico": "Espublico",
+            "fecha": "Fecha"
+        }
+    }
+}

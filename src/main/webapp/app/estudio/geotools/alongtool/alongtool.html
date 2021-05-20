@@ -1,0 +1,56 @@
+<script type="text/ng-template" id="alongtool.html">
+        <div class="modal fade">
+         <div class="modal-dialog">
+           <div class="modal-content">
+             <div class="modal-header">
+               <button type="button" class="close" ng-click="close('Cancel')" data-dismiss="modal" aria-hidden="true">&times;</button>
+               <h4 class="modal-title">Punto a lo largo de una línea</h4>
+             </div>
+             <div class="modal-body">
+               <div class="container-1 main-section" style="/*border:1px solid #ccc;border-radius: 4px;padding-bottom: 10px;*/">
+                 <div class="content-panel" style="border:none;box-shadow:none;">
+                   <div class="container-1">
+                     <div class="img-content">
+                       <md-icon md-svg-icon="content/images/turf-along.svg" style="color: white; width:100px; height:100px;"></md-icon>
+                         <!--<img ng-src="{{along_img}}" style="height=100; width=100; color=white;"  />-->
+                     </div>
+                     <div class="description">
+                       <div class="content-description">
+                        Toma una línea y devuelve un punto a una distancia especificada a lo largo de la línea.
+                       </div>
+                     </div>
+                   </div>
+                   <div class="container-2">
+                     <div class="layer-1">
+                      <div>
+                       Capa:<select name="layer_1_sel" id="layer_1_sel" data-ng-model="ddlvalue">
+                       <option value="">---Seleccionar capa---</option>
+                        <option ng-repeat="layer in layersMap" value="{{layer.id}}">{{layer.name}}</option>
+                       </select>
+                      </div>
+                      </br>
+                     <div ng-init="distance=1">
+                       Distancia: <input ng-model="distance" type="number" min="1" required></input>
+                     </div>
+                     </br>
+                    <div ng-init="ddlunit='kilometers'">
+                      Unidad: <select  name="sel_unit" id="sel_unit" data-ng-model="ddlunit">
+                                <option value='kilometers'>Kilometros</option>
+                                <option value='Meters'>Metros</option>
+                                <option value='miles'>Millas</option>
+                                <option value='radians'>Radianes</option>
+                                <option value='degrees'>Grados</option>
+                              </select>
+                     </div>
+                     </div>
+                   </div>
+                </div>
+               </div>
+             </div>
+             <div class="modal-footer">
+               <md-button  ng-click="process()" class="btn btn-primary">Ejecutar</md-button>
+             </div>
+           </div>
+         </div>
+       </div>
+</script>

@@ -1,0 +1,192 @@
+<div>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <h1 translate="register.title" style="color:#FFFFFF;">Registration</h1>
+
+            <div class="alert alert-success" ng-show="vm.success" translate="register.messages.success" style="font-family: 'Open Sans', Helvetica, Arial, sans-serif;font-size: 14px;">
+                <strong>Registration saved!</strong> Please check your email for confirmation.
+            </div>
+
+            <div class="alert alert-danger" ng-show="vm.error" translate="register.messages.error.fail" style="font-family: 'Open Sans', Helvetica, Arial, sans-serif;font-size: 14px;">
+                <strong>Registration failed!</strong> Please try again later.
+            </div>
+
+            <div class="alert alert-danger" ng-show="vm.errorUserExists" translate="register.messages.error.userexists" style="font-family: 'Open Sans', Helvetica, Arial, sans-serif;font-size: 14px;">
+                <strong>Login name already registered!</strong> Please choose another one.
+            </div>
+
+            <div class="alert alert-danger" ng-show="vm.errorEmailExists" translate="register.messages.error.emailexists" style="font-family: 'Open Sans', Helvetica, Arial, sans-serif;font-size: 14px;">
+                <strong>E-mail is already in use!</strong> Please choose another one.
+            </div>
+
+            <div class="alert alert-danger" ng-show="vm.doNotMatch" translate="global.messages.error.dontmatch" style="font-family: 'Open Sans', Helvetica, Arial, sans-serif;font-size: 14px;">
+                The password and its confirmation do not match!
+            </div>
+            <div class="alert alert-danger" ng-show="vm.errorCompanyId" translate="global.messages.error.companyid" style="font-family: 'Open Sans', Helvetica, Arial, sans-serif;font-size: 14px;">
+                The company is not registered!
+            </div>
+            <div class="alert alert-danger" ng-show="vm.errorCompanyCode" translate="global.messages.error.companycode" style="font-family: 'Open Sans', Helvetica, Arial, sans-serif;font-size: 14px;">
+                The payment code is not valid!
+            </div>
+            <div class="alert alert-danger" ng-show="vm.expiredAccount" translate="global.messages.error.expiredaccount" style="font-family: 'Open Sans', Helvetica, Arial, sans-serif;font-size: 14px;">
+                The account has expired, the company should renovate the plan!
+            </div>
+             <div class="alert alert-danger" ng-show="vm.numberOfUsersBP" translate="global.messages.error.numberofusersbp" style="font-family: 'Open Sans', Helvetica, Arial, sans-serif;font-size: 14px;">
+                It cannot register more users with this plan!
+            </div>
+            <div class="alert alert-danger" ng-show="vm.numberOfUsers" translate="global.messages.error.numberofusers" style="font-family: 'Open Sans', Helvetica, Arial, sans-serif;font-size: 14px;">
+                It cannot register more users!
+            </div>
+            <div class="alert alert-danger" ng-show="vm.errorAdminExists" translate="global.messages.error.adminexists" style="font-family: 'Open Sans', Helvetica, Arial, sans-serif;font-size: 14px;">
+                There is an admin user for the company!
+            </div>
+             <div class="alert alert-danger" ng-show="vm.errorCredentials" translate="global.messages.error.credentials" style="font-family: 'Open Sans', Helvetica, Arial, sans-serif;font-size: 14px;">
+                The credentials do not correspond to the type of plan!
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+            <form ng-show="!vm.success" name="form" role="form" ng-submit="vm.register()" show-validation>
+                <div class="form-group">
+                    <label class="control-label" for="login" translate="global.form.username" style="font-family: 'Open Sans', Helvetica, Arial, sans-serif;font-size: 14px;">Username</label>
+                    <input type="text" class="form-control" id="login" name="login" placeholder="{{'global.form.username.placeholder' | translate}}"
+                           ng-model="vm.registerAccount.login" ng-minlength=1 ng-maxlength=50 ng-pattern="/^[_'.@A-Za-z0-9-]*$/" required>
+                    <div ng-show="vm.submitted && form.login.$dirty && form.login.$invalid">
+                        <p class="help-block"
+                               ng-show="form.login.$error.required" translate="register.messages.validate.login.required" style="font-family: 'Open Sans', Helvetica, Arial, sans-serif;font-size: 14px;">
+                            Your username is required.
+                        </p>
+                        <p class="help-block"
+                               ng-show="vm.submitted && form.login.$error.minlength" translate="register.messages.validate.login.minlength" style="font-family: 'Open Sans', Helvetica, Arial, sans-serif;font-size: 14px;">
+                            Your username is required to be at least 1 character.
+                        </p>
+                        <p class="help-block"
+                               ng-show="vm.submitted && form.login.$error.maxlength" translate="register.messages.validate.login.maxlength" style="font-family: 'Open Sans', Helvetica, Arial, sans-serif;font-size: 14px;">
+                            Your username cannot be longer than 50 characters.
+                        </p>
+                        <p class="help-block"
+                               ng-show="form.$submitted && form.login.$error.pattern" translate="register.messages.validate.login.pattern" style="font-family: 'Open Sans', Helvetica, Arial, sans-serif;font-size: 14px;">
+                            Your username can only contain lower-case letters and digits.
+                    </p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="email" translate="global.form.email" style="font-family: 'Open Sans', Helvetica, Arial, sans-serif;font-size: 14px;">E-mail</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="{{'global.form.email.placeholder' | translate}}"
+                           ng-model="vm.registerAccount.email" ng-minlength=5 ng-maxlength=100 required>
+                    <div ng-show="form.email.$dirty && form.email.$invalid">
+                        <p class="help-block"
+                               ng-show="form.email.$error.required" translate="global.messages.validate.email.required" style="font-family: 'Open Sans', Helvetica, Arial, sans-serif;font-size: 14px;">
+                            Your e-mail is required.
+                        </p>
+                        <p class="help-block"
+                               ng-show="form.email.$error.email" translate="global.messages.validate.email.invalid" style="font-family: 'Open Sans', Helvetica, Arial, sans-serif;font-size: 14px;">
+                            Your e-mail is invalid.
+                        </p>
+                        <p class="help-block"
+                               ng-show="form.email.$error.minlength" translate="global.messages.validate.email.minlength" style="font-family: 'Open Sans', Helvetica, Arial, sans-serif;font-size: 14px;">
+                            Your e-mail is required to be at least 5 characters.
+                        </p>
+                        <p class="help-block"
+                               ng-show="form.email.$error.maxlength" translate="global.messages.validate.email.maxlength" style="font-family: 'Open Sans', Helvetica, Arial, sans-serif;font-size: 14px;">
+                            Your e-mail cannot be longer than 100 characters.
+                        </p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="password" translate="global.form.newpassword" style="font-family: 'Open Sans', Helvetica, Arial, sans-serif;font-size: 14px;">New password</label>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="{{'global.form.newpassword.placeholder' | translate}}"
+                           ng-model="vm.registerAccount.password" ng-minlength=4 ng-maxlength=50 required>
+                    <div ng-show="form.password.$dirty && form.password.$invalid">
+                        <p class="help-block"
+                               ng-show="form.password.$error.required" translate="global.messages.validate.newpassword.required" style="font-family: 'Open Sans', Helvetica, Arial, sans-serif;font-size: 14px;">
+                            Your password is required.
+                        </p>
+                        <p class="help-block"
+                               ng-show="form.password.$error.minlength" translate="global.messages.validate.newpassword.minlength" style="font-family: 'Open Sans', Helvetica, Arial, sans-serif;font-size: 14px;">
+                            Your password is required to be at least 4 characters.
+                        </p>
+                        <p class="help-block"
+                               ng-show="form.password.$error.maxlength" translate="global.messages.validate.newpassword.maxlength" style="font-family: 'Open Sans', Helvetica, Arial, sans-serif;font-size: 14px;">
+                            Your password cannot be longer than 50 characters.
+                        </p>
+                    </div>
+                    <password-strength-bar password-to-check="vm.registerAccount.password"></password-strength-bar>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="confirmPassword" translate="global.form.confirmpassword" style="font-family: 'Open Sans', Helvetica, Arial, sans-serif;font-size: 14px;">New password confirmation</label>
+                    <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="{{'global.form.confirmpassword.placeholder' | translate}}"
+                           ng-model="vm.confirmPassword" ng-minlength=4 ng-maxlength=50 required>
+                    <div ng-show="form.confirmPassword.$dirty && form.confirmPassword.$invalid">
+                        <p class="help-block"
+                               ng-show="form.confirmPassword.$error.required" translate="global.messages.validate.confirmpassword.required" style="font-family: 'Open Sans', Helvetica, Arial, sans-serif;font-size: 14px;">
+                            Your confirmation password is required.
+                        </p>
+                        <p class="help-block"
+                               ng-show="form.confirmPassword.$error.minlength" translate="global.messages.validate.confirmpassword.minlength" style="font-family: 'Open Sans', Helvetica, Arial, sans-serif;font-size: 14px;">
+                            Your confirmation password is required to be at least 4 characters.
+                        </p>
+                        <p class="help-block"
+                               ng-show="form.confirmPassword.$error.maxlength" translate="global.messages.validate.confirmpassword.maxlength" style="font-family: 'Open Sans', Helvetica, Arial, sans-serif;font-size: 14px;">
+                            Your confirmation password cannot be longer than 50 characters.
+                        </p>
+                    </div>
+                </div>
+                <div>
+                 <p translate="global.messages.plan.type" style="font-family: 'Open Sans', Helvetica, Arial, sans-serif;font-size: 14px;">Tipo de plan</p>
+                </div>
+                <div class="form-group" id="business-content">
+                <input type="checkbox" id="chkbusiness_" name="chkbusiness_" ng-model="vm.registerAccount.chkbusiness_" ng-change="vm.handleClick_(vm.registerAccount.chkbusiness_)"><label class="control-label" style="color:#FFFFFF;font-family: 'Open Sans', Helvetica, Arial, sans-serif;font-size: 14px;" for="business" translate="global.form.basic">Basic</label>
+                 <input type="checkbox" id="chkbusiness" name="chkbusiness" ng-model="vm.registerAccount.chkbusiness" ng-change="vm.handleClick(vm.registerAccount.chkbusiness)"><label class="control-label" style="color:#FFFFFF;font-family: 'Open Sans', Helvetica, Arial, sans-serif;font-size: 14px;" for="business" translate="global.form.business">Business</label>
+                 <input type="text" id="business" name="business" class="form-control" ng-model="vm.registerAccount.businessType" placeholder="{{'global.form.businessID.placeholder' | translate}}" required/>
+                  <div ng-show="form.business.$dirty && form.business.$invalid">
+                    <p class="help-block" ng-show="form.business.$error.required" translate="register.messages.validate.businessID.required" style="font-family: 'Open Sans', Helvetica, Arial, sans-serif;font-size: 14px;">
+                      Your company identification is required
+                    </p>
+                  </div>
+                  <br>
+                  <input type="text" id="businessCode" name="businessCode" class="form-control" ng-model="vm.registerAccount.businessCode" placeholder="{{'global.form.businesscode.placeholder' | translate}}" required/>
+                   <div ng-show="form.business.$dirty && form.business.$invalid">
+                     <p class="help-block" ng-show="form.business.$error.required" translate="register.messages.validate.businesscode.required" style="font-family: 'Open Sans', Helvetica, Arial, sans-serif;font-size: 14px;">
+                       Your business code is required
+                     </p>
+                   </div>
+                     <p id="basic-text"><br>Si no posee un código, realice su pago en la página principal <a href="http://www.smallgis.co">smallgis.co</a> para obtener uno nuevo para el plan básico.</p>
+                  <input type="checkbox" id="chkadmin" name="chkadmin" ng-model="vm.registerAccount.chkadmin" ng-change="vm.handleAdminClick(vm.registerAccount.chkadmin)"><label id="lbl-admin" class="control-label" style="color:#FFFFFF;font-family: 'Open Sans', Helvetica, Arial, sans-serif;font-size: 14px;" for="business" translate="global.form.admin">Es administrador</label>
+                  <p id="business-text">Si no posee un código corporativo solicitelo a la empresa a la que este asociado o realice su pago en la página principal <a href="http://www.smallgis.co">smallgis.co</a> para obtener uno nuevo para su negocio con el plan corporativo.</p>
+                 
+                </div>
+                <div class="form-group">
+                  <label class="control-label" for="country" translate="global.form.country" style="font-family: 'Open Sans', Helvetica, Arial, sans-serif;font-size: 14px;">Country</label>
+                  <select name="selectcountries" id="selectcountries" ng-model="vm.registerAccount.countryCode" style="width:100%;font-family:'Open Sans', Helvetica, Arial, sans-serif;font-size: 14px;">
+                    <option value="AR">Argentina</option>
+                    <option value="BZ">Belice</option>
+                    <option value="BO">Bolivia</option>
+                    <option value="CO">Colombia</option>
+                    <option value="CR">Costa Rica</option>
+                    <option value="CU">Cuba</option>
+                    <option value="DO">Republica Dominicana</option>
+                    <option value="EC">Ecuador</option>
+                    <option value="SV">El Salvador</option>
+                    <option value="ES">España</option>
+                    <option value="US">Estados Unidos</option>
+                    <option value="GT">Guatemala</option>
+                    <option value="HN">Honduras</option>
+                    <option value="MX">Mexico</option>
+                    <option value="PA">Panama</option>
+                    <option value="PY">Paraguay</option>
+                    <option value="PE">Peru</option>
+                    <option value="PR">Puerto Rico</option>
+                    <option value="UY">Uruguay</option>
+                    <option value="VE">Venezuela</option>
+                  </select>
+              </div>
+                <!--<button type="submit" ng-disabled="form.$invalid" class="btn btn-primary" translate="register.form.button" style="font-family: 'Open Sans', Helvetica, Arial, sans-serif;font-size: 14px;">Register</button>-->
+                <button id="btn-submit-register" type="submit" ng-disabled="form.$invalid" translate="register.form.button" ng-click="vm.submitted=true">Register</button>
+            </form>
+            <p></p>
+            <!--<div class="alert alert-warning" translate="global.messages.info.authenticated" translate-compile style="font-family: 'Open Sans', Helvetica, Arial, sans-serif;font-size: 14px;">
+                If you want to <a class="alert-link" href="" ng-click="vm.login()" style="font-family: 'Open Sans', Helvetica, Arial, sans-serif;font-size: 14px;">sign in</a>, you can try the default accounts:<br/>- Administrator (login="admin" and password="admin") <br/>- User (login="user" and password="user").
+            </div>-->
+        </div>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+<script type="text/ng-template" id="simplifiedtool.html">
+        <div class="modal fade">
+         <div class="modal-dialog">
+           <div class="modal-content">
+             <div class="modal-header">
+               <button type="button" class="close" ng-click="close('Cancel')" data-dismiss="modal" aria-hidden="true">&times;</button>
+               <h4 class="modal-title">Simplificar la geometria de una capa</h4>
+             </div>
+             <div class="modal-body">
+               <div class="container-2 main-section">
+                <div class="content-panel" style="border:none;box-shadow:none;">
+                   <div class="container-1">
+                     <div class="img-content">
+                         <md-icon md-svg-icon="content/images/turf-simplify.svg" style="color: white; width:100px; height:100px;"></md-icon>
+                     </div>
+                     <div class="description">
+                       <div class="content-description">
+                        Toma una capa de lineas o polígonos y devuelve una versión simplificada . El resultado es una capa de líneas o polígonos con menos vertices.
+                       </div>
+                     </div>
+                   </div>
+                   <div class="container-2">
+                     <div class="layer-1">
+                      <div>
+                       Capa:<select name="layer_1_sel" id="layer_1_sel" data-ng-model="ddlvalue">
+                       <option value="">---Seleccionar capa---</option>
+                        <option ng-repeat="layer in layersMap" value="{{layer.id}}">{{layer.name}}</option>
+                       </select>
+                       </div>
+                        </br>
+                       <div ng-init="tolerance=0.01">
+                         Tolerancia: <input ng-model="tolerance" id="tolerance" type="number" min="0.01" step="0.01" required></input>
+                       </div>
+                     </div>
+                   </div>
+                </div>
+               </div>
+             </div>
+             <div class="modal-footer">
+               <md-button ng-click="process()" class="btn btn-primary" data-dismiss="modal">Ejecutar</md-button>
+             </div>
+           </div>
+         </div>
+       </div>
+</script>

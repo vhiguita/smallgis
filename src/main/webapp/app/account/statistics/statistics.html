@@ -1,0 +1,27 @@
+<div style="overflow: hidden;
+    overflow-y:scroll;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;height:450px;">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+           <h2 translate="global.menu.statistics.title" translate-values="{username: '{{vm.account.login}}'}">Statistics for [<b>{{vm.account.login}}</b>]</h2>
+           <div class="form-group">
+               <label class="control-label" for="user" translate="global.menu.layers"></label>
+               <input type="text" class="form-control" id="nlayers" name="nlayers" ng-model="vm.statisticsAccount.nlayers" style="width:120px; height: 90px; font-size:76px; text-align: center;     background-color: orange; color: black;" readonly>
+               <label class="control-label" for="user" translate="global.menu.maps"></label>
+               <input type="text" class="form-control" id="nmaps" name="nmaps" ng-model="vm.statisticsAccount.nmaps" style="width:120px; height: 90px; font-size:76px; text-align: center;     background-color: orange; color: black;" readonly>
+               <label class="control-label" for="user" translate="global.menu.apps"></label>
+               <input type="text" class="form-control" id="napps" name="napps" ng-model="vm.statisticsAccount.napps" style="width:120px; height: 90px; font-size:76px; text-align: center;     background-color: orange; color: black;" readonly>
+           </div>
+           <div class="form-group">
+               <label class="control-label" for="user" translate="global.menu.statistics.user">User</label>
+               <input type="text" class="form-control" id="user" name="user" ng-model="vm.statisticsAccount.user" ng-minlength=5 ng-maxlength=30 maxlength="30" readonly style="color:black; background-color: orange; font-size:36px;">
+           </div>
+           <div class="form-group">
+               <label class="control-label" for="userplan" translate="global.menu.statistics.userplan">User plan</label>
+               <input type="text" class="form-control" id="user" name="user" ng-model="vm.statisticsAccount.userplan" ng-minlength=5 ng-maxlength=30 maxlength="30" readonly style="color:black; background-color: orange; font-size:36px;">
+           </div>
+        </div>
+    </div>
+</div>

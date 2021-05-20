@@ -1,0 +1,49 @@
+<script type="text/ng-template" id="polilinetool.html">
+        <div class="modal fade">
+         <div class="modal-dialog">
+           <div class="modal-content">
+             <div class="modal-header">
+               <button type="button" class="close" ng-click="close('Cancel')" data-dismiss="modal" aria-hidden="true">&times;</button>
+               <h4 class="modal-title">Generar isolineas</h4>
+             </div>
+             <div class="modal-body">
+               <div class="container-2 main-section">
+                <div class="content-panel" style="border:none;box-shadow:none;">
+                   <div class="container-1">
+                     <div class="img-content">
+                         <md-icon md-svg-icon="content/images/turf-isoline.svg" style="color: white; width:100px; height:100px;"></md-icon>
+                     </div>
+                     <div class="description">
+                       <div class="content-description">
+                        Toma una capa de puntos con valores z y una serie de saltos de valor y genera isolíneas
+                       </div>
+                     </div>
+                   </div>
+                   <div class="container-2">
+                     <div class="layer-1">
+                      <div>
+                       Capa:<select name="layer_1_sel" id="layer_1_sel" data-ng-model="ddlvalue">
+                       <option value="">---Seleccionar capa---</option>
+                        <option ng-repeat="layer in layersMap" value="{{layer.layer._leaflet_id}}">{{layer.name}}</option>
+                       </select>
+                      </div>
+                      <br />
+                      <div ng-init="resolution=1">
+                        Resolucion: <input id="resolution" ng-model="resolution" type="number" min="1" max="10" required></input>
+                      </div>
+                       <br />
+                      <div ng-init="property='GRID_CODE'">
+                        Propiedad: <input id="property" ng-model="property" type="text" required></input>
+                      </div>
+                     </div>
+                   </div>
+                </div>
+              </div>
+             </div>
+             <div class="modal-footer">
+               <md-button ng-click="process()" class="btn btn-primary" data-dismiss="modal">Ejecutar</md-button>
+             </div>
+           </div>
+         </div>
+       </div>
+</script>

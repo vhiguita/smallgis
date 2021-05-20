@@ -1,0 +1,287 @@
+<div style="overflow-x:hidden;overflow-y:scroll;height:600px;">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <div ng-switch="vm.isAuthenticated()">
+        <h2 translate="global.menu.welcome.title" translate-values="{username: '{{vm.account.login}}'}">Bienvenido <b>{{vm.account.login}}</b></h2>
+      </div>
+      <div>
+        <md-content>
+          <md-tabs md-dynamic-height md-border-bottom>
+            <md-tab label="Que es">
+              <md-content class="md-padding">
+                <div>
+                  <div class="row">
+                    <div class="col-md-5 col-md-offset-1 col-sm-6">
+                      <img class="img-responsive" src="../../site/images/smallgis1.jpg">
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-md-5 col-sm-6">
+                      <h3><h3>Que es SmallGIS?</h3></h3>
+                      <p>SmallGIS es un Sistema de información Geográfica en la nube, que le permite gestionar, analizar, desplegar temáticamente y compartir sus capas de información con otros usuarios o clientes.</p>
+                      <p>Al estar basado en estándares abiertos permite integrar los formatos de servicios geográficos más utilizados actualmente (ArcGIS, WMS, WFS, WCS, Mapbox, CartoDB)</p>
+                      <p>Con la potencia de las bases de datos no estructuradas le permite tener el control total sobre la definición t construcción de sus datos geográficos</p>
+                    </div>
+                    <!-- /.col -->
+                  </div>
+                  <!-- /.row -->
+                </div>
+              </md-content>
+            </md-tab>
+            <md-tab label="Para que sirve">
+              <md-content class="md-padding">
+                <div>
+                  <div class="row">
+                    <div class="col-md-4 col-md-push-3 col-md-offset-1 col-sm-6">
+                      <img class="img-responsive" src="../../site/images/smallgis3.jpg">
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-md-3 col-md-pull-4 col-sm-6">
+                      <h3>Para que sirve SmallGIS?</h3>
+                      <p>Al igual que un Sistema de Información Geográfico de escritorio, SmallGIS le permite la gestión, análisis espacial, despliegue temático y reporte de datos geográficos, pero en la nube.</p>
+                      <p>La diferencia radica, que que no necesita instalar ni licenciar ninguna utilidad y esta lista para usar.</p>
+                      <p>Sus datos estarán siempre disponibles, no importa el lugar y el dispositvo que utilice</p>
+                      <p>Podrá compartir sus mapas con clientes, entidades o personas que los requiera.</p>
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-md-3 col-sm-6">
+                      <h3>Tiene la misma capacidad de un GIS de Escritorio?</h3>
+                      <p>SmallGIS no pretende suplir un GIS de Escritorio, pero si satisfacer las necesidades GIS básicas de la mayoría de usuarios Especialistas y no especialistas que requieren gestionar y analizar sus datos geográficos e imprimirlos o compartirlos en Internet.  </p>
+                      <p>
+                        SmallGIS le permite gestionar y analizar fácilmente capas con miles de entidades geográficas, pero con las limitaciones propias de internet</p>
+                        <p>
+                          SmallGIS incorpora los principales análisis espaciales de tipo vectorial e ir incorporando utilidades, en un esquema de maduración continua.</p>
+                        </div>
+                        <!-- /.col -->
+                      </div>
+                      <!-- /.row -->
+                    </div>
+
+                  </md-content>
+                </md-tab>
+                <md-tab label="Que hace">
+                  <md-content class="md-padding">
+                    <div>
+                      <div class="row">
+                        <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
+                          <h3>Que hace SmallGIS?</h3>
+                          <p class="text-left">Con SmallGIS puede mostrar la ubicación de sus clientes, vendedores, infraestructura y vehiculos que tiene almacenado en hojas electrónicas o conectar directamente el GPS del dispositivo que quiere monitorear para obtener datos de ubicación y seguimiento en tiempo real.</p>
+                          <p class="text-left">
+                            Igualmente puede incorporar los datos geográficos de sus proyectos víales, prediales, energéticos, petroleros, ambientales y sociales  y realizar análisis entre las diferentes capas como impactos ambientales, afectaciones sociales, interferencias y restricciones, entre otros.</p>
+                            <p class="text-left">
+                              Responder a los requerimientos de reguladores y autoridades ambientales como los informes de cumplimiento ambiental o  los diferentes estudios requeridos para la obtención de autorizaciones o licencias de proyectos (EAA, EIA, PMA).  </p>
+                            </div>
+                            <!-- /.col -->
+                          </div>
+                        </div>
+
+                      </md-content>
+                    </md-tab>
+                    <md-tab label="Como funciona">
+                      <md-content class="md-padding">
+                        <div>
+                          <div class="row">
+                            <div class="col-md-5 col-md-offset-1 col-sm-6">
+                              <img class="img-responsive" src="../../site/images/smallgis3.jpg">
+                            </div>
+                            <!-- /.col -->
+                            <div class="col-md-5 col-sm-6">
+                              <h3>Como funciona SmallGIS?</h3>
+                              <p><i class="fa fa-check"></i> Cree una cuenta en nuestra nube </p>
+                              <p><i class="fa fa-check"></i> Cargue información geográfica desde se computador de escritorio o portatil en los formatos mas comunes (SHP, KML, GPX, CSV, GeoJSON)</p>
+                              <p><i class="fa fa-check"></i> Igualmente podra crear sus propias capas geográficas desde cero, dibujando sobre el mapa los polígnos, líneas y puntos que requiera.   </p>
+                              <p><i class="fa fa-check"></i> Adicione o edite los atributos que caracterizan su capa.</p>
+                              <p><i class="fa fa-check"></i> Aplique la simbologia que mejor representa su información en el mapa.</p>
+                              <p><i class="fa fa-check"></i> Analize espacialmente sus datos geográficos con nuestras 30 utilidades.</p>
+                              <p><i class="fa fa-check"></i> Imprima o comparta su mapa en internet.</p>
+                            </div>
+                            <!-- /.col -->
+                          </div>
+                        </div>
+
+                      </md-content>
+                    </md-tab>
+                  </md-tabs>
+                </md-content>
+              </div>
+            </div>
+            <div class="col-md-8 col-md-offset-2">
+              <div class="container">
+                <div class="underlined-title">
+                  <h1>Funcionalidad de SmallGIS<br></h1>
+                  <hr class="orange bg-clouds">
+                  <h2>Principales funcionalidades listas para usar</h2>
+                </div>
+                <div class="row">
+                  <div class="col-md-4 col-sm-12 col-xs-12 pad25">
+                    <div class="col-xs-2">
+                      <span class="fa fa-plus-circle black"></span>
+                    </div>
+                    <div class="col-xs-10">
+                      <h4>Crear capa</h4>
+                      <p>Permite crear una capa desde cero, dibujando sobre el mapa polígonos, lineas y puntos.</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4 col-sm-12 col-xs-12 pad25">
+                    <div class="col-xs-2">
+                      <span class="fa fa-object-ungroup black"></span>
+                    </div>
+                    <div class="col-xs-10">
+                      <h4>Editar capas</h4>
+                      <p>Edite (adicionar, modificar, borrar) elementos de sus capas existentes con las herramientas de edición de polígonos, líneas y puntos.</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4 col-sm-12 col-xs-12 pad25">
+                    <div class="col-xs-2">
+                      <span class="fa fa-table black"></span>
+                    </div>
+                    <div class="col-xs-10">
+                      <h4>Tabla de atributos</h4>
+                      <p>Consulte, modifique (crear, borrar campos) y edite la tabla de atributos de sus capas.</p>
+                      <p><br></p>
+                    </div>
+                  </div>
+                  <div class="col-md-4 col-sm-12 col-xs-12 pad25">
+                    <div class="col-xs-2">
+                      <span class="fa fa-cloud-upload black"></span>
+                    </div>
+                    <div class="col-xs-10">
+                      <h4>Guardar en la nube</h4>
+                      <p>Guarde sus capas e información geográfica en nuestra base de datos en la nube.</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4 col-sm-12 col-xs-12 pad25">
+                    <div class="col-xs-2">
+                      <span class="fa fa-cloud-download black"></span>
+                    </div>
+                    <div class="col-xs-10">
+                      <h4>Descargar capas</h4>
+                      <p>Descargue su información geográfica  en formatos SHP, KML, Geojson</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4 col-sm-12 col-xs-12 pad25">
+                    <div class="col-xs-2">
+                      <span class="fa fa-upload black"></span>
+                    </div>
+                    <div class="col-xs-10">
+                      <h4>Cargue información</h4>
+                      <p>Cargue información geográfica desde su computador en formatos SHP, KML, CSV, GeoJSON</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4 col-sm-12 col-xs-12 pad25">
+                    <div class="col-xs-2">
+                      <span class="fa fa-cog black"></span>
+                    </div>
+                    <div class="col-xs-10">
+                      <h4>Gestionar capas</h4>
+                      <p>Administre (renombrar, duplicar, borrar) sus capas geográficas almacenadas en nuestra nube.</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4 col-sm-12 col-xs-12 pad25">
+                    <div class="col-xs-2">
+                      <span class="fa fa-share-alt black"></span>
+                    </div>
+                    <div class="col-xs-10">
+                      <h4>Compartir mapas</h4>
+                      <p>Comparta sus mapas en internet, descargando la compisición en HTML o publicandolo en Internet</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4 col-sm-12 col-xs-12 pad25">
+                    <div class="col-xs-2">
+                      <span class="fa fa-asl-interpreting black"></span>
+                    </div>
+                    <div class="col-xs-10">
+                      <h4>Integración</h4>
+                      <p>Integre servicios geográficos de los principales estandares de la industria (ArcGIS, WMS, WFS)</p>
+                      <p><br></p>
+                    </div>
+                  </div>
+                  <div class="col-md-4 col-sm-12 col-xs-12 pad25">
+                    <div class="col-xs-2">
+                      <span class="fa fa-map-marker black"></span>
+                    </div>
+                    <div class="col-xs-10">
+                      <h4>Localización</h4>
+                      <p>Localice su ubicación en el mapa a travez del GPS de su dispitivo o de la ubicación WiFi</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4 col-sm-12 col-xs-12 pad25">
+                    <div class="col-xs-2">
+                      <span class="fa fa-map-o black"></span>
+                    </div>
+                    <div class="col-xs-10">
+                      <h4>Mapas base</h4>
+                      <p>Selecione la capa base de su interes que mejor se acomode a su requerimiento.Contamos con 12 opciones.</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4 col-sm-12 col-xs-12 pad25">
+                    <div class="col-xs-2">
+                      <span class="fa fa-map-signs black"></span>
+                    </div>
+                    <div class="col-xs-10">
+                      <h4>Geocodificación</h4>
+                      <p>Localize en el mapa sitios de interes por su dirección o geonombre.</p>
+                      <p><br></p>
+                      <p><br></p>
+                    </div>
+                  </div>
+                  <div class="col-md-4 col-sm-12 col-xs-12 pad25">
+                    <div class="col-xs-2">
+                      <span class="fa fa-area-chart black"></span>
+                    </div>
+                    <div class="col-xs-10">
+                      <h4>Perfil de Terreno</h4>
+                      <p>Genere pefiles de terreno trazando una línea sobre cualquier área del mapa.</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4 col-sm-12 col-xs-12 pad25">
+                    <div class="col-xs-2">
+                      <span class="fa fa-road black"></span>
+                    </div>
+                    <div class="col-xs-10">
+                      <h4>Rutas</h4>
+                      <p>Genere rutas viales entre un punto de partida y un punto de llegada.</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4 col-sm-12 col-xs-12 pad25">
+                    <div class="col-xs-2">
+                      <span class="fa fa-crosshairs black"></span>
+                    </div>
+                    <div class="col-xs-10">
+                      <h4>Coordenadas</h4>
+                      <p>Localize un punto en el mapa a partir de una coordenada X,Y.</p>
+                      <p><br></p>
+                    </div>
+                  </div>
+                  <div class="col-md-4 col-sm-12 col-xs-12 pad25">
+                    <div class="col-xs-2">
+                      <span class="fa fa-print black"></span>
+                    </div>
+                    <div class="col-xs-10">
+                      <h4>Imprimir mapa</h4>
+                      <p>Imprima sus mapas y análisis con nuestros formatos pre-establecidos</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4 col-sm-12 col-xs-12 pad25">
+                    <div class="col-xs-2">
+                      <span class="fa fa-fire black"></span>
+                    </div>
+                    <div class="col-xs-10">
+                      <h4>Mapas de Calor</h4>
+                      <p>Genere mapas de calor a partir de la localización en sus capas de puntos.</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4 col-sm-12 col-xs-12 pad25">
+                    <div class="col-xs-2">
+                      <span class="fa fa-circle-thin black"></span>
+                    </div>
+                    <div class="col-xs-10">
+                      <h4>Agrupamientos</h4>
+                      <p>Genera mapas de agrupamiento a partir de la localización en sus capas de puntos.</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.row -->
+              </div>
+            </div>
+          </div>
+        </div>

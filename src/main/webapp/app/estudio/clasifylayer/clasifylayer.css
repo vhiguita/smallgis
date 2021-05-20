@@ -1,0 +1,318 @@
+#layercolors-content{
+  float:left;
+  width:100%;
+}
+.modal-body{
+   height: auto;
+   float: left;
+   width: 100%;
+}
+.modal-backdrop {
+    background-color: transparent;
+}
+div.mapstarter-section {
+    margin-top: 12px;
+}
+div.container {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+div.mapstarter-section ul {
+  padding-left: 24px;
+  list-style-type: none;
+  margin: 0px 0px 10px 0px;
+}
+
+div.mapstarter-section ul li {
+  margin-top: 8px;
+}
+
+div.mapstarter-section div.instructions {
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+div.panel-group span.form-item {
+  margin-right: 2em;
+}
+
+div.panel-group span.form-item:last-of-type {
+  margin: 0;
+}
+
+div.panel div.panel-group {
+  margin-bottom: 16px;
+}
+
+div.panel div.panel-group:last-of-type {
+  margin-bottom: 0;
+}
+
+div.panel div.panel-group div.panel-header {
+  font-weight: bold;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+span.form-item label {
+  margin-right: 4px;
+}
+
+span.form-item label.radio {
+  margin-right: 0;
+  margin-left: 4px;
+}
+
+/* SIZE/PROJECTION */
+
+div#section-size div.panel-group span.form-item label {
+  font-weight: bold;
+}
+
+/* COLORS */
+
+input#color-stroke-width,input#line-stroke-width {
+  width: 60px;
+}
+
+div.panel {
+  /*border: 1px solid #ccc;*/
+  padding: 12px 16px;
+}
+div.panel div.panel-group div.panel-header {
+  font-weight: bold;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+div.palette {
+  float: left;
+  padding: 16px;
+  cursor: pointer;
+}
+
+div.palette.selected {
+  background-color: #ccc;
+}
+
+div.palette:not(.selected):hover {
+  background-color: #dedede;
+}
+
+div.palette div.swatch {
+  float: left;
+  width: 16px;
+  height: 24px;
+}
+span.form-item label {
+  margin-right: 4px;
+}
+
+span.form-item label.radio {
+  margin-right: 0;
+  margin-left: 4px;
+}
+
+/* SIZE/PROJECTION */
+
+div#section-size div.panel-group span.form-item label {
+  font-weight: bold;
+}
+
+/* COLORS */
+
+input#color-stroke-width {
+  width: 60px;
+}
+div#color-choropleth div.panel-header {
+  margin-top: 16px;
+}
+
+/* DOWNLOAD */
+
+pre {
+  background-color: rgb(255,255,255);
+  font-size: 15px;
+}
+
+pre code {
+  border: 1px solid #444;
+  white-space: pre-wrap;
+  padding: 8px;
+  font-family: "Menlo", monospace, "Courier";
+}
+div#tooltip {
+  position: absolute;
+  border: 1px solid black;
+  background-color: #fff;
+  padding: 4px 8px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 12px;
+}
+
+/* ATTRIBUTE TABLE STYLES */
+
+table#attributes {
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;
+}
+
+table#attributes td input.text {
+  font-size: 12px;
+  padding: 0;
+}
+
+table#attributes th{
+  margin: 0;
+  font-size: 12px;
+  padding: 4px 6px;
+}
+table#attributes td {
+  margin: 0;
+  font-size: 12px;
+  padding: 4px 6px;
+}
+
+table#attributes th {
+  font-weight: bold;
+  text-align: center;
+}
+
+table#attributes tr:hover:not(.deleted) {
+  background-color: #e6e6e6;
+}
+
+table#attributes td {
+  text-align: left;
+}
+
+table#attributes th:last-of-type {
+  border-color: transparent;
+}
+
+table#attributes th.sortable {
+  cursor: pointer;
+}
+
+table#attributes th.sortable:hover {
+  background-color: #e6e6e6;
+}
+
+table#attributes tr td:last-of-type {
+  text-align: left;
+  border-color: transparent;
+  cursor: auto;
+  white-space: nowrap;
+}
+
+table#attributes td, table#attributes th {
+  padding: 5px;
+  border: 1px solid #ddd;
+}
+
+table#attributes td, table#attributes th span.glyphicon {
+  color: #000;
+}
+
+table#attributes td, table#attributes th:hover {
+  color: #333;
+}
+
+table#attributes th.sorted {
+  color: steelblue;
+}
+
+table#attributes th.sorted span.glyphicon {
+  color: steelblue;
+}
+
+table#attributes tr.deleted td:not(:last-of-type) {
+  text-decoration: line-through;
+  color: #999;
+}
+
+table#attributes tr.deleted td:last-of-type a {
+  color: #999;
+}
+
+table#attributes tr td:last-of-type a span {
+  font-weight: bold;
+}
+
+table#attributes th {
+  text-align: center;
+}
+
+table#attributes tbody tr {
+  cursor: pointer;
+}
+
+div#attributes-outer {
+  max-height: 240px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+}
+.hidden {
+  display: none;
+}
+.dropchop-popup {
+  min-width: 200px;
+  max-height: 400px;
+  .leaflet-popup-content {
+    padding: 5px;
+    padding-top: 5px !important;
+  }
+}
+.dropchop-table {
+  width: 100%;
+  font-size: 12px;
+  border-collapse: collapse;
+  th, td {
+    padding: 5px;
+  }
+  th {
+    text-align: left;
+    font-family: "Inconsolata", monospace;
+  }
+  td {
+    border: 1px solid #e5e5e5;
+  }
+}
+#value_sel{
+  display:none;
+}
+#nCls{
+  width: 50px;
+}
+#txtLayerName{
+  /*width: 254px;*/
+  width: 77%;
+}
+#grid-tags{
+  width: 500px;
+  height: 200px;
+  text-align: center;
+  margin:auto;
+}
+#panel-grid-point{
+  display:none;
+}
+/*#panel-style-editor{
+  float: left;
+  margin-top:10px;
+}*/
+
+.leaflet-styleeditor-color {
+    height: 35px;
+    width: 30px;
+    float: left;
+    border: 1px solid #fff;
+    cursor: pointer;
+}
+#save-style-container{
+    float: left;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

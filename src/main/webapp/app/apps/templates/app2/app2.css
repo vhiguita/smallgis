@@ -1,0 +1,47 @@
+body {
+    height: 100%;
+    width: 100%;
+}
+ html {
+    height: 100%;
+    width: 100%;
+}
+.dropchop-popup {
+  min-width: 300px;
+  max-height: 400px;
+  .leaflet-popup-content {
+    padding: 5px;
+    padding-top: 5px !important;
+  }
+}
+.dropchop-table {
+  width: 100%;
+  font-size: 12px;
+  border-collapse: collapse;
+  th, td {
+    padding: 5px;
+  }
+  th {
+    text-align: left;
+    font-family: "Inconsolata", monospace;
+  }
+  td {
+    border: 1px solid #e5e5e5;
+  }
+}
+.dropchop-popup .leaflet-popup-content {
+  border: none;
+}
+.mapContainer {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}
+.gitButton{padding:15px 30px; background-color: #47a230;text-decoration: none;font-weight: 900; color: white; text-transform:uppercase; transition: background-color .5s;}
+.gitButton:hover {background-color: #1d7806}
+.gitButton:visited {color: white;}
+@media print {
+  .leaflet-control-container{
+      display: none!important;
+  }
+}

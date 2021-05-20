@@ -1,0 +1,27 @@
+<script type="text/ng-template" id="drawposition.html">
+        <div class="modal fade">
+         <div class="modal-dialog">
+           <div class="modal-content">
+             <div class="modal-header">
+               <button type="button" class="close" ng-click="close('Cancel')" data-dismiss="modal" aria-hidden="true">&times;</button>
+               <h4 class="modal-title">Dibujar coordenada X, Y</h4>
+             </div>
+             <div class="modal-body">
+               <div class="container-1">
+                  <div class="content-panel" style="border:none;box-shadow:none;">
+                   <div>
+                      <label for="x" style="font-weight:bold;">X:</label><input id="x" name="x" ng-model="x" type="number" step="0.1" required></input>
+                   </div>
+                   <div>
+                      <label for="y" style="font-weight:bold;">Y:</label><input id="y" name="y" ng-model="y" type="number" step="0.1" required></input>
+                   </div>
+                 </div>
+               </div>
+             </div>
+             <div class="modal-footer">
+               <md-button  ng-click="drawCoordinate()" class="btn btn-primary">Ejecutar</md-button>
+             </div>
+           </div>
+         </div>
+       </div>
+</script>

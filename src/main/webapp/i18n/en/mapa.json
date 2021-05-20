@@ -1,0 +1,24 @@
+{
+    "smallgisApp": {
+        "mapa" : {
+            "home": {
+                "title": "Mapas",
+                "createLabel": "Create a new Mapa",
+                "createOrEditLabel": "Create or edit a Mapa",
+                "search": "Search for Mapa"
+            },
+            "created": "A new Mapa is created with identifier {{ param }}",
+            "updated": "A Mapa is updated with identifier {{ param }}",
+            "deleted": "A Mapa is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Mapa {{ id }}?"
+            },
+            "detail": {
+                "title": "Mapa"
+            },
+            "titulo": "Titulo",
+            "empresa": "Empresa",
+            "usuario": "Usuario"
+        }
+    }
+}

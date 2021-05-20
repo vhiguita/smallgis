@@ -1,0 +1,25 @@
+<script type="text/ng-template" id="renamelayer.html">
+        <div class="modal fade">
+         <div class="modal-dialog">
+           <div class="modal-content">
+             <div class="modal-header">
+               <button type="button" class="close" ng-click="close('Cancel')" data-dismiss="modal" aria-hidden="true">&times;</button>
+               <h4 class="modal-title">Renombrar capa</h4>
+             </div>
+             <div class="modal-body">
+               <div class="container-1">
+                   <div class="content-panel" style="border:none;box-shadow:none;">
+                     <div>
+                      <label for="new-name" style="font-weight:bold;color:#000000;">Nuevo nombre</label><input ng-model="newname" id="new_name" type="text" required></input>
+                      <input type="text" name="layerIdRn" ng-model="layerIdRn" style="display: none;"/>
+                     </div>
+                   </div>
+               </div>
+             </div>
+             <div class="modal-footer">
+               <md-button ng-click="execute()" class="btn btn-primary" data-dismiss="modal">Ejecutar</md-button>
+             </div>
+           </div>
+         </div>
+       </div>
+</script>

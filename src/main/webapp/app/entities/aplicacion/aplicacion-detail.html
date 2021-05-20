@@ -1,0 +1,46 @@
+
+<div>
+    <h2><span translate="smallgisApp.aplicacion.detail.title">Aplicacion</span> {{vm.aplicacion.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span translate="smallgisApp.aplicacion.titulo">Titulo</span></dt>
+        <dd>
+            <span>{{vm.aplicacion.titulo}}</span>
+        </dd>
+        <dt><span translate="smallgisApp.aplicacion.mapid">Mapid</span></dt>
+        <dd>
+            <span>{{vm.aplicacion.mapid}}</span>
+        </dd>
+        <dt><span translate="smallgisApp.aplicacion.empresa">Empresa</span></dt>
+        <dd>
+            <span>{{vm.aplicacion.empresa}}</span>
+        </dd>
+        <dt><span translate="smallgisApp.aplicacion.usuario">Usuario</span></dt>
+        <dd>
+            <span>{{vm.aplicacion.usuario}}</span>
+        </dd>
+        <dt><span translate="smallgisApp.aplicacion.descripcion">Descripcion</span></dt>
+        <dd>
+            <span>{{vm.aplicacion.descripcion}}</span>
+        </dd>
+        <dt><span translate="smallgisApp.aplicacion.tipoApp">Tipo App</span></dt>
+        <dd>
+            <span>{{vm.aplicacion.tipoApp}}</span>
+        </dd>
+        <dt><span translate="smallgisApp.aplicacion.espublico">Espublico</span></dt>
+        <dd>
+            <span>{{vm.aplicacion.espublico}}</span>
+        </dd>
+        <dt><span translate="smallgisApp.aplicacion.fecha">Fecha</span></dt>
+        <dd>
+            <span>{{vm.aplicacion.fecha | date:'mediumDate'}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

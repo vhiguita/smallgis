@@ -1,0 +1,115 @@
+
+ <md-toolbar class="md-hue-2">
+      <div class="md-toolbar-tools">
+        <h5>
+          <span></span>
+        </h5>
+        <span flex></span>
+        <md-button class="md-icon-button" aria-label="Eliminar">
+          <md-tooltip md-direction="botton">Editar capa</md-tooltip>
+          <md-icon md-svg-icon="content/images/mapa_editar.svg" style="color: white; width:24px; height:24px;"></md-icon>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="Eliminar">
+          <md-tooltip md-direction="botton">Guardar capa</md-tooltip>
+          <md-icon md-svg-icon="content/images/mapa_subir.svg" style="color: white; width:24px; height:24px;"></md-icon>
+        </md-button>
+        <!--<md-button class="md-icon-button" aria-label="Eliminar" ng-click="downloadLayer()">
+          <md-tooltip md-direction="botton">Descargar capa</md-tooltip>
+          <md-icon md-svg-icon="content/images/mapa_bajar.svg" style="color: white; width:24px; height:24px;"></md-icon>
+        </md-button>-->
+        <md-button class="md-icon-button" aria-label="Eliminar">
+          <md-tooltip md-direction="botton">Compartir capa</md-tooltip>
+          <md-icon md-svg-icon="content/images/link.svg" style="color: white; width:24px; height:24px;"></md-icon>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="Settings" ng-click="toggleNav2()">
+          <md-tooltip md-direction="botton">Cerrar</md-tooltip>
+          <md-icon md-svg-icon="content/images/three-dots-menu.svg" style="color: white; width:20px; height:20px;"></md-icon>
+        </md-button>
+      </div>
+ </md-toolbar>
+<md-divider></md-divider>
+<div class="dropchop-form-parameter" style="padding-right:20px;">
+  <md-input-container class="md-icon-float md-block" style="color:white;margin-bottom:0px; height:30px;">
+      <!-- Use floating label instead of placeholder -->
+      <label>Nombre de la capa</label>
+      <md-icon md-svg-src="content/images/edit.svg" class="name" style="height:16px; width:16px;"></md-icon>
+     <input ng-model="layer.name" type="text" style="font-size:12px;">
+      <md-icon md-svg-src="content/images/verify.svg" style="height:16px; width:16px; position:absolute; right:2px; left:245px;" ></md-icon>
+  </md-input-container>
+</div>
+<div class="dropchop-form-parameter" style="padding-right:20px;">
+  <md-input-container class="md-icon-float md-block" style="color:white;margin-bottom:0px; height:30px;">
+      <!-- Use floating label instead of placeholder -->
+      <label>Descripción de la capa</label>
+      <md-icon md-svg-src="content/images/edit.svg" class="name" style="height:16px; width:16px;"></md-icon>
+      <input ng-model="layer.tipo" type="text" style="font-size:12px;">
+      <md-icon md-svg-src="content/images/verify.svg" style="height:16px; width:16px; position:absolute; right:2px; left:245px;" ></md-icon>
+  </md-input-container>
+</div>
+<div class="dropchop-form-parameter" style="padding-right:20px;">
+  <md-input-container class="md-icon-float md-block" style="color:white;margin-bottom:0px; height:30px;">
+      <!-- Use floating label instead of placeholder -->
+      <label>Tipo de capa</label>
+      <md-icon md-svg-src="content/images/edit.svg" class="name" style="height:16px; width:16px;"></md-icon>
+      <md-select ng-model="layer.descripcion" style="font-size:12px; color:white;">
+          <md-option ng-repeat="tipo in tipos" value="{{tipo.descripcion}}">
+             {{tipo.descripcion}}
+          </md-option>
+      </md-select>
+
+      <md-icon md-svg-src="content/images/verify.svg" style="height:16px; width:16px; position:absolute; right:2px; left:245px; bottom:16px;" ></md-icon>
+  </md-input-container>
+</div>
+<md-divider></md-divider>
+<!--<div class="dropchop-form-parameter" style="padding-right:20px;">
+  <label class="dropchop-form-parameter-label"><md-icon md-svg-icon="content/images/transparent-cube.svg" style="color: gray; width:28px; height:28px; padding-right:10px;"></md-icon>Transparencia<br><br>
+    <input type="range" ng-model="valueini" type="text" id="transparencia" slider options="optionSlider" min="0" max="1" step="0.1" ng-change="setOpacity()">
+    <p class="dropchop-form-parameter-description">Porcentaje de transparencia de la capa</p>
+  </label>
+</div>-->
+<md-divider></md-divider>
+<div class="dropchop-form-parameter" style="padding-right:20px;">
+  <label class="dropchop-form-parameter-label"><md-switch class="md-secondary" ng-model="layer.heatmap" style="position:absolute; right:2px; padding-bottom:30px;"></md-switch><md-icon md-svg-icon="content/images/fire-flame.svg" style="color: gray; width:28px; height:28px; padding-right:10px;"></md-icon>Mapa de calor<br><br>
+    <input ng-model="valueini1"  type="text" id="trasnaprencia" slider options="optionSlider1">
+    <p class="dropchop-form-parameter-description">Factor de distribución</p>
+  </label>
+</div>
+<md-divider></md-divider>
+<div class="dropchop-form-parameter" style="padding-right:20px;">
+  <label class="dropchop-form-parameter-label">
+    <md-switch class="md-secondary" ng-model="layer.clouster" style="position:absolute; right:2px; padding-bottom:30px;"></md-switch>
+    <md-icon md-svg-icon="content/images/dot-and-circle.svg" style="color: gray; width:28px; height:28px; padding-right:10px;">
+    </md-icon>Agrupamiento<br><br>
+    <input ng-model="valueini2"  type="text" id="trasnaprencia" slider options="optionSlider2">
+    <p class="dropchop-form-parameter-description">Factor de agrupamiento</p>
+  </label>
+</div>
+<md-divider></md-divider>
+<div class="dropchop-form-parameter" style="padding-right:20px;">
+  <label class="dropchop-form-parameter-label">
+    <md-icon md-svg-icon="content/images/legend.svg" style="color: gray; width:28px; height:28px; padding-right:10px;">
+    </md-icon>Simbología de la capa<br><br>
+    <p class="dropchop-form-parameter-description">Cambiar color de fondo de la capa</p>
+    <ngjs-color-picker selected="selectedColor" options="colorOptions"></ngjs-color-picker><colorpicker color="colorfondo" color-language="en"></colorpicker>
+    <p class="dropchop-form-parameter-description">Cambiar color de contorno de la capa</p>
+    <ngjs-color-picker selected="selectedColor" options="colorOptions"></ngjs-color-picker></ngjs-color-picker><colorpicker color="colorborde" color-language="en"></colorpicker>
+  </label>
+  <md-button for="simbologia" style="color:white;">Ejecutar</md-button>
+</div>
+
+<md-divider></md-divider>
+
+
+
+<angular-accordion>
+<div style="height: 95%; width: 100%; margin: 0; color:white; overflow-y:auto;">
+  <pane>
+      <pane-header class="angular-accordion-header">
+          <md-icon md-svg-icon="content/images/turf-along.svg" style="color: white; width:32px; height:32px;"></md-icon> Punto a lo largo de una línea
+      </pane-header>
+      <pane-content style="color white;">
+        <!--<div ng-include="'app/estudio/geotools/alongtool/along.html'"></div>-->
+      </pane-content>
+  </pane>
+</div>
+</angular-accordion>

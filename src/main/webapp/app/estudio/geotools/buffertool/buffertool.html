@@ -1,0 +1,55 @@
+<script type="text/ng-template" id="buffertool.html">
+        <div class="modal fade">
+         <div class="modal-dialog">
+           <div class="modal-content">
+             <div class="modal-header">
+               <button type="button" class="close" ng-click="close('Cancel')" data-dismiss="modal" aria-hidden="true">&times;</button>
+               <h4 class="modal-title">Area de Influencia</h4>
+             </div>
+             <div class="modal-body">
+               <div class="container-1 main-section" style="/*border:1px solid #ccc;border-radius: 4px;padding-bottom: 10px;*/">
+                <div class="content-panel" style="border:none;box-shadow:none;">
+                   <div class="container-1">
+                     <div class="img-content">
+                          <md-icon md-svg-icon="content/images/turf-buffer.svg" style="color: white; width:100px; height:100px;"></md-icon>
+                     </div>
+                     <div class="description">
+                       <div class="content-description">
+                        Calcula un área de influencia para las entidades de entrada para un radio dado . Las unidades son compatibles millas, kilómetros y grados .
+                       </div>
+                     </div>
+                   </div>
+                   <div class="container-2">
+                     <div class="layer-1">
+                       <div>
+                         Capa: <select name="layer_1_sel" id="layer_1_sel" data-ng-model="ddlvalue">
+                         <option value="">---Seleccionar capa---</option>
+                          <option ng-repeat="layer in layersMap" value="{{layer.id}}">{{layer.name}}</option>
+                         </select>
+                       </div>
+                        </br>
+                       <div ng-init="distance=1">
+                         Distancia: <input ng-model="distance" type="number" min="1" max="500" required></input>
+                       </div>
+                       </br>
+                      <div ng-init="ddlunit='miles'">
+                        Unidad: <select  name="sel_unit" id="sel_unit" data-ng-model="ddlunit">
+                                  <option value='miles'>Millas</option>
+                                  <option value='feet'>Pies</option>
+                                  <option value='kilometers'>Kilometros</option>
+                                  <option value='meters'>Metros</option>
+                                  <option value='degrees'>Grados</option>
+                                </select>
+                      </div>
+                     </div>
+                   </div>
+                </div>
+              </div>
+            </div>
+             <div class="modal-footer">
+               <md-button ng-click="process()" class="btn btn-primary" data-dismiss="modal">Ejecutar</md-button>
+             </div>
+           </div>
+         </div>
+       </div>
+</script>

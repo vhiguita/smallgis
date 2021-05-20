@@ -1,0 +1,70 @@
+<div>
+    <h2 translate="smallgisApp.aplicacion.home.title">Aplicacions</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="aplicacion.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  translate="smallgisApp.aplicacion.home.createLabel">
+                        Create new Aplicacion
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span translate="global.field.id">ID</span></th>
+                    <th><span translate="smallgisApp.aplicacion.titulo">Titulo</span></th>
+                    <th><span translate="smallgisApp.aplicacion.mapid">Mapid</span></th>
+                    <th><span translate="smallgisApp.aplicacion.empresa">Empresa</span></th>
+                    <th><span translate="smallgisApp.aplicacion.usuario">Usuario</span></th>
+                    <th><span translate="smallgisApp.aplicacion.descripcion">Descripcion</span></th>
+                    <th><span translate="smallgisApp.aplicacion.tipoApp">Tipo App</span></th>
+                    <th><span translate="smallgisApp.aplicacion.espublico">Espublico</span></th>
+                    <th><span translate="smallgisApp.aplicacion.fecha">Fecha</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="aplicacion in vm.aplicacions track by aplicacion.id">
+                    <td><a ui-sref="aplicacion-detail({id:aplicacion.id})">{{aplicacion.id}}</a></td>
+                    <td>{{aplicacion.titulo}}</td>
+                    <td>{{aplicacion.mapid}}</td>
+                    <td>{{aplicacion.empresa}}</td>
+                    <td>{{aplicacion.usuario}}</td>
+                    <td>{{aplicacion.descripcion}}</td>
+                    <td>{{aplicacion.tipoApp}}</td>
+                    <td>{{aplicacion.espublico}}</td>
+                        <td>{{aplicacion.fecha | date:'mediumDate'}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="aplicacion-detail({id:aplicacion.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="aplicacion.edit({id:aplicacion.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="aplicacion.delete({id:aplicacion.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

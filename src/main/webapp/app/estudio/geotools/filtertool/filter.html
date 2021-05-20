@@ -1,0 +1,28 @@
+<div id="filter.html">
+<p class="dropchop-form-description">Toma una capa y la filtra por una determinada propiedad y su valor</p>
+<div class="dropchop-form-parameter">
+  <label class="dropchop-form-parameter-label">Capa:
+    <select name="layer_1_sel" id="layer_1_sel" data-ng-model="ddlvalue">
+      <option value="">---Seleccionar capa---</option>
+      <option ng-repeat="layer in layersMap" value="{{layer.layer._leaflet_id}}">{{layer.name}}</option>
+   </select>
+  </label>
+</div>
+<div class="dropchop-form-parameter">
+  <label class="dropchop-form-parameter-label">Campo:
+    <select name="layer_1_sel" id="layer_1_sel" data-ng-model="ddlvalue">
+      <option value="">---Seleccionar campo---</option>
+      <option ng-repeat="campo in layer" value="{{layer.layer._leaflet_id}}">{{layer.campo}}</option>
+   </select>
+  </label>
+</div>
+<div class="dropchop-form-parameter">
+  <label class="dropchop-form-parameter-label">Valor:
+    <select name="layer_1_sel" id="layer_1_sel" data-ng-model="ddlvalue">
+      <option value="">---Seleccionar valor---</option>
+      <option ng-repeat="valor in campo" value="{{layer.layer._leaflet_id}}">{{layer.value}}</option>
+   </select>
+  </label>
+</div>
+<md-button for="buffer" ng-click="process()">Ejecutar</md-button>
+</div>

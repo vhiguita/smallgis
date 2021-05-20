@@ -1,0 +1,117 @@
+body {
+    height: 100%;
+    width: 100%;
+}
+ html {
+    height: 100%;
+    width: 100%;
+}
+.dropchop-popup {
+  min-width: 300px;
+  max-height: 400px;
+  .leaflet-popup-content {
+    padding: 5px;
+    padding-top: 5px !important;
+  }
+}
+.dropchop-table {
+  width: 100%;
+  font-size: 12px;
+  border-collapse: collapse;
+  th, td {
+    padding: 5px;
+  }
+  th {
+    text-align: left;
+    font-family: "Inconsolata", monospace;
+  }
+  td {
+    border: 1px solid #e5e5e5;
+  }
+}
+.dropchop-popup .leaflet-popup-content {
+  border: none;
+}
+.mapContainer {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}
+.legend {
+    line-height: 18px;
+    color: #555;
+}
+.legend i {
+    width: 18px;
+    height: 18px;
+    float: left;
+    margin-right: 8px;
+    opacity: 0.7;
+}
+.info {
+    padding: 6px 8px;
+    font: 14px/16px Arial, Helvetica, sans-serif;
+    background: white;
+    background: rgba(255,255,255,0.8);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 5px;
+}
+
+.info h4 {
+    margin: 0 0 5px;
+    color: #777;
+}
+.filterControl{
+  padding: 6px 8px;
+  font: 14px/16px Arial, Helvetica, sans-serif;
+  background: white;
+  background: rgba(255,255,255,0.8);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
+}
+.legend s{
+  width: 10px;
+  height: 10px;
+  margin-right: 8px;
+  float: left;
+  /*margin-right: 5px;*/
+}
+.scrollCls{
+  overflow-y : scroll;
+  overflow-x : hidden;
+}
+.gridControl{
+  width: 500px;
+  height: 300px;
+  padding: 6px 8px;
+  font: 14px/16px Arial, Helvetica, sans-serif;
+  background: white;
+  background: rgba(255,255,255,0.9);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
+}
+table#attributes{
+    width: 95%;
+	  font-size:16px;
+	  color:#333333;
+	  border-width: 1px;
+	  border-color: #666666;
+	  border-collapse: collapse;
+    border: 1px solid black;
+}
+table#attributes td{
+    padding: 0.25rem;
+    text-align: left;
+    border: 1px solid #ccc;
+}
+table#attributes th {
+   padding: 0.25rem;
+   text-align: left;
+   border: 1px solid #ccc;
+}
+table#attributes tbody tr:nth-child(odd) {
+  background: #eee;
+}
+.tblCls{
+  overflow:auto;
+}

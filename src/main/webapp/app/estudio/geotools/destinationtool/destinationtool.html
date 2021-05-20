@@ -1,0 +1,58 @@
+<script type="text/ng-template" id="destinationtool.html">
+        <div class="modal fade">
+         <div class="modal-dialog">
+           <div class="modal-content">
+             <div class="modal-header">
+               <button type="button" class="close" ng-click="close('Cancel')" data-dismiss="modal" aria-hidden="true">&times;</button>
+               <h4 class="modal-title">Calcular punto de destino</h4>
+             </div>
+             <div class="modal-body">
+               <div class="container-1 main-section">
+                <div class="content-panel" style="border:none;box-shadow:none;">
+                   <div class="container-1">
+                     <div class="img-content">
+                         <md-icon md-svg-icon="content/images/turf-destination.svg" style="color: white; width:100px; height:100px;"></md-icon>
+                     </div>
+                     <div class="description">
+                       <div class="content-description">
+                        Toma un punto y calcula la ubicación de un punto de destino dado una distancia en grados, radianes , millas, o kilómetros ; y teniendo en grados . Este utiliza la fórmula Haversine para tener en cuenta la curvatura global.
+                       </div>
+                     </div>
+                   </div>
+                   <div class="container-2">
+                     <div class="layer-1">
+                     <div>
+                       Capa:<select name="layer_1_sel" id="layer_1_sel" data-ng-model="ddlvalue">
+                       <option value="">---Seleccionar capa---</option>
+                        <option ng-repeat="layer in layersMap" value="{{layer.id}}">{{layer.name}}</option>
+                       </select>
+                      </div>
+                      </br>
+                     <div ng-init="distance=10">
+                       Distancia: <input id="distance" ng-model="distance" type="number" min="1" step="1" required></input>
+                     </div>
+                     </br>
+                     <div ng-init="bearing=0">
+                       Orientacion: <input id="bearing" ng-model="bearing" type="number" min="-180" max="180" step="1" required></input>
+                     </div>
+                     </br>
+                     <div ng-init="ddlunit='miles'">
+                       Unidad: <select  name="sel_unit" id="sel_unit" data-ng-model="ddlunit">
+                                 <option value='miles'>Millas</option>
+                                 <option value='kilometers'>Kilometros</option>
+                                 <option value='radians'>Radianes</option>
+                                 <option value='degrees'>Grados</option>
+                               </select>
+                      </div>
+                     </div>
+                   </div>
+                </div>
+              </div>
+             </div>
+             <div class="modal-footer">
+               <button type="button" ng-click="process()" class="btn btn-primary" data-dismiss="modal">Ejecutar</button>
+             </div>
+           </div>
+         </div>
+       </div>
+</script>

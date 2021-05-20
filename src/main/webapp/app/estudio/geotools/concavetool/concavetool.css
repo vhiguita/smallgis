@@ -1,0 +1,38 @@
+.container-1{
+  float:left;
+  width:100%;
+}
+.img-content{
+  float:left;
+  width:20%;
+}
+.img-content img {
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+}
+.modal-body{
+   height: auto;
+   float: left;
+   width: 100%;
+}
+.description{
+  float:left;
+  width:80%;
+}
+.container-2{
+  float:left;
+  width:100%;
+}
+.layer-1{
+  margin-top: 10px;
+}
+#distance,#bearing{
+  width: 50px;
+}
+div.container {
+    box-sizing: border-box;
+}
+div.main-section {
+    margin-top: 12px;
+}

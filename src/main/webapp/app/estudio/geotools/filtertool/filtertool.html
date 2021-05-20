@@ -1,0 +1,49 @@
+<script type="text/ng-template" id="filtertool.html">
+        <div class="modal fade">
+         <div class="modal-dialog">
+           <div class="modal-content">
+             <div class="modal-header">
+               <button type="button" class="close" ng-click="close('Cancel')" data-dismiss="modal" aria-hidden="true">&times;</button>
+               <h4 class="modal-title">Filtrar capa por atributos</h4>
+             </div>
+             <div class="modal-body">
+              <div class="container main-section" style="border:1px solid #ccc;border-radius: 4px;padding-bottom: 10px;">
+               <div class="content-panel" style="border:none;box-shadow:none;">
+                 <div class="container-1">
+                   <div class="img-content">
+                       <img ng-src="/assets/iconosTurf/turf_filtro.png" height="80" width="80"  />
+                   </div>
+                   <div class="description">
+                     <div class="content-description">
+                       Toma una capa y la filtra por una determinada propiedad y su valor
+                     </div>
+                   </div>
+                 </div>
+                 <div class="container-2">
+                   <div class="layer-1">
+                    <div>
+                     Capa:<select name="layer_1_sel" id="layer_1_sel" data-ng-model="ddlvalue">
+                     <option value="">---Seleccionar capa---</option>
+                      <option ng-repeat="layer in layersMap" value="{{layer.layer._leaflet_id}}">{{layer.name}}</option>
+                     </select>
+                    </div>
+                    <br />
+                    <div ng-init="propertyName='species'">
+                      Llave (key): <input id="propertyName" ng-model="propertyName" type="text" required></input>
+                    </div>
+                     <br />
+                    <div ng-init="propertyValue='oak'">
+                      Valor: <input id="propertyValue" ng-model="propertyValue" type="text" required></input>
+                    </div>
+                   </div>
+                 </div>
+               </div>
+              </div>
+             </div>
+             <div class="modal-footer">
+               <md-button ng-click="process()" class="btn btn-primary" data-dismiss="modal">Ejecutar</md-button>
+             </div>
+           </div>
+         </div>
+       </div>
+</script>

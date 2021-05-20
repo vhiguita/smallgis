@@ -1,0 +1,53 @@
+<script type="text/ng-template" id="concavetool.html">
+        <div class="modal fade">
+         <div class="modal-dialog">
+           <div class="modal-content">
+             <div class="modal-header">
+               <button type="button" class="close" ng-click="close('Cancel')" data-dismiss="modal" aria-hidden="true">&times;</button>
+               <h4 class="modal-title">Generar polígono cóncavo a partir de puntos</h4>
+             </div>
+             <div class="modal-body">
+               <div class="container-1 main-section">
+                <div class="content-panel" style="border:none;box-shadow:none;">
+                   <div class="container-1">
+                     <div class="img-content">
+                         <md-icon md-svg-icon="content/images/turf-concave.svg" style="color: white; width:100px; height:100px;"></md-icon>
+                     </div>
+                     <div class="description">
+                       <div class="content-description">
+                        Toma un conjunto de puntos y devuelve un polígono cóncavo cubriedolos en su extensión.
+                       </div>
+                     </div>
+                   </div>
+                   <div class="container-2">
+                     <div class="layer-1">
+                     <div>
+                       Capa:<select name="layer_1_sel" id="layer_1_sel" data-ng-model="ddlvalue">
+                       <option value="">---Seleccionar capa---</option>
+                        <option ng-repeat="layer in layersMap" value="{{layer.id}}">{{layer.name}}</option>
+                       </select>
+                      </div>
+                      </br>
+                     <div ng-init="distance=10">
+                       Tamaño borde: <input id="distance" ng-model="distance" type="number" min="1" step="1" required></input>
+                      <p>El tamaño del borde necesario que una parte del polígono que cubre los puntos sea cóncava</p>
+                     </div>
+                     </br>
+                     <div ng-init="ddlunit='miles'">
+                       Unidad: <select  name="sel_unit" id="sel_unit" data-ng-model="ddlunit">
+                                 <option value='miles'>Millas</option>
+                                 <option value='kilometers'>Kilometros</option>
+                               </select>
+                      </div>
+                     </div>
+                   </div>
+                </div>
+              </div>
+             </div>
+             <div class="modal-footer">
+               <md-button ng-click="process()" class="btn btn-primary">Ejecutar</md-button>
+             </div>
+           </div>
+         </div>
+       </div>
+</script>
